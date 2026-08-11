@@ -1,0 +1,133 @@
+---
+---
+
+<div id="terminal-drawer" class="fixed inset-x-0 top-0 z-50 transform -translate-y-full transition-transform duration-300 ease-in-out bg-[#0A0F14] text-[#F3F1EB] border-b-4 border-[#FF6B22] font-mono-tech p-6 brutal-shadow-xl">
+  <div class="max-w-7xl mx-auto">
+    <div class="flex justify-between items-center border-b border-[#F3F1EB]/20 pb-4 mb-4">
+      <div class="flex items-center gap-2">
+        <span class="w-3 h-3 bg-[#FF6B22] animate-pulse"></span>
+        <span class="font-bold text-sm">PK-SHELL v1.0 [GLOBAL COMMAND PALETTE]</span>
+      </div>
+      <div class="text-xs text-[#F3F1EB]/50">
+        PRESS <span class="px-2 py-0.5 bg-[#F3F1EB]/20 text-[#FFD83D] font-bold">ESC</span> TO CLOSE
+      </div>
+    </div>
+
+    <!-- Command Quick Buttons -->
+    <div class="flex flex-wrap gap-2 mb-4 text-xs">
+      <button data-cmd="cat about" class="cmd-btn px-3 py-1 bg-[#F3F1EB]/10 border border-[#F3F1EB]/30 hover:bg-[#4A9EFF] hover:text-[#0A0F14] font-bold">cat about.txt</button>
+      <button data-cmd="goto work" class="cmd-btn px-3 py-1 bg-[#F3F1EB]/10 border border-[#F3F1EB]/30 hover:bg-[#FFD83D] hover:text-[#0A0F14] font-bold">goto work</button>
+      <button data-cmd="goto brandex" class="cmd-btn px-3 py-1 bg-[#F3F1EB]/10 border border-[#F3F1EB]/30 hover:bg-[#54D69A] hover:text-[#0A0F14] font-bold">goto brandex</button>
+      <button data-cmd="goto geniusphere" class="cmd-btn px-3 py-1 bg-[#F3F1EB]/10 border border-[#F3F1EB]/30 hover:bg-[#FF6B22] hover:text-[#0A0F14] font-bold">goto geniusphere</button>
+      <button data-cmd="help" class="cmd-btn px-3 py-1 bg-[#F3F1EB]/10 border border-[#F3F1EB]/30 hover:bg-[#DCC5FF] hover:text-[#0A0F14] font-bold">help</button>
+    </div>
+
+    <!-- Terminal Input Line -->
+    <div class="flex items-center gap-3 bg-[#121820] p-3 border border-[#F3F1EB]/30">
+      <span class="text-[#54D69A] font-bold">pavan@world:~$</span>
+      <input id="terminal-input" type="text" placeholder="Type a command (e.g., 'help', 'about', 'contact', 'clear')..." class="bg-transparent border-none outline-none text-[#F3F1EB] w-full text-sm font-mono-tech" />
+    </div>
+
+    <!-- Output Box -->
+    <div id="terminal-output" class="mt-4 p-4 bg-[#05080C] border border-[#F3F1EB]/10 text-xs min-h-[100px] max-h-[160px] overflow-y-auto space-y-1 text-[#54D69A]">
+      <div>Welcome to PK-SHELL. Type <span class="text-[#FFD83D] font-bold">help</span> to list available operations.</div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const drawer = document.getElementById('terminal-drawer');
+  const input = document.getElementById('terminal-input') as HTMLInputElement;
+  const output = document.getElementById('terminal-output');
+
+  // Toggle Command Palette with Cmd+K or Ctrl+K or ESC
+  window.addEventListener('keydown', (e) => {
+    if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+      e.preventDefault();
+      toggleTerminal();
+    }
+    if (e.key === 'Escape' && drawer && !drawer.classList.contains('-translate-y-full')) {
+      toggleTerminal();
+    }
+  });
+
+  function toggleTerminal() {
+    if (drawer) {
+      drawer.classList.toggle('-translate-y-full');
+      if (!drawer.classList.contains('-translate-y-full')) {
+        setTimeout(() => input?.focus(), 100);
+      }
+    }
+  }
+
+  // Handle Command Input
+  if (input && output) {
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        const cmd = input.value.trim().toLowerCase();
+        executeCmd(cmd);
+        input.value = '';
+      }
+    });
+
+    document.querySelectorAll('.cmd-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const cmd = btn.getAttribute('data-cmd') || '';
+        executeCmd(cmd);
+      });
+    });
+  }
+
+  function executeCmd(cmd: string) {
+    if (!output) return;
+    
+    const line = document.createElement('div');
+    line.className = 'text-[#F3F1EB]/70 border-t border-[#F3F1EB]/10 pt-1 mt-1';
+    line.innerHTML = `<span class="text-[#FFD83D]">pavan@world:~$</span> ${cmd}`;
+    output.appendChild(line);
+
+    let res = '';
+    switch (cmd) {
+      case 'help':
+        res = 'COMMANDS: <span class="text-[#4A9EFF]">about</span>, <span class="text-[#4A9EFF]">work</span>, <span class="text-[#4A9EFF]">brandex</span>, <span class="text-[#4A9EFF]">geniusphere</span>, <span class="text-[#4A9EFF]">contact</span>, <span class="text-[#4A9EFF]">clear</span>';
+        break;
+      case 'cat about':
+      case 'about':
+        res = 'PAVAN KUMAR: Technologist, Founder & Builder creating cross-disciplinary systems across Business, Tech, Education & AI.';
+        break;
+      case 'goto work':
+      case 'work':
+        document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' });
+        res = 'Navigating to Work Archive...';
+        toggleTerminal();
+        break;
+      case 'goto brandex':
+      case 'brandex':
+        document.getElementById('brandex')?.scrollIntoView({ behavior: 'smooth' });
+        res = 'Navigating to Brandex OS...';
+        toggleTerminal();
+        break;
+      case 'goto geniusphere':
+      case 'geniusphere':
+        document.getElementById('geniusphere')?.scrollIntoView({ behavior: 'smooth' });
+        res = 'Navigating to Geniusphere...';
+        toggleTerminal();
+        break;
+      case 'contact':
+        document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+        res = 'Navigating to Contact Section...';
+        toggleTerminal();
+        break;
+      case 'clear':
+        output.innerHTML = '';
+        return;
+      default:
+        res = `<span class="text-[#FF6B22]">Command not recognized: '${cmd}'. Type 'help' for options.</span>`;
+    }
+
+    const resLine = document.createElement('div');
+    resLine.innerHTML = res;
+    output.appendChild(resLine);
+    output.scrollTop = output.scrollHeight;
+  }
+</script>

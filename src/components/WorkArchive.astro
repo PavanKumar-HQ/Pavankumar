@@ -1,0 +1,122 @@
+---
+const projects = [
+  {
+    id: "01",
+    name: "BRANDEX",
+    category: "TECHNOLOGY × BUSINESS",
+    summary: "End-to-end technology and business operations engine.",
+    tags: ["Astro", "CRM", "Client Systems", "Automation"],
+    color: "bg-[#4A9EFF]",
+    link: "#brandex"
+  },
+  {
+    id: "02",
+    name: "GENIUSPHERE",
+    category: "EDUCATION × COMMUNITY",
+    summary: "Future-focused tech & AI learning ecosystem for students.",
+    tags: ["Community", "Education", "AI Workshops", "Events"],
+    color: "bg-[#FFD83D]",
+    link: "#geniusphere"
+  },
+  {
+    id: "03",
+    name: "ESSMA OS",
+    category: "ENTERPRISE SOFTWARE",
+    summary: "Custom operational software for streamlined data & workflow management.",
+    tags: ["Supabase", "TypeScript", "Dashboard", "Internal Tool"],
+    color: "bg-[#54D69A]",
+    link: "#systems"
+  },
+  {
+    id: "04",
+    name: "CHAT BILLING SYSTEM",
+    category: "PRODUCT × OPERATIONS",
+    summary: "Conversational & automated invoicing system for rapid transactions.",
+    tags: ["Node.js", "Payment API", "Automation", "Bot"],
+    color: "bg-[#FF6B22]",
+    link: "#systems"
+  },
+  {
+    id: "05",
+    name: "SCHOOL TECH INITIATIVES",
+    category: "EDUCATION × HARDWARE",
+    summary: "Implementing IoT, computer labs and modern tech tools in schools.",
+    tags: ["Hardware", "Lab Setup", "Curriculum", "Mentorship"],
+    color: "bg-[#DCC5FF]",
+    link: "#geniusphere"
+  },
+  {
+    id: "06",
+    name: "EXPERIMENTAL LAB",
+    category: "AI × WEB × SYSTEMS",
+    summary: "R&D suite exploring quantum concepts, AI agents, and web interfaces.",
+    tags: ["LLM Agents", "Interactive Web", "Shader", "Experiments"],
+    color: "bg-[#F3F1EB]",
+    link: "#lab"
+  }
+];
+---
+
+<section id="work" class="w-full py-20 px-6 sm:px-12 lg:px-16 border-b-3 border-[#0A0F14] bg-[#0A0F14] text-[#F3F1EB]">
+  
+  <div class="max-w-7xl mx-auto">
+    
+    <!-- Section Header -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 pb-8 border-b-2 border-[#F3F1EB]/20">
+      <div>
+        <div class="inline-block px-3 py-1 bg-[#4A9EFF] text-[#0A0F14] font-mono-tech text-xs font-bold mb-4 brutal-border">
+          [04] THE THINGS I'VE BUILT
+        </div>
+        <h2 class="font-heading font-black text-5xl sm:text-7xl lg:text-8xl uppercase tracking-tight text-[#F3F1EB]">
+          WORK / ARCHIVE
+        </h2>
+      </div>
+      <div class="font-mono-tech text-xs text-[#F3F1EB]/60 mt-4 md:mt-0">
+        TOTAL SYSTEMS LOGGED: 06
+      </div>
+    </div>
+
+    <!-- Neo-Brutalist Interactive Project List -->
+    <div class="space-y-6">
+      {projects.map((project) => (
+        <a href={project.link} class="block group">
+          <div class="p-6 sm:p-8 bg-[#F3F1EB] text-[#0A0F14] brutal-border-thick brutal-shadow-hover transition-all flex flex-col md:flex-row md:items-center justify-between gap-6">
+            
+            <div class="flex items-start sm:items-center gap-6">
+              <!-- ID Badge -->
+              <span class={`font-mono-tech text-lg font-black px-4 py-2 brutal-border ${project.color}`}>
+                {project.id}
+              </span>
+
+              <div>
+                <div class="font-mono-tech text-xs font-bold text-[#FF6B22] uppercase tracking-wider mb-1">
+                  {project.category}
+                </div>
+                <h3 class="font-heading font-black text-2xl sm:text-4xl uppercase group-hover:text-[#4A9EFF] transition-colors">
+                  {project.name}
+                </h3>
+                <p class="font-sans text-sm text-[#0A0F14]/70 mt-1 max-w-xl">
+                  {project.summary}
+                </p>
+              </div>
+            </div>
+
+            <!-- Tags & Action Trigger -->
+            <div class="flex flex-wrap items-center gap-2 md:justify-end">
+              {project.tags.map((tag) => (
+                <span class="px-3 py-1 bg-white border border-[#0A0F14] font-mono-tech text-[11px] font-medium">
+                  {tag}
+                </span>
+              ))}
+              <span class="ml-4 font-mono-tech font-bold text-sm bg-[#0A0F14] text-[#F3F1EB] px-4 py-2 group-hover:bg-[#4A9EFF] group-hover:text-[#0A0F14] transition-colors brutal-border">
+                EXPLORE ↗
+              </span>
+            </div>
+
+          </div>
+        </a>
+      ))}
+    </div>
+
+  </div>
+</section>

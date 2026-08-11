@@ -1,0 +1,76 @@
+---
+---
+
+<div id="loader" class="fixed inset-0 z-50 bg-[#0A0F14] text-[#F3F1EB] flex flex-col justify-between p-6 sm:p-12 font-mono-tech transition-opacity duration-700">
+  <div class="flex justify-between items-center text-xs tracking-widest uppercase border-b border-[#F3F1EB]/20 pb-4">
+    <div class="flex items-center gap-2">
+      <span class="w-2.5 h-2.5 rounded-full bg-[#54D69A] animate-pulse"></span>
+      <span>SYSTEM / INITIALIZING</span>
+    </div>
+    <span>PAVAN KUMAR / WORLD</span>
+  </div>
+
+  <div class="max-w-2xl">
+    <div class="text-xs text-[#4A9EFF] mb-2">[00_DIAGNOSTICS] KERNEL_LOAD_OK</div>
+    <div class="text-2xl sm:text-4xl font-heading font-bold mb-6 text-[#F3F1EB] leading-tight">
+      INITIALIZING PERSONAL DIGITAL ARCHIVE...
+    </div>
+    
+    <!-- Progress Bar -->
+    <div class="w-full bg-[#F3F1EB]/10 h-4 border border-[#F3F1EB]/30 p-0.5 mb-4">
+      <div id="loader-bar" class="h-full bg-[#FFD83D] w-0 transition-all duration-100 ease-out"></div>
+    </div>
+    
+    <div class="flex justify-between text-xs text-[#F3F1EB]/70">
+      <span id="loader-status">LOADING_MODULES...</span>
+      <span id="loader-percent" class="font-bold text-[#FFD83D]">0%</span>
+    </div>
+  </div>
+
+  <div class="text-[10px] text-[#F3F1EB]/40 flex justify-between border-t border-[#F3F1EB]/20 pt-4 uppercase">
+    <span>BUILD: 2026.08</span>
+    <span>STATUS: ACTIVE</span>
+  </div>
+</div>
+
+<script>
+  let progress = 0;
+  const bar = document.getElementById('loader-bar');
+  const percent = document.getElementById('loader-percent');
+  const loader = document.getElementById('loader');
+  const status = document.getElementById('loader-status');
+
+  const steps = [
+    'LOADING_MODULES...',
+    'FETCHING_ARCHIVES...',
+    'INITIALIZING_INTERACTION...',
+    'SYSTEM_READY'
+  ];
+
+  const interval = setInterval(() => {
+    progress += Math.floor(Math.random() * 15) + 5;
+    if (progress > 100) progress = 100;
+    
+    if (bar && percent) {
+      bar.style.width = `${progress}%`;
+      percent.innerText = `${progress}%`;
+    }
+
+    if (status) {
+      const stepIdx = Math.min(Math.floor((progress / 100) * steps.length), steps.length - 1);
+      status.innerText = steps[stepIdx];
+    }
+
+    if (progress === 100) {
+      clearInterval(interval);
+      setTimeout(() => {
+        if (loader) {
+          loader.style.opacity = '0';
+          setTimeout(() => {
+            loader.style.display = 'none';
+          }, 700);
+        }
+      }, 300);
+    }
+  }, 90);
+</script>

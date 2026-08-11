@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-paper: #F3F1EB;
+    --ink-dark: #0A0F14;
+    --accent-blue: #4A9EFF;
+    --accent-yellow: #FFD83D;
+    --accent-green: #54D69A;
+    --accent-orange: #FF6B22;
+    --accent-lavender: #DCC5FF;
+  }
+
+  body {
+    background-color: var(--bg-paper);
+    color: var(--ink-dark);
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom Neo-Brutalist Utility Classes & Borders */
+.brutal-border {
+  border: 2px solid var(--ink-dark);
+}
+
+.brutal-border-thick {
+  border: 3px solid var(--ink-dark);
+}
+
+.brutal-border-xl {
+  border: 4px solid var(--ink-dark);
+}
+
+.brutal-shadow {
+  box-shadow: 4px 4px 0px var(--ink-dark);
+}
+
+.brutal-shadow-lg {
+  box-shadow: 8px 8px 0px var(--ink-dark);
+}
+
+.brutal-shadow-xl {
+  box-shadow: 12px 12px 0px var(--ink-dark);
+}
+
+.brutal-shadow-sm {
+  box-shadow: 2px 2px 0px var(--ink-dark);
+}
+
+.brutal-shadow-hover {
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.brutal-shadow-hover:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 10px 10px 0px var(--ink-dark);
+}
+
+.brutal-shadow-hover:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px var(--ink-dark);
+}
+
+.font-mono-tech {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.font-heading {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* Custom Interactive Cursor Dot */
+.custom-cursor {
+  width: 20px;
+  height: 20px;
+  background-color: #FFD83D;
+  border: 2px solid #0A0F14;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  border-radius: 0px;
+  transform: translate(-50%, -50%);
+  transition: width 0.15s ease, height 0.15s ease, background-color 0.15s ease;
+}
+
+/* Halftone Grid Pattern Background */
+.bg-grid-pattern {
+  background-image: radial-gradient(#0A0F14 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Marquee Animations */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: 200%;
+  animation: marquee 25s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Glitch Effect on Hover */
+.glitch-hover:hover {
+  animation: glitch-anim 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+}
+
+@keyframes glitch-anim {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
+}
+
+/* Hide scrollbar for clean horizontal scroll sections */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

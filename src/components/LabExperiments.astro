@@ -1,0 +1,135 @@
+---
+const labs = [
+  { name: "AI AGENTS & LLM PROMPTS", cat: "INTELLIGENCE", color: "bg-[#FFD83D]", desc: "Custom tool calling routines and interactive prompt engines." },
+  { name: "WEB EXPERIMENTS", cat: "INTERACTIONS", color: "bg-[#4A9EFF]", desc: "GSAP shader-style dynamic cursor distortion & canvas canvas physics." },
+  { name: "QUANTUM LOGIC", cat: "ALGORITHMS", color: "bg-[#54D69A]", desc: "Exploratory quantum state simulator and qubit visualizers." },
+  { name: "HARDWARE SYSTEMS", cat: "IOT & LABS", color: "bg-[#FF6B22]", desc: "Microcontroller sensors for physical school lab setups." }
+];
+---
+
+<section id="lab" class="w-full py-20 px-6 sm:px-12 lg:px-16 border-b-3 border-[#0A0F14] bg-[#F3F1EB]">
+  <div class="max-w-7xl mx-auto">
+    
+    <div class="inline-block px-3 py-1 bg-[#DCC5FF] text-[#0A0F14] font-mono-tech text-xs font-bold mb-6 brutal-border">
+      [08] THE LAB / EXPERIMENTS & LIVE PLAYGROUND
+    </div>
+
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 border-b-2 border-[#0A0F14] pb-6">
+      <div>
+        <h2 class="font-heading font-black text-5xl sm:text-7xl uppercase tracking-tight">
+          EXPERIMENTAL PLAYGROUND
+        </h2>
+        <p class="font-mono-tech text-xs sm:text-sm text-[#0A0F14]/70 mt-2">
+          LIVE INTERACTIVE PROTOTYPES & AI PROMPT SANDBOX.
+        </p>
+      </div>
+      <div class="font-mono-tech text-xs font-bold text-[#FF6B22] mt-4 md:mt-0">
+        MODE: CONTINUOUS R&D
+      </div>
+    </div>
+
+    <!-- Live Interactive AI Sandbox Feature Tile -->
+    <div class="mb-12 p-8 bg-[#0A0F14] text-[#F3F1EB] brutal-border-xl brutal-shadow-xl font-mono-tech">
+      <div class="flex justify-between items-center border-b border-[#F3F1EB]/20 pb-4 mb-6">
+        <div class="flex items-center gap-2">
+          <span class="w-3 h-3 bg-[#54D69A] animate-ping"></span>
+          <span class="font-bold text-sm text-[#FFD83D]">LIVE_SANDBOX: AI AGENT INTERVIEW REASONER</span>
+        </div>
+        <span class="text-xs text-[#F3F1EB]/50">GEMINI NANO LOGIC / INTERACTIVE</span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div class="lg:col-span-5 space-y-3">
+          <div class="text-xs text-[#4A9EFF] font-bold">[SYSTEM_PROMPT]</div>
+          <p class="font-sans text-xs text-[#F3F1EB]/80 leading-relaxed">
+            Test Pavan's AI logic sandbox directly in your browser. Select a prompt or type your query below to analyze build decisions.
+          </p>
+
+          <div class="flex flex-wrap gap-2 pt-2">
+            <button data-prompt="Why build Brandex as an OS?" class="sandbox-btn px-3 py-1 bg-[#F3F1EB]/10 border border-[#F3F1EB]/30 text-[11px] hover:bg-[#FFD83D] hover:text-[#0A0F14]">Why Brandex OS?</button>
+            <button data-prompt="What is the mission of Geniusphere?" class="sandbox-btn px-3 py-1 bg-[#F3F1EB]/10 border border-[#F3F1EB]/30 text-[11px] hover:bg-[#54D69A] hover:text-[#0A0F14]">Geniusphere Goal?</button>
+            <button data-prompt="How do you handle client software systems?" class="sandbox-btn px-3 py-1 bg-[#F3F1EB]/10 border border-[#F3F1EB]/30 text-[11px] hover:bg-[#4A9EFF] hover:text-[#0A0F14]">Client Software?</button>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 bg-[#05080C] p-4 border border-[#F3F1EB]/20 brutal-shadow-sm space-y-4">
+          <div class="flex gap-2">
+            <input id="ai-input" type="text" placeholder="Ask Pavan's AI Agent something..." class="w-full bg-[#121820] border border-[#F3F1EB]/30 p-2 text-xs text-[#F3F1EB] outline-none" />
+            <button id="ai-send" class="px-4 py-2 bg-[#FF6B22] text-[#0A0F14] font-bold text-xs hover:bg-[#FFD83D] transition-colors whitespace-nowrap">RUN ↗</button>
+          </div>
+
+          <div id="ai-output" class="p-3 bg-[#121820] border border-[#F3F1EB]/10 min-h-[90px] text-xs text-[#54D69A] leading-relaxed">
+            > Ready. Click a prompt button above or enter a query to test live AI reasoning.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lab Grid Tiles -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {labs.map((item, idx) => (
+        <div class="p-6 bg-white brutal-border-thick brutal-shadow-hover flex flex-col justify-between h-64 group cursor-pointer">
+          <div>
+            <div class="flex justify-between items-center mb-4">
+              <span class={`px-2.5 py-1 font-mono-tech text-[10px] font-bold border border-[#0A0F14] ${item.color}`}>
+                0{idx + 1} // {item.cat}
+              </span>
+              <span class="font-mono-tech text-xs font-bold group-hover:translate-x-1 transition-transform">↗</span>
+            </div>
+
+            <h3 class="font-heading font-black text-2xl uppercase group-hover:text-[#4A9EFF] transition-colors mb-2">
+              {item.name}
+            </h3>
+
+            <p class="font-sans text-xs text-[#0A0F14]/70">
+              {item.desc}
+            </p>
+          </div>
+
+          <div class="font-mono-tech text-[10px] text-[#0A0F14]/50 border-t border-[#0A0F14] pt-2 flex justify-between">
+            <span>R&D PROTO</span>
+            <span class="text-[#54D69A] font-bold">ACTIVE</span>
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<script>
+  const aiInput = document.getElementById('ai-input') as HTMLInputElement;
+  const aiSend = document.getElementById('ai-send');
+  const aiOutput = document.getElementById('ai-output');
+
+  const responses: Record<string, string> = {
+    'why build brandex as an os?': '> BRANDEX OS: Traditional agencies ship static code. We build productized operating engines combining client CRMs, automated webhooks, and DB infrastructure for zero-friction scaling.',
+    'what is the mission of geniusphere?': '> GENIUSPHERE: Empowering 200+ school students across partner institutions with practical AI workflows, modern web development, and financial literacy before college.',
+    'how do you handle client software systems?': '> ESSMA & CLIENT SOFTWARE: Architected using Astro SSG, Supabase PostgreSQL, zero-latency serverless functions, and robust custom dashboard telemetry.'
+  };
+
+  function runAiQuery(promptText: string) {
+    if (!aiOutput) return;
+    const cleanPrompt = promptText.trim().toLowerCase();
+    aiOutput.innerHTML = `<span class="text-[#FFD83D] animate-pulse">> ANALYZING REASONING PIPELINE FOR: "${promptText}"...</span>`;
+
+    setTimeout(() => {
+      const reply = responses[cleanPrompt] || `> AGENT RESPONSE: Pavan specializes in building practical software, business systems, and AI workflows around "${promptText}".`;
+      aiOutput.innerHTML = reply;
+    }, 400);
+  }
+
+  aiSend?.addEventListener('click', () => {
+    if (aiInput && aiInput.value) {
+      runAiQuery(aiInput.value);
+    }
+  });
+
+  document.querySelectorAll('.sandbox-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const p = btn.getAttribute('data-prompt') || '';
+      if (aiInput) aiInput.value = p;
+      runAiQuery(p);
+    });
+  });
+</script>
