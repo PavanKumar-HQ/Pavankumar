@@ -1,8 +1,8 @@
 ---
 ---
 
-<!-- Marquee Banner -->
-<div class="w-full bg-[#0A0F14] text-[#F3F1EB] border-b-2 border-[#0A0F14] overflow-hidden py-2 font-mono-tech text-xs tracking-widest uppercase flex select-none">
+<!-- Marquee Banner at Top -->
+<div class="w-full bg-[#0A0F14] text-[#F3F1EB] border-b-2 border-[#0A0F14] overflow-hidden py-1.5 font-mono-tech text-xs tracking-widest uppercase flex select-none">
   <div class="animate-marquee whitespace-nowrap flex gap-8 items-center font-bold">
     <span class="flex items-center gap-2">
       <span class="w-2 h-2 rounded-full bg-[#54D69A]"></span>
@@ -19,7 +19,7 @@
     <span>★</span>
     <span class="text-[#DCC5FF]">AI & SYSTEM ARCHITECTURE</span>
     <span>★</span>
-    <!-- Duplicate for infinite marquee loop -->
+    <!-- Duplicate for infinite loop -->
     <span class="flex items-center gap-2">
       <span class="w-2 h-2 rounded-full bg-[#54D69A]"></span>
       PAVAN KUMAR / WORLD
@@ -38,35 +38,70 @@
   </div>
 </div>
 
+<!-- Header Top Bar -->
 <header class="w-full border-b-3 border-[#0A0F14] bg-[#F3F1EB] sticky top-0 z-40">
-  <div class="max-w-7xl mx-auto px-4 sm:px-8 py-4 flex justify-between items-center font-mono-tech text-xs sm:text-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-8 py-3.5 flex justify-between items-center font-mono-tech text-xs sm:text-sm">
     <a href="#" class="font-bold font-heading text-xl sm:text-2xl tracking-tighter flex items-center gap-2 group">
       <span class="w-4 h-4 bg-[#FF6B22] brutal-border inline-block group-hover:rotate-45 transition-transform"></span>
       PAVAN KUMAR <span class="text-xs px-2.5 py-0.5 bg-[#FFD83D] brutal-border">WORLD</span>
     </a>
     
-    <nav class="hidden md:flex items-center gap-6 font-bold">
-      <a href="#about" class="hover:text-[#4A9EFF] hover:underline underline-offset-4 transition-all">01.PHILOSOPHY</a>
-      <a href="#journey" class="hover:text-[#4A9EFF] hover:underline underline-offset-4 transition-all">02.JOURNEY</a>
-      <a href="#work" class="hover:text-[#4A9EFF] hover:underline underline-offset-4 transition-all">03.BUILT_WORK</a>
-      <a href="#systems" class="hover:text-[#4A9EFF] hover:underline underline-offset-4 transition-all">04.SYSTEMS</a>
-      <a href="#writing" class="hover:text-[#4A9EFF] hover:underline underline-offset-4 transition-all">05.NOTES</a>
-    </nav>
-
-    <div class="flex items-center gap-3">
-      <div class="hidden sm:flex items-center gap-2 px-3 py-1 bg-[#54D69A]/30 brutal-border text-[11px] font-bold">
+    <div class="flex items-center gap-4">
+      <div class="hidden sm:flex items-center gap-2 px-3 py-1 bg-[#0A0F14] text-[#F3F1EB] brutal-border text-[11px] font-bold">
         <span class="w-2 h-2 rounded-full bg-[#54D69A] animate-ping"></span>
         STATUS: ACTIVE
       </div>
       <button id="terminal-trigger-btn" class="px-3 py-1.5 bg-[#FFD83D] text-[#0A0F14] font-bold brutal-border text-xs flex items-center gap-1 hover:bg-[#FF6B22] transition-colors">
         <span>CMD + K</span>
       </button>
-      <a href="#contact" class="px-4 py-2 bg-[#0A0F14] text-[#F3F1EB] font-bold brutal-shadow-hover hover:bg-[#4A9EFF] hover:text-[#0A0F14] transition-all brutal-border">
-        TALK ↗
-      </a>
     </div>
   </div>
 </header>
+
+<!-- Bottom Dock Navigation Bar (Sui Overflow Pixel-Perfect Match) -->
+<div class="fixed bottom-0 inset-x-0 z-40 bg-[#F3F1EB] border-t-2 border-[#0A0F14] select-none">
+  <div class="max-w-7xl mx-auto flex items-stretch divide-x-2 divide-[#0A0F14] overflow-x-auto no-scrollbar">
+    
+    <a href="#about" class="dock-item flex-1 min-w-[120px] py-4 px-6 text-center font-bold font-sans text-sm hover:bg-[#4A9EFF] hover:text-[#0A0F14] transition-colors flex items-center justify-center">
+      Philosophy
+    </a>
+    
+    <a href="#journey" class="dock-item flex-1 min-w-[120px] py-4 px-6 text-center font-bold font-sans text-sm hover:bg-[#4A9EFF] hover:text-[#0A0F14] transition-colors flex items-center justify-center">
+      Journey
+    </a>
+    
+    <a href="#work" class="dock-item flex-1 min-w-[120px] py-4 px-6 text-center font-bold font-sans text-sm hover:bg-[#4A9EFF] hover:text-[#0A0F14] transition-colors flex items-center justify-center">
+      Built Work
+    </a>
+    
+    <a href="#brandex" class="dock-item flex-1 min-w-[120px] py-4 px-6 text-center font-bold font-sans text-sm hover:bg-[#4A9EFF] hover:text-[#0A0F14] transition-colors flex items-center justify-center">
+      Brandex OS
+    </a>
+    
+    <a href="#geniusphere" class="dock-item flex-1 min-w-[120px] py-4 px-6 text-center font-bold font-sans text-sm hover:bg-[#4A9EFF] hover:text-[#0A0F14] transition-colors flex items-center justify-center">
+      Geniusphere
+    </a>
+    
+    <a href="#systems" class="dock-item flex-1 min-w-[120px] py-4 px-6 text-center font-bold font-sans text-sm hover:bg-[#4A9EFF] hover:text-[#0A0F14] transition-colors flex items-center justify-center">
+      Systems
+    </a>
+
+    <a href="#writing" class="dock-item flex-1 min-w-[120px] py-4 px-6 text-center font-bold font-sans text-sm hover:bg-[#4A9EFF] hover:text-[#0A0F14] transition-colors flex items-center justify-center">
+      Notes
+    </a>
+
+    <!-- Black Action Trigger Button Block -->
+    <a href="#contact" class="px-8 py-4 bg-[#0A0F14] text-[#F3F1EB] font-bold font-sans text-sm hover:bg-[#FF6B22] hover:text-[#0A0F14] transition-colors flex items-center justify-center whitespace-nowrap">
+      Let's Talk
+    </a>
+
+    <!-- Blue Arrow Trigger Action Block (Pixel-Perfect Sui Overflow) -->
+    <a href="#contact" class="px-6 bg-[#4A9EFF] text-[#0A0F14] font-bold text-xl flex items-center justify-center hover:bg-[#FF6B22] transition-colors">
+      ↗
+    </a>
+
+  </div>
+</div>
 
 <script>
   // Connect CMD+K trigger button to terminal drawer toggle
@@ -75,5 +110,28 @@
     if (drawer) {
       drawer.classList.toggle('-translate-y-full');
     }
+  });
+
+  // Active dock item highlight on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const dockItems = document.querySelectorAll('.dock-item');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach((sec) => {
+      const secTop = (sec as HTMLElement).offsetTop - 150;
+      if (window.scrollY >= secTop) {
+        current = sec.getAttribute('id') || '';
+      }
+    });
+
+    dockItems.forEach((item) => {
+      const href = item.getAttribute('href')?.substring(1);
+      if (href === current) {
+        item.classList.add('bg-[#4A9EFF]', 'text-[#0A0F14]');
+      } else {
+        item.classList.remove('bg-[#4A9EFF]', 'text-[#0A0F14]');
+      }
+    });
   });
 </script>

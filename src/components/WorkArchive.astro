@@ -5,6 +5,7 @@ const projects = [
     name: "BRANDEX",
     category: "TECHNOLOGY × BUSINESS",
     summary: "End-to-end technology and business operations engine.",
+    details: "Brandex operates at the intersection of business strategy and software engineering. Engineered custom CRM engines, automated webhook pipelines, and scalable enterprise web systems.",
     tags: ["Astro", "CRM", "Client Systems", "Automation"],
     color: "bg-[#4A9EFF]",
     link: "#brandex"
@@ -14,6 +15,7 @@ const projects = [
     name: "GENIUSPHERE",
     category: "EDUCATION × COMMUNITY",
     summary: "Future-focused tech & AI learning ecosystem for students.",
+    details: "Trained over 200+ students across partner schools with practical hands-on curriculum in AI tools, modern web engineering, and digital financial literacy.",
     tags: ["Community", "Education", "AI Workshops", "Events"],
     color: "bg-[#FFD83D]",
     link: "#geniusphere"
@@ -23,6 +25,7 @@ const projects = [
     name: "ESSMA OS",
     category: "ENTERPRISE SOFTWARE",
     summary: "Custom operational software for streamlined data & workflow management.",
+    details: "Centralized internal operations platform managing 142 clients and 38 active projects with real-time Supabase PostgreSQL telemetry.",
     tags: ["Supabase", "TypeScript", "Dashboard", "Internal Tool"],
     color: "bg-[#54D69A]",
     link: "#systems"
@@ -32,6 +35,7 @@ const projects = [
     name: "CHAT BILLING SYSTEM",
     category: "PRODUCT × OPERATIONS",
     summary: "Conversational & automated invoicing system for rapid transactions.",
+    details: "Automated billing bot system integrating payment webhooks, instant messaging triggers, and automatic ledger generation.",
     tags: ["Node.js", "Payment API", "Automation", "Bot"],
     color: "bg-[#FF6B22]",
     link: "#systems"
@@ -41,18 +45,10 @@ const projects = [
     name: "SCHOOL TECH INITIATIVES",
     category: "EDUCATION × HARDWARE",
     summary: "Implementing IoT, computer labs and modern tech tools in schools.",
+    details: "On-ground hardware lab upgrades, microcontroller IoT installations, and direct tech mentorship for young student builders.",
     tags: ["Hardware", "Lab Setup", "Curriculum", "Mentorship"],
     color: "bg-[#DCC5FF]",
     link: "#geniusphere"
-  },
-  {
-    id: "06",
-    name: "EXPERIMENTAL LAB",
-    category: "AI × WEB × SYSTEMS",
-    summary: "R&D suite exploring quantum concepts, AI agents, and web interfaces.",
-    tags: ["LLM Agents", "Interactive Web", "Shader", "Experiments"],
-    color: "bg-[#F3F1EB]",
-    link: "#lab"
   }
 ];
 ---
@@ -71,52 +67,112 @@ const projects = [
           WORK / ARCHIVE
         </h2>
       </div>
-      <div class="font-mono-tech text-xs text-[#F3F1EB]/60 mt-4 md:mt-0">
-        TOTAL SYSTEMS LOGGED: 06
-      </div>
     </div>
 
     <!-- Neo-Brutalist Interactive Project List -->
     <div class="space-y-6">
       {projects.map((project) => (
-        <a href={project.link} class="block group">
-          <div class="p-6 sm:p-8 bg-[#F3F1EB] text-[#0A0F14] brutal-border-thick brutal-shadow-hover transition-all flex flex-col md:flex-row md:items-center justify-between gap-6">
-            
-            <div class="flex items-start sm:items-center gap-6">
-              <!-- ID Badge -->
-              <span class={`font-mono-tech text-lg font-black px-4 py-2 brutal-border ${project.color}`}>
-                {project.id}
-              </span>
+        <div class="p-6 sm:p-8 bg-[#F3F1EB] text-[#0A0F14] brutal-border-thick brutal-shadow-hover transition-all flex flex-col md:flex-row md:items-center justify-between gap-6 cursor-pointer group">
+          
+          <div class="flex items-start sm:items-center gap-6">
+            <!-- ID Badge -->
+            <span class={`font-mono-tech text-lg font-black px-4 py-2 brutal-border ${project.color}`}>
+              {project.id}
+            </span>
 
-              <div>
-                <div class="font-mono-tech text-xs font-bold text-[#FF6B22] uppercase tracking-wider mb-1">
-                  {project.category}
-                </div>
-                <h3 class="font-heading font-black text-2xl sm:text-4xl uppercase group-hover:text-[#4A9EFF] transition-colors">
-                  {project.name}
-                </h3>
-                <p class="font-sans text-sm text-[#0A0F14]/70 mt-1 max-w-xl">
-                  {project.summary}
-                </p>
+            <div>
+              <div class="font-mono-tech text-xs font-bold text-[#FF6B22] uppercase tracking-wider mb-1">
+                {project.category}
               </div>
+              <h3 class="font-heading font-black text-2xl sm:text-4xl uppercase group-hover:text-[#4A9EFF] transition-colors">
+                {project.name}
+              </h3>
+              <p class="font-sans text-sm text-[#0A0F14]/70 mt-1 max-w-xl">
+                {project.summary}
+              </p>
             </div>
-
-            <!-- Tags & Action Trigger -->
-            <div class="flex flex-wrap items-center gap-2 md:justify-end">
-              {project.tags.map((tag) => (
-                <span class="px-3 py-1 bg-white border border-[#0A0F14] font-mono-tech text-[11px] font-medium">
-                  {tag}
-                </span>
-              ))}
-              <span class="ml-4 font-mono-tech font-bold text-sm bg-[#0A0F14] text-[#F3F1EB] px-4 py-2 group-hover:bg-[#4A9EFF] group-hover:text-[#0A0F14] transition-colors brutal-border">
-                EXPLORE ↗
-              </span>
-            </div>
-
           </div>
-        </a>
+
+          <!-- Tags & Action Trigger Drawer Button -->
+          <div class="flex flex-wrap items-center gap-2 md:justify-end">
+            {project.tags.map((tag) => (
+              <span class="px-3 py-1 bg-white border border-[#0A0F14] font-mono-tech text-[11px] font-medium">
+                {tag}
+              </span>
+            ))}
+            <button class="open-case-btn ml-4 font-mono-tech font-bold text-sm bg-[#0A0F14] text-[#F3F1EB] px-4 py-2 group-hover:bg-[#4A9EFF] group-hover:text-[#0A0F14] transition-colors brutal-border"
+              data-name={project.name}
+              data-cat={project.category}
+              data-details={project.details}
+              data-tags={project.tags.join(', ')}
+              data-color={project.color}>
+              EXPLORE ↗
+            </button>
+          </div>
+
+        </div>
       ))}
     </div>
 
   </div>
+
+  <!-- Interactive Project Case Study Drawer Modal -->
+  <div id="case-modal" class="fixed inset-y-0 right-0 w-full sm:w-[640px] z-50 transform translate-x-full transition-transform duration-300 ease-in-out bg-[#F3F1EB] text-[#0A0F14] border-l-4 border-[#0A0F14] p-8 sm:p-10 brutal-shadow-xl overflow-y-auto font-sans">
+    <div class="flex justify-between items-center border-b-2 border-[#0A0F14] pb-4 mb-6 font-mono-tech">
+      <span id="case-badge" class="px-3 py-1 bg-[#4A9EFF] text-white text-xs font-bold brutal-border">CATEGORY</span>
+      <button id="close-case-modal" class="px-3 py-1 bg-[#0A0F14] text-[#F3F1EB] font-bold text-xs hover:bg-[#FF6B22] transition-colors">CLOSE [X]</button>
+    </div>
+
+    <h2 id="case-title" class="font-heading font-black text-4xl sm:text-5xl uppercase leading-tight mb-4">PROJECT TITLE</h2>
+    
+    <div class="p-6 bg-white brutal-border brutal-shadow mb-8 font-sans text-sm sm:text-base leading-relaxed text-[#0A0F14]/90" id="case-details">
+      Detailed case study content...
+    </div>
+
+    <div class="space-y-6 border-t-2 border-[#0A0F14] pt-6 font-mono-tech">
+      <div>
+        <div class="text-xs text-[#FF6B22] font-bold mb-2 uppercase">[STACK_ARCHITECTURE]</div>
+        <div id="case-tags" class="flex flex-wrap gap-2 text-xs">
+          <!-- Dynamically inserted tag badges -->
+        </div>
+      </div>
+
+      <div class="p-4 bg-[#FFD83D] brutal-border text-xs font-bold">
+        SYSTEM STATUS: ACTIVE & VERIFIED ARCHITECTURE
+      </div>
+    </div>
+  </div>
 </section>
+
+<script>
+  const caseModal = document.getElementById('case-modal');
+  const closeCaseModal = document.getElementById('close-case-modal');
+  const caseTitle = document.getElementById('case-title');
+  const caseBadge = document.getElementById('case-badge');
+  const caseDetails = document.getElementById('case-details');
+  const caseTags = document.getElementById('case-tags');
+
+  document.querySelectorAll('.open-case-btn').forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const name = btn.getAttribute('data-name') || '';
+      const cat = btn.getAttribute('data-cat') || '';
+      const details = btn.getAttribute('data-details') || '';
+      const tags = (btn.getAttribute('data-tags') || '').split(', ');
+
+      if (caseTitle) caseTitle.innerText = name;
+      if (caseBadge) caseBadge.innerText = cat;
+      if (caseDetails) caseDetails.innerText = details;
+
+      if (caseTags) {
+        caseTags.innerHTML = tags.map(t => `<span class="px-3 py-1 bg-white brutal-border font-bold">${t}</span>`).join('');
+      }
+
+      caseModal?.classList.remove('translate-x-full');
+    });
+  });
+
+  closeCaseModal?.addEventListener('click', () => {
+    caseModal?.classList.add('translate-x-full');
+  });
+</script>
