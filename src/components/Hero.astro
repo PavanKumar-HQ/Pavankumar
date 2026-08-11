@@ -3,77 +3,92 @@
 
 <section id="hero" class="relative w-full min-h-[92vh] flex flex-col justify-between p-6 sm:p-12 lg:p-16 border-b-3 border-[#0A0F14] overflow-hidden bg-[#F3F1EB] bg-grid-pattern">
   
-  <!-- Top Technical Grid Metadata -->
-  <div class="grid grid-cols-2 md:grid-cols-4 gap-4 font-mono-tech text-xs border-b-2 border-[#0A0F14] pb-6 bg-[#F3F1EB]/90 p-4 brutal-border">
-    <div>
-      <span class="text-[#0A0F14]/50 block">SYSTEM_ID</span>
-      <span class="font-bold text-[#FF6B22]">PK-WORLD-2026</span>
-    </div>
-    <div>
-      <span class="text-[#0A0F14]/50 block">LOCATION</span>
-      <span class="font-bold">INDIA 🇮🇳</span>
-    </div>
-    <div>
-      <span class="text-[#0A0F14]/50 block">OPERATING FOCUS</span>
-      <span class="font-bold text-[#4A9EFF]">TECH × BUSINESS × AI</span>
-    </div>
-    <div>
-      <span class="text-[#0A0F14]/50 block">ACTIVE VENTURE</span>
-      <span class="font-bold text-[#54D69A]">BRANDEX & GENIUSPHERE</span>
-    </div>
-  </div>
-
   <!-- Giant Editorial Headline Section -->
-  <div class="my-12 relative z-10">
-    <div class="inline-flex items-center gap-2 px-3 py-1 bg-[#DCC5FF] brutal-border font-mono-tech text-xs font-bold mb-6 brutal-shadow-sm">
-      <span class="w-2 h-2 bg-[#0A0F14]"></span>
-      [01] THE DIGITAL ARCHIVE & WORLD
-    </div>
+  <div class="my-8 relative z-10">
     
-    <h1 id="hero-title" class="font-heading font-black text-6xl sm:text-8xl md:text-9xl lg:text-[12rem] leading-[0.82] tracking-tighter uppercase select-none">
-      <span class="block hover:text-[#4A9EFF] transition-colors cursor-default">PAVAN</span>
-      <span class="block hover:text-[#FF6B22] transition-colors cursor-default">KUMAR</span>
+    <h1 id="hero-title" class="font-heading font-black text-6xl sm:text-8xl md:text-9xl lg:text-[12rem] leading-[0.82] tracking-tighter uppercase select-none text-[#0A0F14]">
+      <span class="block cursor-default">PAVAN</span>
+      <span class="block cursor-default">KUMAR</span>
     </h1>
 
     <div class="mt-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
       
-      <!-- Big Statement Box -->
-      <div class="lg:col-span-7 font-mono-tech text-sm sm:text-base space-y-3 bg-white p-6 sm:p-8 brutal-border-thick brutal-shadow-lg">
-        <div class="text-xs font-bold text-[#FF6B22] uppercase tracking-widest">[IDENTITY_MANIFESTO]</div>
-        <p class="font-bold text-xl sm:text-3xl text-[#0A0F14] font-heading leading-tight">
-          I BUILD THINGS. THEN I BREAK THEM. THEN I BUILD THEM BETTER.
+      <!-- Big Statement Box with Typewriter Effect -->
+      <div class="lg:col-span-7 font-mono-tech text-sm sm:text-base space-y-3 bg-white p-6 sm:p-8 brutal-border-thick brutal-shadow-lg min-h-[160px]">
+        <p id="typewriter-title" class="font-bold text-xl sm:text-3xl text-[#0A0F14] font-heading leading-tight min-h-[60px]">
+          <!-- Typewriter content injected here -->
         </p>
         <p class="text-[#0A0F14]/80 text-xs sm:text-sm leading-relaxed">
-          Moving fluidly between software engineering, business strategy, educational initiatives, CRM engines, and AI experiments. Visualizing a journey beyond standard boxes.
+          Moving fluidly between technology, entrepreneurship, educational initiatives, and AI products. Visualizing a journey beyond standard boxes.
         </p>
       </div>
 
+<script>
+  const typewriterElement = document.getElementById('typewriter-title');
+  const phrases = [
+    "I BUILD THINGS. THEN I BREAK THEM. THEN I BUILD THEM BETTER.",
+    "BUILDER × ENTREPRENEUR × TECHNOLOGIST.",
+    "ENGINEERING BRANDEX OS & GENIUSPHERE."
+  ];
+
+  let phraseIdx = 0;
+  let charIdx = 0;
+  let isDeleting = false;
+
+  function typeEffect() {
+    if (!typewriterElement) return;
+    const currentPhrase = phrases[phraseIdx];
+    
+    if (isDeleting) {
+      typewriterElement.innerText = currentPhrase.substring(0, charIdx - 1);
+      charIdx--;
+    } else {
+      typewriterElement.innerText = currentPhrase.substring(0, charIdx + 1);
+      charIdx++;
+    }
+
+    let speed = isDeleting ? 30 : 60;
+
+    if (!isDeleting && charIdx === currentPhrase.length) {
+      speed = 2500; // Pause at end of sentence
+      isDeleting = true;
+    } else if (isDeleting && charIdx === 0) {
+      isDeleting = false;
+      phraseIdx = (phraseIdx + 1) % phrases.length;
+      speed = 500;
+    }
+
+    setTimeout(typeEffect, speed);
+  }
+
+  typeEffect();
+</script>
+
       <!-- Quick Discipline Badges & Status -->
       <div class="lg:col-span-5 flex flex-wrap gap-3 justify-start lg:justify-end">
-        <div class="p-4 bg-[#FFD83D] brutal-border-thick brutal-shadow-hover w-full sm:w-auto font-mono-tech">
-          <div class="text-[10px] text-[#0A0F14]/60 font-bold uppercase">FOUNDER & CEO</div>
-          <div class="font-heading font-black text-xl">BRANDEX</div>
-        </div>
-        <div class="p-4 bg-[#54D69A] brutal-border-thick brutal-shadow-hover w-full sm:w-auto font-mono-tech">
-          <div class="text-[10px] text-[#0A0F14]/60 font-bold uppercase">INITIATIVE LEAD</div>
-          <div class="font-heading font-black text-xl">GENIUSPHERE</div>
-        </div>
-        <div class="p-4 bg-[#4A9EFF] text-white brutal-border-thick brutal-shadow-hover w-full sm:w-auto font-mono-tech">
-          <div class="text-[10px] text-white/70 font-bold uppercase">ARCHITECT</div>
-          <div class="font-heading font-black text-xl">ESSMA OS</div>
-        </div>
+        <a href="#brandex" class="p-4 bg-[#FFD83D] brutal-border-thick brutal-shadow-hover w-full sm:w-auto font-mono-tech group">
+          <div class="text-[10px] text-[#0A0F14]/70 font-bold uppercase">CORE VENTURE</div>
+          <div class="font-heading font-black text-xl group-hover:text-[#FF6B22] transition-colors">BRANDEX ↗</div>
+        </a>
+        <a href="#geniusphere" class="p-4 bg-[#54D69A] brutal-border-thick brutal-shadow-hover w-full sm:w-auto font-mono-tech group">
+          <div class="text-[10px] text-[#0A0F14]/70 font-bold uppercase">EDUCATION INITIATIVE</div>
+          <div class="font-heading font-black text-xl group-hover:text-[#0A0F14] transition-colors">GENIUSPHERE ↗</div>
+        </a>
       </div>
 
     </div>
   </div>
 
-  <!-- Decorative Neo-Brutalist Interactive Object -->
-  <div class="absolute right-6 top-1/3 w-40 h-40 sm:w-60 sm:h-60 lg:w-80 lg:h-80 bg-[#FFD83D] brutal-border-xl brutal-shadow-xl rotate-12 -z-0 hidden lg:flex flex-col justify-between p-8 select-none pointer-events-none transform hover:rotate-0 transition-transform duration-500">
-    <div class="font-mono-tech text-xs font-bold text-[#0A0F14]/60">SYS_OBJECT / 001</div>
-    <div class="font-heading font-black text-4xl uppercase leading-none tracking-tight">
-      DIGITAL<br />PLAYGROUND
+  <!-- Decorative Interactive Card -->
+  <div class="absolute right-8 top-1/4 w-48 h-48 sm:w-64 sm:h-64 lg:w-80 lg:h-80 bg-[#4A9EFF] text-white brutal-border-xl brutal-shadow-xl rotate-6 -z-0 hidden lg:flex flex-col justify-between p-8 select-none pointer-events-none transition-transform duration-500">
+    <div class="font-mono-tech text-xs font-bold text-[#FFD83D]">PERSONAL ARCHIVE</div>
+    <div>
+      <div class="font-heading font-black text-4xl uppercase leading-none tracking-tight">
+        EXPLORE<br />THE WORLD
+      </div>
+      <p class="font-sans text-xs text-white/80 mt-2">Technology × Business × Community</p>
     </div>
-    <div class="font-mono-tech text-xs font-bold text-[#FF6B22]">PAVAN KUMAR WORLD</div>
+    <div class="font-mono-tech text-xs font-bold text-white/90 border-t border-white/30 pt-2">PAVAN KUMAR — 2026</div>
   </div>
 
   <!-- Bottom Action Bar -->
