@@ -1,0 +1,143 @@
+---
+const skillsCategories = [
+  {
+    category: "Programming Languages",
+    color: "bg-[#FFD83D]",
+    items: [
+      { name: "Python", detail: "Machine Learning & Scripting" },
+      { name: "Java", detail: "Object Oriented & Data Structures" },
+      { name: "C", detail: "Foundational & System Concepts" }
+    ]
+  },
+  {
+    category: "AI Tools & Automation",
+    color: "bg-[#54D69A]",
+    items: [
+      { name: "ChatGPT & API", detail: "Prompt Engineering & Workflows" },
+      { name: "Gemini AI", detail: "Multimodal AI & Automation" },
+      { name: "AI Tools", detail: "Business Productivity & Communication" }
+    ]
+  },
+  {
+    category: "Cybersecurity & Systems",
+    color: "bg-[#4A9EFF] text-white",
+    items: [
+      { name: "Basic Threat Analysis", detail: "Security Essentials & Fundamentals" },
+      { name: "Career Essentials", detail: "Microsoft & LinkedIn Security Track" }
+    ]
+  },
+  {
+    category: "Microsoft Applications",
+    color: "bg-[#DCC5FF]",
+    items: [
+      { name: "Word & PowerPoint", detail: "Documentation & Presentation" },
+      { name: "Excel & Access", detail: "Data Analysis & Database Management" }
+    ]
+  }
+];
+
+const educationData = [
+  {
+    degree: "Bachelor of Computer Applications (BCA)",
+    institution: "KLE Society's Degree College, Bangalore",
+    duration: "05/2027",
+    score: "CGPA: 8.2 / 10",
+    color: "bg-[#54D69A]"
+  },
+  {
+    degree: "Pre-University Course (PU)",
+    institution: "KLE Independent PU College, Bangalore",
+    duration: "06/2024",
+    score: "Result: First Class",
+    color: "bg-[#FFD83D]"
+  },
+  {
+    degree: "Schooling (ICSE)",
+    institution: "Mount Senoria School, Bangalore",
+    duration: "03/2020",
+    score: "Percentage: 90.80%",
+    color: "bg-[#4A9EFF] text-white"
+  }
+];
+
+const interests = [
+  "Artificial Intelligence & Machine Learning",
+  "AI Tools & Automation",
+  "AI in Business Strategy & Innovation",
+  "Social Impact Technology & AI Ethics",
+  "Quantum Computing Fundamentals"
+];
+---
+
+<section id="skills" class="w-full py-20 px-6 sm:px-12 lg:px-16 border-b-3 border-[#0A0F14] bg-[#F3F1EB]">
+  <div class="max-w-7xl mx-auto">
+
+
+    <!-- Skills Section (Editorial Text List Layout) -->
+    <div class="mb-20">
+      <h2 class="font-heading font-black text-5xl sm:text-7xl uppercase tracking-tight mb-12">
+        CAPABILITIES & TOOLS
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 font-mono-tech border-t-2 border-[#0A0F14] pt-8">
+        {skillsCategories.map((cat, idx) => (
+          <div class="space-y-4">
+            <div class="flex items-center gap-2 border-b-2 border-[#0A0F14] pb-3">
+              <span class="text-xs font-bold text-[#FF6B22]">0{idx + 1} /</span>
+              <h3 class="font-bold text-xs uppercase text-[#0A0F14]">{cat.category}</h3>
+            </div>
+            <ul class="space-y-3 font-sans text-sm">
+              {cat.items.map((item) => (
+                <li class="border-b border-[#0A0F14]/10 pb-2">
+                  <span class="font-heading font-bold text-base block uppercase text-[#0A0F14]">{item.name}</span>
+                  <span class="font-mono-tech text-[11px] text-[#0A0F14]/60">{item.detail}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Education Section (Editorial Rows) -->
+    <div class="mb-16 border-t-2 border-[#0A0F14] pt-12">
+      <h2 class="font-heading font-black text-4xl sm:text-6xl uppercase tracking-tight mb-8">
+        EDUCATION
+      </h2>
+
+      <div class="space-y-4 font-mono-tech">
+        {educationData.map((edu) => (
+          <div class="p-6 bg-white border-l-4 border-[#0A0F14] brutal-shadow-hover flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div>
+              <span class="text-xs font-bold text-[#FF6B22] uppercase block mb-1">{edu.duration} • BANGALORE</span>
+              <h3 class="font-heading font-black text-2xl uppercase text-[#0A0F14]">
+                {edu.degree}
+              </h3>
+              <p class="font-sans text-xs text-[#0A0F14]/70 mt-1">
+                {edu.institution}
+              </p>
+            </div>
+            <div class="self-start md:self-center">
+              <span class="px-3 py-1 bg-[#F3F1EB] brutal-border text-xs font-bold text-[#0A0F14]">{edu.score}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Interests Marquee Pill Carousel -->
+    <div class="border-t-2 border-[#0A0F14] pt-12">
+      <h3 class="font-mono-tech text-xs font-bold text-[#FF6B22] uppercase tracking-widest mb-4">
+        CORE AREAS OF INTEREST & CURVED FOCUS
+      </h3>
+      <div class="flex flex-wrap gap-3">
+        {interests.map((interest) => (
+          <span class="px-4 py-2 bg-[#0A0F14] text-[#F3F1EB] font-mono-tech text-xs font-bold brutal-shadow-sm hover:bg-[#FF6B22] hover:text-[#0A0F14] transition-colors cursor-default">
+            ★ {interest}
+          </span>
+        ))}
+      </div>
+    </div>
+
+  </div>
+</section>

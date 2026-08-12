@@ -1,0 +1,82 @@
+---
+const experienceList = [
+  {
+    role: "AIML Intern",
+    company: "Epic Minds",
+    period: "11/2025 – 12/2025",
+    location: "Bengaluru, Karnataka",
+    badge: "COMPLETED",
+    badgeColor: "bg-[#54D69A]",
+    details: [
+      "Contributed to project lifecycle by preparing comprehensive design documents.",
+      "Organized complex technical information and specifications for core modules.",
+      "Supported development team with hands-on development-related tasks and debugging."
+    ]
+  },
+  {
+    role: "AI Research Intern",
+    company: "Sanna Innovations",
+    period: "07/2025 – 10/2025",
+    location: "Bengaluru, Karnataka",
+    badge: "COMPLETED",
+    badgeColor: "bg-[#4A9EFF] text-white",
+    details: [
+      "Driven client outreach initiatives via targeted cold calls and high-conversion emails.",
+      "Explored and evaluated cutting-edge AI tools to enhance business communication.",
+      "Optimized client engagement automation flows for seamless customer onboarding."
+    ]
+  }
+];
+---
+
+<section id="experience" class="w-full py-20 px-6 sm:px-12 lg:px-16 border-b-3 border-[#0A0F14] bg-[#F3F1EB]">
+  <div class="max-w-7xl mx-auto">
+    
+
+
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 border-b-2 border-[#0A0F14] pb-6">
+      <div>
+        <h2 class="font-heading font-black text-5xl sm:text-7xl uppercase tracking-tight">
+          PROFESSIONAL WORK
+        </h2>
+        <p class="font-mono-tech text-xs sm:text-sm text-[#0A0F14]/70 mt-2">
+          REAL INDUSTRY ROLES & APPLIED RESEARCH EXPERIENCE IN BENGALURU
+        </p>
+      </div>
+    </div>
+
+    <!-- Editorial Accordion / Row Timeline Layout -->
+    <div class="space-y-6">
+      {experienceList.map((exp, idx) => (
+        <div class="bg-white border-l-8 border-[#0A0F14] p-8 brutal-shadow-hover transition-all duration-300 relative group overflow-hidden">
+          <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b-2 border-[#0A0F14]/10">
+            <div>
+              <div class="flex items-center gap-3 font-mono-tech text-xs font-bold mb-2">
+                <span class="text-[#FF6B22]">0{idx + 1} / ROLE</span>
+                <span class="px-2 py-0.5 bg-[#0A0F14] text-[#FFD83D] text-[10px] uppercase font-bold">{exp.company}</span>
+              </div>
+              <h3 class="font-heading font-black text-3xl sm:text-5xl uppercase tracking-tight group-hover:text-[#4A9EFF] transition-colors">
+                {exp.role}
+              </h3>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-4 font-mono-tech text-xs font-bold">
+              <span class="px-3 py-1.5 bg-[#F3F1EB] brutal-border">{exp.period}</span>
+              <span class="text-[#0A0F14]/60">📍 {exp.location}</span>
+            </div>
+          </div>
+
+          <div class="pt-6 grid grid-cols-1 md:grid-cols-3 gap-4 font-sans text-sm text-[#0A0F14]/80">
+            {exp.details.map((point) => (
+              <div class="p-4 bg-[#F3F1EB]/50 border-t-2 border-[#0A0F14] space-y-1">
+                <span class="font-mono-tech text-xs font-bold text-[#FF6B22] block">★ KEY DELIVERABLE</span>
+                <p class="text-xs leading-relaxed">{point}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
