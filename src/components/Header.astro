@@ -1,61 +1,84 @@
 ---
 ---
 
-<header id="main-nav" class="w-full bg-[#F3F1EB] border-b-2 border-[#0A0F14] sticky top-0 z-50 transition-all duration-300 font-mono-tech select-none">
-  <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 flex items-center justify-between h-16 sm:h-20">
-    
-    <!-- Anchor Name (Left) -->
-    <a href="#" class="font-heading font-black text-xl sm:text-2xl text-[#0A0F14] tracking-tight hover:text-[#4A9EFF] transition-colors whitespace-nowrap">
-      PAVAN KUMAR S
+<header class="w-full bg-[#F3F1EB] border-b-2 border-[#0A0F14] sticky top-0 z-50 select-none">
+
+  <!-- Row 1: Segmented Nav -->
+  <div class="w-full flex items-stretch divide-x-2 divide-[#0A0F14] font-sans text-xs sm:text-sm font-semibold">
+
+    <a href="#hero" data-nav="hero" class="grid-nav-item flex-1 py-3.5 px-4 text-center bg-[#4A9EFF] text-[#0A0F14] font-bold transition-colors flex items-center justify-center whitespace-nowrap">
+      Home
     </a>
 
-    <!-- Navigation Links (Center/Right) -->
-    <div class="hidden lg:flex items-center gap-8 text-xs sm:text-sm font-bold text-[#0A0F14]/70 uppercase tracking-widest">
-      <a href="#about" data-nav="about" class="nav-item hover:text-[#0A0F14] transition-colors relative pb-1">
-        ABOUT
-      </a>
-      <a href="#experience" data-nav="experience" class="nav-item hover:text-[#0A0F14] transition-colors relative pb-1">
-        WORK
-      </a>
-      <a href="#geniusphere" data-nav="geniusphere" class="nav-item hover:text-[#0A0F14] transition-colors relative pb-1">
-        GENIUSPHERE
-      </a>
-      <a href="#skills" data-nav="skills" class="nav-item hover:text-[#0A0F14] transition-colors relative pb-1">
-        EXPLORE
-      </a>
-      <a href="#contact" data-nav="contact" class="nav-item hover:text-[#0A0F14] transition-colors relative pb-1">
-        CONTACT
+    <a href="#about" data-nav="about" class="grid-nav-item flex-1 py-3.5 px-4 text-center bg-[#F3F1EB] text-[#0A0F14] hover:bg-[#0A0F14]/5 transition-colors flex items-center justify-center whitespace-nowrap">
+      About
+    </a>
+
+    <a href="#experience" data-nav="experience" class="grid-nav-item flex-1 py-3.5 px-4 text-center bg-[#F3F1EB] text-[#0A0F14] hover:bg-[#0A0F14]/5 transition-colors flex items-center justify-center whitespace-nowrap">
+      Work
+    </a>
+
+    <a href="#geniusphere" data-nav="geniusphere" class="grid-nav-item flex-1 py-3.5 px-4 text-center bg-[#F3F1EB] text-[#0A0F14] hover:bg-[#0A0F14]/5 transition-colors flex items-center justify-center whitespace-nowrap">
+      Geniusphere
+    </a>
+
+    <a href="#skills" data-nav="skills" class="grid-nav-item flex-1 py-3.5 px-4 text-center bg-[#F3F1EB] text-[#0A0F14] hover:bg-[#0A0F14]/5 transition-colors flex items-center justify-center whitespace-nowrap">
+      Explore
+    </a>
+
+    <a href="#contact" data-nav="contact" class="grid-nav-item flex-1 py-3.5 px-4 text-center bg-[#F3F1EB] text-[#0A0F14] hover:bg-[#0A0F14]/5 transition-colors flex items-center justify-center whitespace-nowrap">
+      Contact
+    </a>
+
+    <!-- Right CTA -->
+    <div class="flex items-stretch divide-x-2 divide-[#0A0F14]">
+      <a href="#contact" class="py-3.5 px-6 bg-[#0A0F14] text-[#FFD83D] font-bold flex items-center justify-center hover:bg-[#FFD83D] hover:text-[#0A0F14] transition-colors whitespace-nowrap">
+        LET'S TALK ↗
       </a>
     </div>
 
-    <!-- Right Action (Let's Talk) -->
-    <a href="#contact" class="hidden sm:flex items-center gap-2 bg-[#0A0F14] text-[#FFD83D] px-5 py-2 font-bold text-xs sm:text-sm hover:bg-[#4A9EFF] hover:text-[#0A0F14] transition-colors border-2 border-[#0A0F14]">
-      LET'S TALK ↗
-    </a>
-
   </div>
+
+  <!-- Row 2: Full-width moving ticker -->
+  <div class="w-full bg-[#0A0F14] border-t-2 border-[#0A0F14] overflow-hidden flex whitespace-nowrap py-2">
+    <div class="animate-marquee flex items-center gap-0 font-mono-tech text-xs font-bold uppercase text-[#FFD83D] tracking-widest">
+      <span class="px-6">★ FOUNDER OF GENIUSPHERE</span>
+      <span class="px-6 text-white/30">·</span>
+      <span class="px-6">★ CO-FOUNDER OF BRANDEX</span>
+      <span class="px-6 text-white/30">·</span>
+      <span class="px-6">★ BCA STUDENT</span>
+      <span class="px-6 text-white/30">·</span>
+      <span class="px-6">★ AI ENTHUSIAST</span>
+      <span class="px-6 text-white/30">·</span>
+      <span class="px-6">★ BENGALURU, INDIA</span>
+      <span class="px-6 text-white/30">·</span>
+      <span class="px-6">★ FOUNDER OF GENIUSPHERE</span>
+      <span class="px-6 text-white/30">·</span>
+      <span class="px-6">★ CO-FOUNDER OF BRANDEX</span>
+      <span class="px-6 text-white/30">·</span>
+      <span class="px-6">★ BCA STUDENT</span>
+      <span class="px-6 text-white/30">·</span>
+      <span class="px-6">★ AI ENTHUSIAST</span>
+      <span class="px-6 text-white/30">·</span>
+      <span class="px-6">★ BENGALURU, INDIA</span>
+      <span class="px-6 text-white/30">·</span>
+      <span class="px-6">★ FOUNDER OF GENIUSPHERE</span>
+      <span class="px-6 text-white/30">·</span>
+      <span class="px-6">★ CO-FOUNDER OF BRANDEX</span>
+      <span class="px-6 text-white/30">·</span>
+      <span class="px-6">★ BCA STUDENT</span>
+      <span class="px-6 text-white/30">·</span>
+      <span class="px-6">★ AI ENTHUSIAST</span>
+      <span class="px-6 text-white/30">·</span>
+      <span class="px-6">★ BENGALURU, INDIA</span>
+    </div>
+  </div>
+
 </header>
 
-<style>
-  /* Active indicator style */
-  .nav-item.active {
-    color: #0A0F14;
-  }
-  .nav-item.active::after {
-    content: '●';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 8px;
-    color: #4A9EFF;
-  }
-</style>
-
 <script>
-  // Simple Intersection Observer for Active Links
   const sections = document.querySelectorAll('section[id]');
-  const navItems = document.querySelectorAll('.nav-item');
+  const gridItems = document.querySelectorAll('.grid-nav-item');
 
   const observerOptions = {
     root: null,
@@ -68,12 +91,13 @@
       if (entry.isIntersecting) {
         const id = entry.target.getAttribute('id');
         if (!id) return;
-
-        navItems.forEach((item) => {
+        gridItems.forEach((item) => {
           if (item.getAttribute('data-nav') === id) {
-            item.classList.add('active');
+            item.classList.add('bg-[#4A9EFF]', 'font-bold');
+            item.classList.remove('bg-[#F3F1EB]');
           } else {
-            item.classList.remove('active');
+            item.classList.remove('bg-[#4A9EFF]', 'font-bold');
+            item.classList.add('bg-[#F3F1EB]');
           }
         });
       }
@@ -81,17 +105,4 @@
   }, observerOptions);
 
   sections.forEach((section) => observer.observe(section));
-
-  // Shrink navbar on scroll
-  const header = document.getElementById('main-nav');
-  const innerDiv = header.querySelector('div');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      innerDiv.classList.remove('h-16', 'sm:h-20');
-      innerDiv.classList.add('h-14', 'sm:h-16');
-    } else {
-      innerDiv.classList.add('h-16', 'sm:h-20');
-      innerDiv.classList.remove('h-14', 'sm:h-16');
-    }
-  });
 </script>
