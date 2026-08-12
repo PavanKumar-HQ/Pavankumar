@@ -1,81 +1,194 @@
 ---
-const experienceList = [
-  {
-    role: "AIML Intern",
-    company: "Epic Minds",
-    period: "11/2025 – 12/2025",
-    location: "Bengaluru, Karnataka",
-    badge: "COMPLETED",
-    badgeColor: "bg-[#54D69A]",
-    details: [
-      "Contributed to project lifecycle by preparing comprehensive design documents.",
-      "Organized complex technical information and specifications for core modules.",
-      "Supported development team with hands-on development-related tasks and debugging."
-    ]
-  },
-  {
-    role: "AI Research Intern",
-    company: "Sanna Innovations",
-    period: "07/2025 – 10/2025",
-    location: "Bengaluru, Karnataka",
-    badge: "COMPLETED",
-    badgeColor: "bg-[#4A9EFF] text-white",
-    details: [
-      "Driven client outreach initiatives via targeted cold calls and high-conversion emails.",
-      "Explored and evaluated cutting-edge AI tools to enhance business communication.",
-      "Optimized client engagement automation flows for seamless customer onboarding."
-    ]
-  }
-];
 ---
 
-<section id="experience" class="w-full py-20 px-6 sm:px-12 lg:px-16 border-b-3 border-[#0A0F14] bg-[#F3F1EB]">
-  <div class="max-w-7xl mx-auto">
+<section id="experience" class="w-full py-24 px-6 sm:px-12 lg:px-16 border-b-3 border-[#0A0F14] bg-[#F3F1EB] relative overflow-hidden">
+  <div class="max-w-7xl mx-auto space-y-32">
     
+    <!-- 01. Section Opening -->
+    <div class="space-y-12">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 border-b-2 border-[#0A0F14] pb-8">
+        <div class="space-y-4 max-w-2xl">
+          <h2 class="font-heading font-black text-5xl sm:text-7xl lg:text-8xl uppercase tracking-tight text-[#0A0F14] leading-[0.9]">
+            PROFESSIONAL WORK
+          </h2>
+          <p class="font-sans text-base sm:text-lg text-[#0A0F14]/70 leading-relaxed font-medium">
+            A few places where I got to work, contribute, and explore beyond the classroom.
+          </p>
+        </div>
+        
+        <div class="text-right flex flex-col items-end">
+          <div class="font-heading font-black text-6xl sm:text-8xl text-[#FFD83D] drop-shadow-[2px_2px_0px_#0A0F14] leading-none">
+            02
+          </div>
+          <div class="font-mono-tech text-sm sm:text-base font-bold text-[#0A0F14] uppercase tracking-widest mt-2">
+            INTERNSHIPS <br> 2025
+          </div>
+        </div>
+      </div>
 
+      <!-- Chronology Line -->
+      <div class="font-mono-tech text-xs sm:text-sm font-bold text-[#0A0F14] relative pt-8">
+        <div class="absolute left-0 top-0 text-xl font-heading font-black">2025</div>
+        <div class="flex flex-col sm:flex-row gap-8 sm:gap-16 pt-8 items-start sm:items-center">
+          <div class="flex items-center gap-4">
+            <div class="flex items-center gap-2">
+              <span class="bg-[#0A0F14] text-white px-2 py-0.5">07</span>
+              <div class="h-0.5 w-12 sm:w-24 bg-[#0A0F14]"></div>
+              <span class="bg-[#0A0F14] text-white px-2 py-0.5">10</span>
+            </div>
+            <span class="uppercase tracking-widest text-[#4A9EFF]">SANNA INNOVATIONS</span>
+          </div>
 
-    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 border-b-2 border-[#0A0F14] pb-6">
-      <div>
-        <h2 class="font-heading font-black text-5xl sm:text-7xl uppercase tracking-tight">
-          PROFESSIONAL WORK
-        </h2>
-        <p class="font-mono-tech text-xs sm:text-sm text-[#0A0F14]/70 mt-2">
-          REAL INDUSTRY ROLES & APPLIED RESEARCH EXPERIENCE IN BENGALURU
-        </p>
+          <div class="flex items-center gap-4">
+            <div class="flex items-center gap-2">
+              <span class="bg-[#0A0F14] text-white px-2 py-0.5">11</span>
+              <div class="h-0.5 w-12 sm:w-24 bg-[#0A0F14]"></div>
+              <span class="bg-[#0A0F14] text-white px-2 py-0.5">12</span>
+            </div>
+            <span class="uppercase tracking-widest text-[#54D69A]">EPIC MINDS</span>
+          </div>
+        </div>
       </div>
     </div>
 
-    <!-- Editorial Accordion / Row Timeline Layout -->
-    <div class="space-y-6">
-      {experienceList.map((exp, idx) => (
-        <div class="bg-white border-l-8 border-[#0A0F14] p-8 brutal-shadow-hover transition-all duration-300 relative group overflow-hidden">
-          <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b-2 border-[#0A0F14]/10">
-            <div>
-              <div class="flex items-center gap-3 font-mono-tech text-xs font-bold mb-2">
-                <span class="text-[#FF6B22]">0{idx + 1} / ROLE</span>
-                <span class="px-2 py-0.5 bg-[#0A0F14] text-[#FFD83D] text-[10px] uppercase font-bold">{exp.company}</span>
-              </div>
-              <h3 class="font-heading font-black text-3xl sm:text-5xl uppercase tracking-tight group-hover:text-[#4A9EFF] transition-colors">
-                {exp.role}
-              </h3>
-            </div>
-
-            <div class="flex flex-wrap items-center gap-4 font-mono-tech text-xs font-bold">
-              <span class="px-3 py-1.5 bg-[#F3F1EB] brutal-border">{exp.period}</span>
-              <span class="text-[#0A0F14]/60">📍 {exp.location}</span>
+    <!-- 02. First Experience: Sanna Innovations -->
+    <div class="relative bg-white border-4 border-[#0A0F14] brutal-shadow-xl overflow-hidden group">
+      <!-- Gigantic Background Text -->
+      <div class="absolute -right-20 -bottom-10 font-heading font-black text-[20rem] text-[#F3F1EB] opacity-60 leading-none select-none z-0">
+        AI
+      </div>
+      
+      <div class="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 p-8 sm:p-12 lg:p-16">
+        <div class="space-y-6">
+          <div class="space-y-2">
+            <h3 class="font-heading font-black text-4xl sm:text-6xl uppercase leading-[0.9] text-[#0A0F14]">
+              AI RESEARCH INTERN
+            </h3>
+            <div class="font-heading font-black text-2xl text-[#4A9EFF] uppercase">
+              SANNA INNOVATIONS
             </div>
           </div>
+          
+          <div class="flex flex-wrap gap-4 font-mono-tech text-xs font-bold text-[#0A0F14]/70">
+            <span class="px-3 py-1 bg-[#F3F1EB] border-2 border-[#0A0F14]">07/2025 — 10/2025</span>
+            <span class="px-3 py-1 bg-[#F3F1EB] border-2 border-[#0A0F14]">BENGALURU, KARNATAKA</span>
+          </div>
 
-          <div class="pt-6 grid grid-cols-1 md:grid-cols-3 gap-4 font-sans text-sm text-[#0A0F14]/80">
-            {exp.details.map((point) => (
-              <div class="p-4 bg-[#F3F1EB]/50 border-t-2 border-[#0A0F14] space-y-1">
-                <span class="font-mono-tech text-xs font-bold text-[#FF6B22] block">★ KEY DELIVERABLE</span>
-                <p class="text-xs leading-relaxed">{point}</p>
-              </div>
-            ))}
+          <p class="font-sans text-base sm:text-lg text-[#0A0F14] leading-relaxed pt-4 border-t-2 border-[#0A0F14]/10">
+            Worked on client outreach through cold calls and emails and explored how AI tools enhance business communication and client engagement.
+          </p>
+          
+          <!-- Moving Marquee Words (Visual Treatment) -->
+          <div class="pt-8 overflow-hidden w-full flex whitespace-nowrap mask-edges">
+            <div class="animate-marquee font-heading font-black text-xl sm:text-3xl uppercase text-[#FFD83D] flex items-center gap-8 drop-shadow-[1px_1px_0px_#0A0F14]">
+              <span>OUTREACH</span>
+              <span class="text-[#0A0F14] opacity-20">★</span>
+              <span>COMMUNICATION</span>
+              <span class="text-[#0A0F14] opacity-20">★</span>
+              <span>CLIENT ENGAGEMENT</span>
+              <span class="text-[#0A0F14] opacity-20">★</span>
+              <span>OUTREACH</span>
+              <span class="text-[#0A0F14] opacity-20">★</span>
+              <span>COMMUNICATION</span>
+              <span class="text-[#0A0F14] opacity-20">★</span>
+              <span>CLIENT ENGAGEMENT</span>
+            </div>
           </div>
         </div>
-      ))}
+
+        <!-- What I worked around treatment -->
+        <div class="bg-[#0A0F14] text-[#F3F1EB] p-8 sm:p-10 flex flex-col justify-center space-y-6 border-l-4 lg:border-l-0 lg:border-t-4 border-[#0A0F14] brutal-border">
+          <div class="font-mono-tech text-xs font-bold text-[#FFD83D] uppercase tracking-widest mb-4">
+            WHAT I WORKED AROUND
+          </div>
+          <div class="font-heading font-black text-2xl sm:text-3xl uppercase leading-none">
+            CLIENT OUTREACH
+          </div>
+          <div class="text-[#4A9EFF] font-bold text-xl">↓</div>
+          <div class="font-heading font-black text-2xl sm:text-3xl uppercase leading-none">
+            AI IN BUSINESS COMMUNICATION
+          </div>
+          <div class="text-[#4A9EFF] font-bold text-xl">↓</div>
+          <div class="font-heading font-black text-2xl sm:text-3xl uppercase leading-none">
+            CLIENT ENGAGEMENT
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 03. Transition Statement -->
+    <div class="py-12 text-center space-y-6 max-w-4xl mx-auto">
+      <div class="font-mono-tech text-xs sm:text-sm font-bold text-[#0A0F14]/70 uppercase tracking-widest border-y-2 border-[#0A0F14] py-4">
+        TWO INTERNSHIPS. TWO DIFFERENT WAYS OF WORKING.
+      </div>
+      <div class="font-heading font-black text-2xl sm:text-4xl text-[#0A0F14] flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 uppercase">
+        <span class="text-[#4A9EFF]">OUTREACH × AI</span>
+        <span class="text-xl text-[#0A0F14]/30 hidden sm:block">→</span>
+        <span class="text-[#54D69A]">DOCUMENTATION × DEVELOPMENT SUPPORT</span>
+      </div>
+    </div>
+
+    <!-- 04. Second Experience: Epic Minds -->
+    <div class="relative bg-[#54D69A] border-4 border-[#0A0F14] brutal-shadow-xl overflow-hidden group">
+      
+      <div class="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 p-8 sm:p-12 lg:p-16">
+        
+        <!-- What I contributed to treatment -->
+        <div class="bg-white text-[#0A0F14] p-8 sm:p-10 flex flex-col justify-center space-y-6 border-2 border-[#0A0F14] order-2 lg:order-1">
+          <div class="font-mono-tech text-xs font-bold text-[#FF6B22] uppercase tracking-widest mb-4">
+            WHAT I CONTRIBUTED TO
+          </div>
+          <div class="font-heading font-black text-2xl sm:text-3xl uppercase leading-none">
+            DESIGN DOCUMENTS
+          </div>
+          <div class="text-[#54D69A] font-bold text-xl">↓</div>
+          <div class="font-heading font-black text-2xl sm:text-3xl uppercase leading-none">
+            TECHNICAL INFORMATION
+          </div>
+          <div class="text-[#54D69A] font-bold text-xl">↓</div>
+          <div class="font-heading font-black text-2xl sm:text-3xl uppercase leading-none">
+            DEVELOPMENT SUPPORT
+          </div>
+        </div>
+
+        <div class="space-y-6 order-1 lg:order-2">
+          <div class="space-y-2">
+            <h3 class="font-heading font-black text-4xl sm:text-6xl uppercase leading-[0.9] text-[#0A0F14]">
+              AIML INTERN
+            </h3>
+            <div class="font-heading font-black text-2xl text-white drop-shadow-[1px_1px_0px_#0A0F14] uppercase">
+              EPIC MINDS
+            </div>
+          </div>
+          
+          <div class="flex flex-wrap gap-4 font-mono-tech text-xs font-bold text-[#0A0F14]/80">
+            <span class="px-3 py-1 bg-white border-2 border-[#0A0F14]">11/2025 — 12/2025</span>
+            <span class="px-3 py-1 bg-white border-2 border-[#0A0F14]">BENGALURU, KARNATAKA</span>
+          </div>
+
+          <p class="font-sans text-base sm:text-lg text-[#0A0F14] leading-relaxed pt-4 border-t-2 border-[#0A0F14]">
+            Contributed to the project lifecycle by preparing design documents, organizing technical information, and supporting the team with development-related tasks when required.
+          </p>
+          
+          <!-- Visual Treatment -->
+          <div class="pt-8 overflow-hidden w-full flex flex-col gap-2 font-heading font-black text-4xl sm:text-5xl uppercase text-white drop-shadow-[2px_2px_0px_#0A0F14] leading-none">
+            <span class="hover:translate-x-4 transition-transform duration-300">DOCUMENT.</span>
+            <span class="hover:translate-x-4 transition-transform duration-300">ORGANIZE.</span>
+            <span class="hover:translate-x-4 transition-transform duration-300">SUPPORT.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 05. A Really Good Ending / Transition to Next Section -->
+    <div class="pt-24 pb-12 flex flex-col items-center justify-center text-center space-y-6">
+      <div class="font-heading font-black text-3xl sm:text-5xl lg:text-7xl uppercase leading-[0.9] text-[#0A0F14]">
+        FROM WORKING ON PROJECTS <br>
+        <span class="text-[#FF6B22]">TO BUILDING SOMETHING OF MY OWN.</span>
+      </div>
+      <div class="pt-8 font-heading font-black text-2xl sm:text-4xl text-[#0A0F14] flex items-center gap-4 hover:text-[#4A9EFF] transition-colors cursor-pointer">
+        <span>→ GENIUSPHERE</span>
+      </div>
     </div>
 
   </div>
