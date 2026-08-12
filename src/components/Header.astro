@@ -1,34 +1,46 @@
 ---
 ---
 
-<!-- Floating Centered Pill Dock Navbar with Glassmorphism -->
-<header class="fixed top-6 inset-x-0 z-50 flex justify-center px-4 pointer-events-none">
-  <div class="pointer-events-auto bg-[#0A0F14]/90 backdrop-blur-md text-[#F3F1EB] border-2 border-[#0A0F14] rounded-full px-4 sm:px-6 py-2.5 flex items-center justify-between gap-4 sm:gap-8 shadow-2xl brutal-shadow-sm max-w-4xl w-full">
+<!-- Segmented Grid Navbar (Exact Match to Reference Screenshot) -->
+<header class="w-full bg-[#F3F1EB] border-b-2 border-[#0A0F14] sticky top-0 z-50 select-none">
+  <div class="max-w-full flex items-stretch divide-x-2 divide-[#0A0F14] overflow-x-auto no-scrollbar font-sans text-xs sm:text-sm font-semibold">
     
-    <!-- Logo -->
-    <a href="#" class="font-bold font-heading text-lg tracking-tighter flex items-center gap-2 group whitespace-nowrap">
-      <span class="w-3 h-3 bg-[#FF6B22] rounded-full inline-block group-hover:scale-125 transition-transform"></span>
-      <span>PAVAN KUMAR</span>
-      <span class="text-[10px] font-mono-tech px-2 py-0.5 bg-[#FFD83D] text-[#0A0F14] rounded-full font-bold">WORLD</span>
+    <!-- Active First Item (Blue Highlighted rounded-l) -->
+    <a href="#about" data-nav="about" class="grid-nav-item flex-1 min-w-[120px] sm:min-w-[140px] py-3.5 px-4 text-center bg-[#4A9EFF] text-[#0A0F14] font-bold transition-colors flex items-center justify-center whitespace-nowrap">
+      Overview
     </a>
 
-    <!-- Floating Nav Links -->
-    <nav class="hidden md:flex items-center gap-1 font-mono-tech text-xs font-semibold">
-      <a href="#about" class="px-3 py-1.5 rounded-full hover:bg-white/10 hover:text-[#4A9EFF] transition-all">Philosophy</a>
-      <a href="#journey" class="px-3 py-1.5 rounded-full hover:bg-white/10 hover:text-[#FF6B22] transition-all">Journey</a>
-      <a href="#work" class="px-3 py-1.5 rounded-full hover:bg-white/10 hover:text-[#FFD83D] transition-all">Work</a>
-      <a href="#brandex" class="px-3 py-1.5 rounded-full hover:bg-white/10 hover:text-[#4A9EFF] transition-all">Brandex</a>
-      <a href="#geniusphere" class="px-3 py-1.5 rounded-full hover:bg-white/10 hover:text-[#54D69A] transition-all">Geniusphere</a>
-      <a href="#writing" class="px-3 py-1.5 rounded-full hover:bg-white/10 hover:text-[#DCC5FF] transition-all">Notes</a>
-    </nav>
+    <a href="#journey" data-nav="journey" class="grid-nav-item flex-1 min-w-[130px] sm:min-w-[150px] py-3.5 px-4 text-center bg-[#F3F1EB] text-[#0A0F14] hover:bg-[#0A0F14]/5 transition-colors flex items-center justify-center whitespace-nowrap">
+      Philosophy
+    </a>
 
-    <!-- Quick Action Buttons -->
-    <div class="flex items-center gap-2">
-      <button id="terminal-trigger-btn" class="px-3 py-1 bg-[#FFD83D] text-[#0A0F14] font-bold rounded-full text-xs hover:bg-[#FF6B22] hover:text-white transition-all whitespace-nowrap">
-        <span>CMD + K</span>
-      </button>
-      <a href="#contact" class="px-3.5 py-1 bg-white text-[#0A0F14] font-bold rounded-full text-xs hover:bg-[#4A9EFF] hover:text-white transition-all whitespace-nowrap">
-        TALK ↗
+    <a href="#work" data-nav="work" class="grid-nav-item flex-1 min-w-[120px] sm:min-w-[140px] py-3.5 px-4 text-center bg-[#F3F1EB] text-[#0A0F14] hover:bg-[#0A0F14]/5 transition-colors flex items-center justify-center whitespace-nowrap">
+      Journey
+    </a>
+
+    <a href="#brandex" data-nav="brandex" class="grid-nav-item flex-1 min-w-[120px] sm:min-w-[140px] py-3.5 px-4 text-center bg-[#F3F1EB] text-[#0A0F14] hover:bg-[#0A0F14]/5 transition-colors flex items-center justify-center whitespace-nowrap">
+      Brandex
+    </a>
+
+    <a href="#geniusphere" data-nav="geniusphere" class="grid-nav-item flex-1 min-w-[130px] sm:min-w-[150px] py-3.5 px-4 text-center bg-[#F3F1EB] text-[#0A0F14] hover:bg-[#0A0F14]/5 transition-colors flex items-center justify-center whitespace-nowrap">
+      Geniusphere
+    </a>
+
+    <a href="#writing" data-nav="writing" class="grid-nav-item flex-1 min-w-[120px] sm:min-w-[140px] py-3.5 px-4 text-center bg-[#F3F1EB] text-[#0A0F14] hover:bg-[#0A0F14]/5 transition-colors flex items-center justify-center whitespace-nowrap">
+      Notes
+    </a>
+
+    <a href="#contact" data-nav="contact" class="grid-nav-item flex-1 min-w-[120px] sm:min-w-[140px] py-3.5 px-4 text-center bg-[#F3F1EB] text-[#0A0F14] hover:bg-[#0A0F14]/5 transition-colors flex items-center justify-center whitespace-nowrap">
+      Contact
+    </a>
+
+    <!-- Action Right Block (Dark Blue Block + Blue Arrow Icon Pill) -->
+    <div class="flex items-stretch divide-x-2 divide-[#0A0F14] ml-auto">
+      <a href="#work" class="py-3.5 px-6 bg-[#0A0F14] text-[#F3F1EB] font-bold flex items-center justify-center hover:bg-[#0A0F14]/90 transition-colors whitespace-nowrap">
+        View Projects
+      </a>
+      <a href="#contact" class="py-3.5 px-5 bg-[#4A9EFF] text-[#0A0F14] font-black text-base flex items-center justify-center hover:bg-[#3B8CEB] transition-colors">
+        ↗
       </a>
     </div>
 
@@ -36,11 +48,32 @@
 </header>
 
 <script>
-  // Connect CMD+K trigger button to terminal drawer toggle
-  document.getElementById('terminal-trigger-btn')?.addEventListener('click', () => {
-    const drawer = document.getElementById('terminal-drawer');
-    if (drawer) {
-      drawer.classList.toggle('-translate-y-full');
-    }
-  });
+  // Dynamic Scroll Active Section Highlighter matching the Segmented Grid Style
+  const sections = document.querySelectorAll('section[id]');
+  const gridItems = document.querySelectorAll('.grid-nav-item');
+
+  const observerOptions = {
+    root: null,
+    rootMargin: '-25% 0px -55% 0px',
+    threshold: 0
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        if (!id) return;
+
+        gridItems.forEach((item) => {
+          if (item.getAttribute('data-nav') === id) {
+            item.className = 'grid-nav-item flex-1 min-w-[120px] sm:min-w-[140px] py-3.5 px-4 text-center bg-[#4A9EFF] text-[#0A0F14] font-bold transition-colors flex items-center justify-center whitespace-nowrap';
+          } else {
+            item.className = 'grid-nav-item flex-1 min-w-[120px] sm:min-w-[140px] py-3.5 px-4 text-center bg-[#F3F1EB] text-[#0A0F14] hover:bg-[#0A0F14]/5 transition-colors flex items-center justify-center whitespace-nowrap';
+          }
+        });
+      }
+    });
+  }, observerOptions);
+
+  sections.forEach((section) => observer.observe(section));
 </script>

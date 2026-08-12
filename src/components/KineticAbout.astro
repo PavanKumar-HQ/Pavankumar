@@ -1,59 +1,70 @@
 ---
 ---
 
-<section id="about" class="w-full min-h-[80vh] py-24 px-6 sm:px-12 lg:px-16 border-b-3 border-[#0A0F14] bg-[#0A0F14] text-[#F3F1EB] relative overflow-hidden">
+<section id="about" class="py-24 px-6 sm:px-12 lg:px-16 border-b-3 border-[#0A0F14] bg-[#F3F1EB] relative">
   
   <div class="max-w-7xl mx-auto">
-    <div class="inline-flex items-center gap-2 px-3 py-1 bg-[#FF6B22] text-[#0A0F14] font-mono-tech text-xs font-bold mb-8 brutal-border">
-      <span class="w-2 h-2 bg-[#0A0F14]"></span>
-      [02] THE PHILOSOPHY
+    <!-- Chapter Badge -->
+    <div class="inline-flex items-center gap-2 px-3 py-1 bg-[#4A9EFF] text-white font-mono-tech text-xs font-bold mb-8 brutal-border">
+      [02] PHILOSOPHY & IDENTITY
     </div>
 
-    <!-- Massive statement typography -->
-    <h2 class="font-heading font-black text-6xl sm:text-8xl lg:text-9xl leading-[0.88] uppercase tracking-tighter mb-16">
-      I DON'T REALLY <br />
-      <span class="text-[#FFD83D] underline decoration-[#FF6B22] decoration-4 underline-offset-8">LIKE STAYING</span> <br />
-      IN ONE BOX.
-    </h2>
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      
+      <!-- Left Editorial Narrative Header -->
+      <div class="lg:col-span-6 space-y-6">
+        <h2 class="font-heading font-black text-4xl sm:text-6xl uppercase leading-tight tracking-tight">
+          WHO IS PAVAN KUMAR?
+        </h2>
+        <p class="font-sans text-base sm:text-lg text-[#0A0F14]/80 leading-relaxed">
+          I am a builder, technologist, and entrepreneur. I don't build software just for the sake of code — I build systems to solve meaningful problems, scale businesses, and empower communities.
+        </p>
+        <p class="font-sans text-sm sm:text-base text-[#0A0F14]/70 leading-relaxed">
+          From architecting enterprise CRM software at **Brandex** to mentoring 200+ students through **Geniusphere**, my goal is to bridge the gap between abstract technology and real-world execution.
+        </p>
+      </div>
 
-    <!-- Interactive / Kinetic Floating Discipline Badges with Glitch physics -->
-    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 mb-16 font-mono-tech text-center">
-      <div class="p-6 bg-[#F3F1EB] text-[#0A0F14] brutal-border-thick font-bold brutal-shadow-hover hover:bg-[#4A9EFF] hover:text-white transition-all cursor-pointer">
-        <div class="text-[10px] text-[#0A0F14]/50">01.CORE</div>
-        <div class="text-xl font-black mt-1">TECH</div>
+      <!-- Right 4 Core Pillars Grid -->
+      <div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+        
+        <div class="p-6 bg-white brutal-border-thick brutal-shadow-hover space-y-2">
+          <div class="font-mono-tech text-xs font-bold text-[#FF6B22]">01 / PHILOSOPHY</div>
+          <h3 class="font-heading font-black text-xl uppercase">First Principles</h3>
+          <p class="font-sans text-xs text-[#0A0F14]/70">Deconstructing complex systems down to fundamental truths before writing code.</p>
+        </div>
+
+        <div class="p-6 bg-[#FFD83D] brutal-border-thick brutal-shadow-hover space-y-2">
+          <div class="font-mono-tech text-xs font-bold text-[#0A0F14]/80">02 / FOCUS</div>
+          <h3 class="font-heading font-black text-xl uppercase">Systems Thinking</h3>
+          <p class="font-sans text-xs text-[#0A0F14]/80">Building end-to-end automation pipelines that replace manual friction with precision.</p>
+        </div>
+
+        <div class="p-6 bg-[#54D69A] brutal-border-thick brutal-shadow-hover space-y-2">
+          <div class="font-mono-tech text-xs font-bold text-[#0A0F14]/80">03 / COMMUNITY</div>
+          <h3 class="font-heading font-black text-xl uppercase">Education First</h3>
+          <p class="font-sans text-xs text-[#0A0F14]/80">Teaching applied building, empowering the next generation of engineers.</p>
+        </div>
+
+        <div class="p-6 bg-[#DCC5FF] brutal-border-thick brutal-shadow-hover space-y-2">
+          <div class="font-mono-tech text-xs font-bold text-[#0A0F14]/80">04 / EXPLORATION</div>
+          <h3 class="font-heading font-black text-xl uppercase">Continuous Lab</h3>
+          <p class="font-sans text-xs text-[#0A0F14]/80">Constantly experimenting with AI, hardware ideas, and modern web protocols.</p>
+        </div>
+
       </div>
-      <div class="p-6 bg-[#FFD83D] text-[#0A0F14] brutal-border-thick font-bold brutal-shadow-hover transition-all cursor-pointer">
-        <div class="text-[10px] text-[#0A0F14]/50">02.VENTURES</div>
-        <div class="text-xl font-black mt-1">BUSINESS</div>
-      </div>
-      <div class="p-6 bg-[#54D69A] text-[#0A0F14] brutal-border-thick font-bold brutal-shadow-hover transition-all cursor-pointer">
-        <div class="text-[10px] text-[#0A0F14]/50">03.IMPACT</div>
-        <div class="text-xl font-black mt-1">EDUCATION</div>
-      </div>
-      <div class="p-6 bg-[#DCC5FF] text-[#0A0F14] brutal-border-thick font-bold brutal-shadow-hover transition-all cursor-pointer">
-        <div class="text-[10px] text-[#0A0F14]/50">04.PEOPLE</div>
-        <div class="text-xl font-black mt-1">COMMUNITY</div>
-      </div>
-      <div class="p-6 bg-[#FF6B22] text-[#0A0F14] brutal-border-thick font-bold brutal-shadow-hover transition-all cursor-pointer">
-        <div class="text-[10px] text-[#0A0F14]/50">05.SYSTEMS</div>
-        <div class="text-xl font-black mt-1">AI</div>
-      </div>
-      <div class="p-6 bg-[#F3F1EB] text-[#0A0F14] brutal-border-thick font-bold brutal-shadow-hover hover:bg-[#FFD83D] transition-all cursor-pointer">
-        <div class="text-[10px] text-[#0A0F14]/50">06.BUILD</div>
-        <div class="text-xl font-black mt-1">PRODUCTS</div>
-      </div>
+
     </div>
 
-    <!-- Core Narrative Quote Box -->
-    <div class="p-8 sm:p-12 bg-[#F3F1EB] text-[#0A0F14] brutal-border-xl brutal-shadow-xl relative">
-
-      <blockquote class="font-heading font-black text-3xl sm:text-5xl leading-tight uppercase">
-        "I build technology, businesses, communities and experiments around problems I find interesting."
+    <!-- Core Personal Manifesto Banner -->
+    <div class="mt-16 p-8 sm:p-12 bg-[#0A0F14] text-[#F3F1EB] brutal-border-thick brutal-shadow-xl relative overflow-hidden">
+      <div class="font-mono-tech text-xs text-[#FFD83D] font-bold mb-3 uppercase tracking-widest">[IDENTITY_MANIFESTO]</div>
+      <blockquote class="font-heading font-black text-2xl sm:text-4xl leading-tight uppercase text-balance">
+        "I build technology, businesses, communities, and experiments around problems I find genuinely interesting."
       </blockquote>
-      <div class="mt-8 flex flex-col sm:flex-row justify-between items-start sm:items-center font-mono-tech text-xs border-t-2 border-[#0A0F14] pt-6 gap-4">
-        <span class="font-bold">PAVAN KUMAR — FOUNDER & TECHNOLOGIST</span>
-        <span class="px-3 py-1 bg-[#4A9EFF] text-white font-bold brutal-border">MODE: UNBOXED ARCHITECTURE</span>
+      <div class="mt-6 font-mono-tech text-xs text-[#F3F1EB]/60 font-bold">
+        — PAVAN KUMAR, ARCHITECT & BUILDER
       </div>
     </div>
+
   </div>
 </section>

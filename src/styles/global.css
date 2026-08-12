@@ -90,37 +90,56 @@
   background-size: 24px 24px;
 }
 
-/* Marquee Animations */
-@keyframes marquee {
-  0% { transform: translateX(0%); }
-  100% { transform: translateX(-50%); }
+/* Section Entering Sweep Line Animation */
+.section-sweep-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #FF6B22, #4A9EFF, #FFD83D, #54D69A);
+  width: 0%;
+  z-index: 20;
+  pointer-events: none;
 }
 
-.animate-marquee {
-  display: flex;
-  width: 200%;
-  animation: marquee 25s linear infinite;
+/* Active Nav Pill Colors for Desktop & Mobile */
+.nav-pill.active-about {
+  background-color: #4A9EFF !important;
+  color: #FFFFFF !important;
+  border-color: #0A0F14 !important;
 }
 
-.animate-marquee:hover {
-  animation-play-state: paused;
+.nav-pill.active-journey {
+  background-color: #FF6B22 !important;
+  color: #FFFFFF !important;
+  border-color: #0A0F14 !important;
 }
 
-/* Glitch Effect on Hover */
-.glitch-hover:hover {
-  animation: glitch-anim 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+.nav-pill.active-work {
+  background-color: #FFD83D !important;
+  color: #0A0F14 !important;
+  border-color: #0A0F14 !important;
 }
 
-@keyframes glitch-anim {
-  0% { transform: translate(0); }
-  20% { transform: translate(-2px, 2px); }
-  40% { transform: translate(-2px, -2px); }
-  60% { transform: translate(2px, 2px); }
-  80% { transform: translate(2px, -2px); }
-  100% { transform: translate(0); }
+.nav-pill.active-brandex {
+  background-color: #4A9EFF !important;
+  color: #FFFFFF !important;
+  border-color: #0A0F14 !important;
 }
 
-/* Hide scrollbar for clean horizontal scroll sections */
+.nav-pill.active-geniusphere {
+  background-color: #54D69A !important;
+  color: #0A0F14 !important;
+  border-color: #0A0F14 !important;
+}
+
+.nav-pill.active-writing {
+  background-color: #DCC5FF !important;
+  color: #0A0F14 !important;
+  border-color: #0A0F14 !important;
+}
+
+/* Hide scrollbar */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }

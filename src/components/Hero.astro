@@ -1,102 +1,150 @@
 ---
 ---
 
-<section id="hero" class="relative w-full min-h-[92vh] flex flex-col justify-between p-6 sm:p-12 lg:p-16 border-b-3 border-[#0A0F14] overflow-hidden bg-[#F3F1EB] bg-grid-pattern">
+<section id="hero" class="relative w-full min-h-[90vh] flex flex-col justify-between p-6 sm:p-12 lg:p-16 border-b-3 border-[#0A0F14] overflow-hidden bg-[#F3F1EB] bg-grid-pattern">
   
+  <!-- Top Personal Archive Coordinates -->
+  <div class="flex flex-wrap justify-between items-center border-b-2 border-[#0A0F14] pb-4 font-mono-tech text-xs bg-[#F3F1EB]/90 p-3 brutal-border select-none">
+    <div class="flex items-center gap-3">
+      <span class="w-2.5 h-2.5 rounded-full bg-[#54D69A] animate-ping"></span>
+      <span class="font-bold">PAVAN KUMAR / DIGITAL ARCHIVE</span>
+    </div>
+    <div class="hidden sm:flex items-center gap-6 text-[#0A0F14]/70 font-bold">
+      <span>LAT: 12.9716° N</span>
+      <span>LONG: 77.5946° E</span>
+      <span class="text-[#FF6B22]">LOC: INDIA 🇮🇳</span>
+    </div>
+  </div>
+
   <!-- Giant Editorial Headline Section -->
-  <div class="my-8 relative z-10">
-    
-    <h1 id="hero-title" class="font-heading font-black text-6xl sm:text-8xl md:text-9xl lg:text-[12rem] leading-[0.82] tracking-tighter uppercase select-none text-[#0A0F14]">
-      <span class="block cursor-default">PAVAN</span>
-      <span class="block cursor-default">KUMAR</span>
+  <div class="my-10 relative z-10">
+    <h1 id="hero-title" class="font-heading font-black text-6xl sm:text-8xl md:text-9xl lg:text-[11.5rem] leading-[0.82] tracking-tighter uppercase select-none text-[#0A0F14]">
+      <span class="block cursor-default overflow-hidden flex" id="word-pavan">
+        <span class="char inline-block translate-y-full hover:text-[#FF6B22] transition-colors duration-200 cursor-pointer">P</span>
+        <span class="char inline-block translate-y-full hover:text-[#4A9EFF] transition-colors duration-200 cursor-pointer">A</span>
+        <span class="char inline-block translate-y-full hover:text-[#54D69A] transition-colors duration-200 cursor-pointer">V</span>
+        <span class="char inline-block translate-y-full hover:text-[#FFD83D] transition-colors duration-200 cursor-pointer">A</span>
+        <span class="char inline-block translate-y-full hover:text-[#FF6B22] transition-colors duration-200 cursor-pointer">N</span>
+      </span>
+      <span class="block cursor-default overflow-hidden flex" id="word-kumar">
+        <span class="char inline-block translate-y-full hover:text-[#4A9EFF] transition-colors duration-200 cursor-pointer">K</span>
+        <span class="char inline-block translate-y-full hover:text-[#FFD83D] transition-colors duration-200 cursor-pointer">U</span>
+        <span class="char inline-block translate-y-full hover:text-[#54D69A] transition-colors duration-200 cursor-pointer">M</span>
+        <span class="char inline-block translate-y-full hover:text-[#FF6B22] transition-colors duration-200 cursor-pointer">A</span>
+        <span class="char inline-block translate-y-full hover:text-[#4A9EFF] transition-colors duration-200 cursor-pointer">R</span>
+      </span>
     </h1>
 
     <div class="mt-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
       
       <!-- Big Statement Box with Typewriter Effect -->
-      <div class="lg:col-span-7 font-mono-tech text-sm sm:text-base space-y-3 bg-white p-6 sm:p-8 brutal-border-thick brutal-shadow-lg min-h-[160px]">
+      <div class="lg:col-span-8 font-mono-tech text-sm sm:text-base space-y-4 bg-white p-6 sm:p-8 brutal-border-thick brutal-shadow-lg min-h-[180px]">
+        <div class="text-xs font-bold text-[#FF6B22] uppercase tracking-widest">[CORE_NARRATIVE]</div>
         <p id="typewriter-title" class="font-bold text-xl sm:text-3xl text-[#0A0F14] font-heading leading-tight min-h-[60px]">
           <!-- Typewriter content injected here -->
         </p>
         <p class="text-[#0A0F14]/80 text-xs sm:text-sm leading-relaxed">
-          Moving fluidly between technology, entrepreneurship, educational initiatives, and AI products. Visualizing a journey beyond standard boxes.
+          Exploring software engineering, business strategy, educational initiatives, CRM engines, and AI experiments. Building a personal world on the internet where every project tells a story.
         </p>
       </div>
 
-<script>
-  const typewriterElement = document.getElementById('typewriter-title');
-  const phrases = [
-    "I BUILD THINGS. THEN I BREAK THEM. THEN I BUILD THEM BETTER.",
-    "BUILDER × ENTREPRENEUR × TECHNOLOGIST.",
-    "ENGINEERING BRANDEX OS & GENIUSPHERE."
-  ];
-
-  let phraseIdx = 0;
-  let charIdx = 0;
-  let isDeleting = false;
-
-  function typeEffect() {
-    if (!typewriterElement) return;
-    const currentPhrase = phrases[phraseIdx];
-    
-    if (isDeleting) {
-      typewriterElement.innerText = currentPhrase.substring(0, charIdx - 1);
-      charIdx--;
-    } else {
-      typewriterElement.innerText = currentPhrase.substring(0, charIdx + 1);
-      charIdx++;
-    }
-
-    let speed = isDeleting ? 30 : 60;
-
-    if (!isDeleting && charIdx === currentPhrase.length) {
-      speed = 2500; // Pause at end of sentence
-      isDeleting = true;
-    } else if (isDeleting && charIdx === 0) {
-      isDeleting = false;
-      phraseIdx = (phraseIdx + 1) % phrases.length;
-      speed = 500;
-    }
-
-    setTimeout(typeEffect, speed);
-  }
-
-  typeEffect();
-</script>
-
-      <!-- Quick Discipline Badges & Status -->
-      <div class="lg:col-span-5 flex flex-wrap gap-3 justify-start lg:justify-end">
-        <a href="#brandex" class="p-4 bg-[#FFD83D] brutal-border-thick brutal-shadow-hover w-full sm:w-auto font-mono-tech group">
-          <div class="text-[10px] text-[#0A0F14]/70 font-bold uppercase">CORE VENTURE</div>
-          <div class="font-heading font-black text-xl group-hover:text-[#FF6B22] transition-colors">BRANDEX ↗</div>
-        </a>
-        <a href="#geniusphere" class="p-4 bg-[#54D69A] brutal-border-thick brutal-shadow-hover w-full sm:w-auto font-mono-tech group">
-          <div class="text-[10px] text-[#0A0F14]/70 font-bold uppercase">EDUCATION INITIATIVE</div>
-          <div class="font-heading font-black text-xl group-hover:text-[#0A0F14] transition-colors">GENIUSPHERE ↗</div>
-        </a>
+      <!-- Dimensions Ticker Card -->
+      <div class="lg:col-span-4 flex flex-col gap-2.5 font-mono-tech text-xs">
+        <div class="text-[10px] text-[#0A0F14]/60 font-bold uppercase tracking-widest px-1">OPERATING DIMENSIONS</div>
+        <div class="flex flex-wrap gap-2">
+          <span class="px-3 py-1.5 bg-[#FFD83D] text-[#0A0F14] font-bold brutal-border brutal-shadow-sm">BUILDER</span>
+          <span class="px-3 py-1.5 bg-[#4A9EFF] text-white font-bold brutal-border brutal-shadow-sm">ENTREPRENEUR</span>
+          <span class="px-3 py-1.5 bg-[#54D69A] text-[#0A0F14] font-bold brutal-border brutal-shadow-sm">SYSTEMS EXPLORER</span>
+          <span class="px-3 py-1.5 bg-[#FF6B22] text-white font-bold brutal-border brutal-shadow-sm">COMMUNITY LEAD</span>
+          <span class="px-3 py-1.5 bg-[#DCC5FF] text-[#0A0F14] font-bold brutal-border brutal-shadow-sm">LEARNER</span>
+        </div>
       </div>
 
     </div>
   </div>
 
-  <!-- Decorative Interactive Card -->
-  <div class="absolute right-8 top-1/4 w-48 h-48 sm:w-64 sm:h-64 lg:w-80 lg:h-80 bg-[#4A9EFF] text-white brutal-border-xl brutal-shadow-xl rotate-6 -z-0 hidden lg:flex flex-col justify-between p-8 select-none pointer-events-none transition-transform duration-500">
-    <div class="font-mono-tech text-xs font-bold text-[#FFD83D]">PERSONAL ARCHIVE</div>
-    <div>
-      <div class="font-heading font-black text-4xl uppercase leading-none tracking-tight">
-        EXPLORE<br />THE WORLD
-      </div>
-      <p class="font-sans text-xs text-white/80 mt-2">Technology × Business × Community</p>
-    </div>
-    <div class="font-mono-tech text-xs font-bold text-white/90 border-t border-white/30 pt-2">PAVAN KUMAR — 2026</div>
-  </div>
+  <script>
+    import { gsap } from 'gsap';
+
+    // 1. GSAP Staggered Kinetic Character Reveal
+    const chars = document.querySelectorAll('#hero-title .char');
+    if (chars.length > 0) {
+      gsap.to(chars, {
+        y: '0%',
+        duration: 1,
+        stagger: 0.06,
+        ease: 'back.out(1.7)',
+        delay: 0.2
+      });
+
+      // Magnetic Distortion & Micro-Bounce on Hover
+      chars.forEach((char) => {
+        char.addEventListener('mouseenter', () => {
+          gsap.to(char, {
+            y: '-15%',
+            scale: 1.15,
+            duration: 0.15,
+            ease: 'power2.out'
+          });
+        });
+        char.addEventListener('mouseleave', () => {
+          gsap.to(char, {
+            y: '0%',
+            scale: 1,
+            duration: 0.3,
+            ease: 'elastic.out(1, 0.4)'
+          });
+        });
+      });
+    }
+
+    // Typewriter Loop anchored around Pavan's Narrative
+    const typewriterElement = document.getElementById('typewriter-title');
+    const phrases = [
+      "I BUILD THINGS, EXPLORE SYSTEMS, AND TURN IDEAS INTO SOMETHING REAL.",
+      "SOFTWARE ENGINEERING × BUSINESS STRATEGY × COMMUNITY.",
+      "DOCUMENTING LESSONS FROM BRANDEX OS, GENIUSPHERE & EXPERIMENTS."
+    ];
+
+    let phraseIdx = 0;
+    let charIdx = 0;
+    let isDeleting = false;
+
+    function typeEffect() {
+      if (!typewriterElement) return;
+      const currentPhrase = phrases[phraseIdx];
+      
+      if (isDeleting) {
+        typewriterElement.innerText = currentPhrase.substring(0, charIdx - 1);
+        charIdx--;
+      } else {
+        typewriterElement.innerText = currentPhrase.substring(0, charIdx + 1);
+        charIdx++;
+      }
+
+      let speed = isDeleting ? 30 : 60;
+
+      if (!isDeleting && charIdx === currentPhrase.length) {
+        speed = 2500;
+        isDeleting = true;
+      } else if (isDeleting && charIdx === 0) {
+        isDeleting = false;
+        phraseIdx = (phraseIdx + 1) % phrases.length;
+        speed = 500;
+      }
+
+      setTimeout(typeEffect, speed);
+    }
+
+    typeEffect();
+  </script>
 
   <!-- Bottom Action Bar -->
-  <div class="flex justify-between items-center pt-6 border-t-2 border-[#0A0F14] font-mono-tech text-xs bg-[#F3F1EB]/90 p-2">
+  <div class="flex justify-between items-center pt-4 border-t-2 border-[#0A0F14] font-mono-tech text-xs bg-[#F3F1EB]/90 p-2">
     <div class="flex items-center gap-3">
       <span class="w-3 h-3 bg-[#FF6B22] brutal-border animate-bounce"></span>
-      <span class="font-bold">SCROLL TO UNLOCK CHAPTERS</span>
+      <span class="font-bold">SCROLL TO EXPLORE THE ARCHIVE</span>
     </div>
-    <div class="font-bold">CHAPTER 01 / 11</div>
+    <div class="font-bold">CHAPTER 01 / 10</div>
   </div>
 </section>
