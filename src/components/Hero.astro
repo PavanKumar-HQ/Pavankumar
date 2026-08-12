@@ -23,6 +23,12 @@
 
   <!-- Giant Editorial Headline Section -->
   <div class="my-10 relative z-10">
+    <!-- Creative Animated Neo-Brutalist Greeting Tag -->
+    <div class="inline-flex items-center gap-2 mb-4 px-4 py-1.5 bg-[#4A9EFF] text-white font-mono-tech text-xs sm:text-sm font-bold uppercase brutal-border-thick rotate-1 hover:-rotate-1 transition-transform duration-200 shadow-[4px_4px_0px_0px_#0A0F14]">
+      <span class="w-2.5 h-2.5 rounded-full bg-[#54D69A] animate-ping"></span>
+      <span id="greeting-switcher">👋 HELLO, WORLD!</span>
+    </div>
+
     <h1 id="hero-title" class="font-heading font-black text-6xl sm:text-8xl md:text-9xl lg:text-[11.5rem] leading-[0.82] tracking-tighter uppercase select-none text-[#0A0F14]">
       <span class="block cursor-default overflow-hidden flex" id="word-pavan">
         <span class="char inline-block translate-y-full hover:text-[#FF6B22] transition-colors duration-200 cursor-pointer">P</span>
@@ -134,5 +140,21 @@
     }
 
     typeEffect();
+
+    // Multilingual Neo-Brutalist Greeting Switcher
+    const greetings = [
+      "👋 HELLO, WORLD!",
+      "🙏 NAMASTE!",
+      "⚡ CREATIVE BUILDER",
+      "🚀 WELCOME TO MY ARCHIVE"
+    ];
+    let gIdx = 0;
+    const greetingEl = document.getElementById('greeting-switcher');
+    if (greetingEl) {
+      setInterval(() => {
+        gIdx = (gIdx + 1) % greetings.length;
+        greetingEl.innerText = greetings[gIdx];
+      }, 2500);
+    }
   </script>
 </section>
