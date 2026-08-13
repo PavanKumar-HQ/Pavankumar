@@ -1,28 +1,29 @@
 ---
-const letters = [
-  { letter: "B", color: "bg-[#4A9EFF]", sideColor: "bg-[#266cc7]" },
-  { letter: "U", color: "bg-[#DCC5FF]", sideColor: "bg-[#9a7bc7]" },
-  { letter: "I", color: "bg-[#54D69A]", sideColor: "bg-[#329668]" },
-  { letter: "L", color: "bg-[#FFD83D]", sideColor: "bg-[#d9ae18]" },
-  { letter: "D", color: "bg-[#FF6B22]", sideColor: "bg-[#c94a0b]" },
-  { letter: "↵", color: "bg-[#F3F1EB]", sideColor: "bg-[#c8c6c0]" },
-  { letter: "W", color: "bg-[#54D69A]", sideColor: "bg-[#329668]" },
-  { letter: "E", color: "bg-[#FFD83D]", sideColor: "bg-[#d9ae18]" },
-  { letter: "B", color: "bg-[#4A9EFF]", sideColor: "bg-[#266cc7]" },
-];
-const spacing = 130;
-const heroKeys = letters.map((k, i) => {
-  const row = Math.floor(i / 3);
-  const col = i % 3;
-  const xOffset = row * 40;
-  return {
-    ...k,
-    x: col * spacing + xOffset - 130,
-    y: row * spacing - 130,
-    z: Math.floor(Math.sin(i) * 20),
-    delay: `${i * 0.1}s`
-  };
-});
+const heroKeys = [
+  // Top Row
+  { letter: "P", color: "bg-[#FF6B22]", sideColor: "bg-[#c94a0b]", x: -140, y: -160, z: 15, angle: -15 },
+  { letter: "A", color: "bg-[#DCC5FF]", sideColor: "bg-[#9a7bc7]", x: -10, y: -180, z: -5, angle: 10 },
+  { letter: "V", color: "bg-[#54D69A]", sideColor: "bg-[#329668]", x: 130, y: -150, z: 25, angle: -5 },
+  
+  // Upper Middle
+  { letter: "A", color: "bg-[#FFD83D]", sideColor: "bg-[#d9ae18]", x: -90, y: -60, z: -10, angle: 20 },
+  { letter: "N", color: "bg-[#4A9EFF]", sideColor: "bg-[#266cc7]", x: 50, y: -70, z: 10, angle: -8 },
+  { letter: "</>", color: "bg-[#F3F1EB]", sideColor: "bg-[#c8c6c0]", x: 170, y: -50, z: 5, angle: 12 },
+
+  // Center / Lower Middle
+  { letter: "B", color: "bg-[#54D69A]", sideColor: "bg-[#329668]", x: -150, y: 50, z: 0, angle: -10 },
+  { letter: "U", color: "bg-[#FFD83D]", sideColor: "bg-[#d9ae18]", x: -20, y: 40, z: 35, angle: 5 },
+  { letter: "I", color: "bg-[#4A9EFF]", sideColor: "bg-[#266cc7]", x: 110, y: 60, z: -15, angle: -20 },
+  
+  // Bottom Cluster
+  { letter: "L", color: "bg-[#FF6B22]", sideColor: "bg-[#c94a0b]", x: -100, y: 160, z: 20, angle: 15 },
+  { letter: "D", color: "bg-[#DCC5FF]", sideColor: "bg-[#9a7bc7]", x: 30, y: 150, z: -5, angle: -12 },
+  { letter: "↵", color: "bg-[#F3F1EB]", sideColor: "bg-[#c8c6c0]", x: 160, y: 170, z: 15, angle: 8 },
+
+  // Spilled off edges
+  { letter: "⌘", color: "bg-[#F3F1EB]", sideColor: "bg-[#c8c6c0]", x: -190, y: -50, z: -25, angle: -25 },
+  { letter: "★", color: "bg-[#FFD83D]", sideColor: "bg-[#d9ae18]", x: -180, y: 150, z: 5, angle: 30 },
+].map((k, i) => ({ ...k, delay: `${i * 0.1}s` }));
 ---
 
 <style>
@@ -108,25 +109,25 @@ const heroKeys = letters.map((k, i) => {
       <div id="true-3d-cluster" class="relative pointer-events-auto transition-transform duration-100 ease-out will-change-transform w-[400px] h-[400px] flex items-center justify-center" style="transform: rotateX(55deg) rotateZ(-40deg); transform-style: preserve-3d;">
         
         {heroKeys.map((key) => (
-          <div class="absolute animate-float-idle" style={`transform: translateX(${key.x}px) translateY(${key.y}px) translateZ(${key.z}px); transform-style: preserve-3d; animation-delay: ${key.delay};`}>
+          <div class="absolute animate-float-idle" style={`transform: translateX(${key.x}px) translateY(${key.y}px) translateZ(${key.z}px) rotateZ(${key.angle}deg); transform-style: preserve-3d; animation-delay: ${key.delay};`}>
             
             <!-- Press interaction wrapper -->
-            <div class="relative w-20 h-20 xl:w-24 xl:h-24 transition-transform duration-150 hover:translateZ(-15px) cursor-pointer group" style="transform-style: preserve-3d;">
+            <div class="relative w-20 h-20 xl:w-24 xl:h-24 transition-transform duration-150 hover:translateZ(-10px) cursor-pointer group" style="transform-style: preserve-3d;">
               
-              <!-- Solid Black Base (Bottom 8 layers) -->
-              {Array.from({ length: 8 }).map((_, i) => (
-                <div class="absolute inset-0 bg-[#0A0F14] rounded-2xl" style={`transform: translateZ(${i - 20}px);`}></div>
+              <!-- Solid Black Base (Bottom 12 layers) -->
+              {Array.from({ length: 12 }).map((_, i) => (
+                <div class="absolute inset-0 bg-[#0A0F14] rounded-xl" style={`transform: translateZ(${i - 28}px);`}></div>
               ))}
               
-              <!-- Solid Colored Side Extrusion (Middle 20 layers) -->
-              {Array.from({ length: 20 }).map((_, i) => (
-                <div class={`absolute inset-0 ${key.sideColor} rounded-2xl`} style={`transform: translateZ(${i - 12}px);`}></div>
+              <!-- Solid Colored Side Extrusion (Middle 24 layers with shading gradient) -->
+              {Array.from({ length: 24 }).map((_, i) => (
+                <div class={`absolute inset-0 ${key.sideColor} rounded-xl`} style={`transform: translateZ(${i - 16}px); filter: brightness(${0.65 + (i * 0.015)});`}></div>
               ))}
 
               <!-- Top Cap (Layer Z=8) -->
-              <div class={`absolute inset-0 ${key.color} border-4 border-[#0A0F14] rounded-2xl flex items-center justify-center shadow-[inset_0_4px_0_rgba(255,255,255,0.4),inset_0_-4px_0_rgba(0,0,0,0.15)] group-hover:brightness-110 transition-all`} style="transform: translateZ(8px);">
-                <!-- Counter-rotate text so it faces up cleanly like the OVERFLOW image -->
-                <span class="font-heading font-black text-4xl xl:text-5xl text-[#0A0F14] drop-shadow-sm" style="transform: rotateZ(40deg);">{key.letter}</span>
+              <div class={`absolute inset-0 ${key.color} border-4 border-[#0A0F14] rounded-xl flex items-center justify-center shadow-[inset_0_4px_0_rgba(255,255,255,0.2),inset_0_-4px_0_rgba(0,0,0,0.1)] group-hover:brightness-110 transition-all`} style="transform: translateZ(8px);">
+                <!-- Counter-rotate text so it faces up cleanly -->
+                <span class="font-heading font-black text-3xl xl:text-4xl text-[#0A0F14] drop-shadow-sm" style={`transform: rotateZ(${40 - key.angle}deg);`}>{key.letter}</span>
               </div>
 
             </div>
