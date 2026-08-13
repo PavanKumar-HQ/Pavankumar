@@ -1,52 +1,38 @@
 ---
-const heroKeys = [
-  { letter: "B", color: "bg-[#4A9EFF]", shadowColor: "#266cc7", rotate: "-10deg", delay: "0.1s", top: "5%", left: "10%", z: "z-10" },
-  { letter: "U", color: "bg-[#DCC5FF]", shadowColor: "#9a7bc7", rotate: "8deg", delay: "0.3s", top: "10%", left: "45%", z: "z-20" },
-  { letter: "I", color: "bg-[#54D69A]", shadowColor: "#329668", rotate: "-5deg", delay: "0.5s", top: "8%", left: "75%", z: "z-10" },
-  { letter: "L", color: "bg-[#FFD83D]", shadowColor: "#d9ae18", rotate: "12deg", delay: "0.2s", top: "40%", left: "2%", z: "z-30" },
-  { letter: "D", color: "bg-[#FF6B22]", shadowColor: "#c94a0b", rotate: "-8deg", delay: "0.4s", top: "35%", left: "38%", z: "z-40" },
-  { letter: "↵", color: "bg-[#F3F1EB]", shadowColor: "#c8c6c0", rotate: "5deg", delay: "0.6s", top: "42%", left: "72%", z: "z-30" },
-  { letter: "W", color: "bg-[#54D69A]", shadowColor: "#329668", rotate: "-12deg", delay: "0.15s", top: "72%", left: "15%", z: "z-50" },
-  { letter: "E", color: "bg-[#FFD83D]", shadowColor: "#d9ae18", rotate: "10deg", delay: "0.35s", top: "78%", left: "45%", z: "z-40" },
-  { letter: "B", color: "bg-[#4A9EFF]", shadowColor: "#266cc7", rotate: "-4deg", delay: "0.55s", top: "70%", left: "82%", z: "z-30" },
+const letters = [
+  { letter: "B", color: "bg-[#4A9EFF]", sideColor: "bg-[#266cc7]" },
+  { letter: "U", color: "bg-[#DCC5FF]", sideColor: "bg-[#9a7bc7]" },
+  { letter: "I", color: "bg-[#54D69A]", sideColor: "bg-[#329668]" },
+  { letter: "L", color: "bg-[#FFD83D]", sideColor: "bg-[#d9ae18]" },
+  { letter: "D", color: "bg-[#FF6B22]", sideColor: "bg-[#c94a0b]" },
+  { letter: "↵", color: "bg-[#F3F1EB]", sideColor: "bg-[#c8c6c0]" },
+  { letter: "W", color: "bg-[#54D69A]", sideColor: "bg-[#329668]" },
+  { letter: "E", color: "bg-[#FFD83D]", sideColor: "bg-[#d9ae18]" },
+  { letter: "B", color: "bg-[#4A9EFF]", sideColor: "bg-[#266cc7]" },
 ];
+const spacing = 130;
+const heroKeys = letters.map((k, i) => {
+  const row = Math.floor(i / 3);
+  const col = i % 3;
+  const xOffset = row * 40;
+  return {
+    ...k,
+    x: col * spacing + xOffset - 130,
+    y: row * spacing - 130,
+    z: Math.floor(Math.sin(i) * 20),
+    delay: `${i * 0.1}s`
+  };
+});
 ---
 
 <style>
   @keyframes float-idle {
-    0% { transform: translateY(0px) rotate(var(--rot, 0deg)); }
-    50% { transform: translateY(-8px) rotate(var(--rot, 0deg)); }
-    100% { transform: translateY(0px) rotate(var(--rot, 0deg)); }
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0px); }
   }
   .animate-float-idle {
     animation: float-idle 4s ease-in-out infinite;
-  }
-  .key-mechanical {
-    box-shadow: 
-      1px 1px 0 0 var(--shadow-color),
-      2px 2px 0 0 var(--shadow-color),
-      3px 3px 0 0 var(--shadow-color),
-      4px 4px 0 0 var(--shadow-color),
-      5px 5px 0 0 var(--shadow-color),
-      6px 6px 0 0 var(--shadow-color),
-      7px 7px 0 0 var(--shadow-color),
-      8px 8px 0 0 var(--shadow-color),
-      9px 9px 0 0 var(--shadow-color),
-      10px 10px 0 0 var(--shadow-color),
-      11px 11px 0 0 var(--shadow-color),
-      12px 12px 0 0 var(--shadow-color),
-      13px 13px 0 0 var(--shadow-color),
-      14px 14px 0 0 var(--shadow-color),
-      15px 15px 0 0 var(--shadow-color),
-      16px 16px 0 0 var(--shadow-color),
-      16px 16px 0 4px #0A0F14;
-    transition: transform 0.1s ease-out, box-shadow 0.1s ease-out;
-  }
-  .key-mechanical:hover {
-    box-shadow: 
-      0px 0px 0 0 var(--shadow-color),
-      0px 0px 0 4px #0A0F14;
-    transform: translate(16px, 16px) !important;
   }
 </style>
 
@@ -115,17 +101,39 @@ const heroKeys = [
       </span>
     </h1>
 
-    <!-- Mechanical Keyboard Grid (Perfect 2.5D Isometric Spilled Style) -->
-    <div id="keyboard-cluster" class="hidden lg:block absolute right-[2%] top-[55%] xl:top-1/2 -translate-y-1/2 w-[420px] h-[420px] xl:w-[500px] xl:h-[500px] pointer-events-auto origin-center transition-transform duration-200 ease-out z-0">
-      {heroKeys.map((key) => (
-        <div class={`absolute ${key.z} animate-float-idle`} style={`left: ${key.left}; top: ${key.top}; animation-delay: ${key.delay}; transform: rotate(${key.rotate});`}>
-          <div class={`relative w-20 h-20 xl:w-28 xl:h-28 rounded-xl xl:rounded-2xl border-4 border-[#0A0F14] ${key.color} flex items-center justify-center cursor-pointer key-mechanical`} style={`--shadow-color: ${key.shadowColor};`}>
-            <!-- Inner highlight for 3D bevel -->
-            <div class="absolute inset-0 rounded-lg xl:rounded-xl shadow-[inset_0_6px_0_rgba(255,255,255,0.3),inset_0_-6px_0_rgba(0,0,0,0.15)] pointer-events-none"></div>
-            <span class="font-heading font-black text-4xl xl:text-5xl text-[#0A0F14] drop-shadow-sm">{key.letter}</span>
+    <!-- True 3D Isometric Layered Extrusion Keyboard -->
+    <div class="hidden lg:flex absolute right-[2%] top-[55%] xl:top-1/2 -translate-y-1/2 w-[500px] h-[500px] items-center justify-center pointer-events-none" style="perspective: 2500px;">
+      
+      <!-- The Cluster Rotator -->
+      <div id="true-3d-cluster" class="relative pointer-events-auto transition-transform duration-100 ease-out will-change-transform w-[400px] h-[400px] flex items-center justify-center" style="transform: rotateX(55deg) rotateZ(-40deg); transform-style: preserve-3d;">
+        
+        {heroKeys.map((key) => (
+          <div class="absolute animate-float-idle" style={`transform: translateX(${key.x}px) translateY(${key.y}px) translateZ(${key.z}px); transform-style: preserve-3d; animation-delay: ${key.delay};`}>
+            
+            <!-- Press interaction wrapper -->
+            <div class="relative w-20 h-20 xl:w-24 xl:h-24 transition-transform duration-150 hover:translateZ(-15px) cursor-pointer group" style="transform-style: preserve-3d;">
+              
+              <!-- Solid Black Base (Bottom 8 layers) -->
+              {Array.from({ length: 8 }).map((_, i) => (
+                <div class="absolute inset-0 bg-[#0A0F14] rounded-2xl" style={`transform: translateZ(${i - 20}px);`}></div>
+              ))}
+              
+              <!-- Solid Colored Side Extrusion (Middle 20 layers) -->
+              {Array.from({ length: 20 }).map((_, i) => (
+                <div class={`absolute inset-0 ${key.sideColor} rounded-2xl`} style={`transform: translateZ(${i - 12}px);`}></div>
+              ))}
+
+              <!-- Top Cap (Layer Z=8) -->
+              <div class={`absolute inset-0 ${key.color} border-4 border-[#0A0F14] rounded-2xl flex items-center justify-center shadow-[inset_0_4px_0_rgba(255,255,255,0.4),inset_0_-4px_0_rgba(0,0,0,0.15)] group-hover:brightness-110 transition-all`} style="transform: translateZ(8px);">
+                <!-- Counter-rotate text so it faces up cleanly like the OVERFLOW image -->
+                <span class="font-heading font-black text-4xl xl:text-5xl text-[#0A0F14] drop-shadow-sm" style="transform: rotateZ(40deg);">{key.letter}</span>
+              </div>
+
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+        
+      </div>
     </div>
 
     <div class="mt-8 relative z-10">
@@ -217,8 +225,8 @@ const heroKeys = [
       setTimeout(typeEffect, speed);
     }
 
-    // Parallax Cluster Hover Effect
-    const keyCluster = document.getElementById('keyboard-cluster');
+    // True 3D Cluster Hover Effect
+    const keyCluster = document.getElementById('true-3d-cluster');
     const heroSection = document.getElementById('hero');
     if (keyCluster && heroSection) {
       heroSection.addEventListener('mousemove', (e) => {
@@ -229,13 +237,14 @@ const heroKeys = [
         const deltaX = (e.clientX - rect.left) - centerX;
         const deltaY = (e.clientY - rect.top) - centerY;
         
-        const moveX = -deltaX / 30;
-        const moveY = -deltaY / 30;
+        // Base isometric angle: rotateX(55deg) rotateZ(-40deg)
+        const rotateX = 55 + Math.max(-15, Math.min(15, -deltaY / 40));
+        const rotateZ = -40 + Math.max(-15, Math.min(15, deltaX / 40));
         
-        keyCluster.style.transform = `translate(calc(0% + ${moveX}px), calc(-50% + ${moveY}px))`;
+        keyCluster.style.transform = `rotateX(${rotateX}deg) rotateZ(${rotateZ}deg)`;
       });
       heroSection.addEventListener('mouseleave', () => {
-        keyCluster.style.transform = `translate(0%, -50%)`;
+        keyCluster.style.transform = `rotateX(55deg) rotateZ(-40deg)`;
       });
     }
 
