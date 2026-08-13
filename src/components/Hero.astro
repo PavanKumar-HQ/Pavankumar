@@ -1,26 +1,29 @@
 ---
 const vectorKeys = [
-  { id: "code", letter: "</>", top: "0%", left: "30%", rot: "-6deg", topStart: "#FFFFFF", topEnd: "#E5E7EB", sideStart: "#9CA3AF", sideEnd: "#4B5563", delay: "0.5s", isIcon: true, textColor: "#0A0F14" },
-  { id: "P", letter: "P", top: "6%", left: "2%", rot: "-18deg", topStart: "#FF6B22", topEnd: "#FF4500", sideStart: "#C93B00", sideEnd: "#802600", delay: "0s", textColor: "#0A0F14" },
-  { id: "A1", letter: "A", top: "16%", left: "28%", rot: "12deg", topStart: "#4A9EFF", topEnd: "#2563EB", sideStart: "#1D4ED8", sideEnd: "#1E3A8A", delay: "0.2s", textColor: "#0A0F14" },
-  { id: "V", letter: "V", top: "8%", left: "58%", rot: "-10deg", topStart: "#54D69A", topEnd: "#10B981", sideStart: "#059669", sideEnd: "#064E3B", delay: "0.4s", textColor: "#0A0F14" },
-  { id: "cmd", letter: "⌘", top: "22%", left: "80%", rot: "16deg", topStart: "#374151", topEnd: "#1F2937", sideStart: "#111827", sideEnd: "#030712", delay: "0.15s", isIcon: true, textColor: "#FFFFFF" },
+  // Row 1
+  { id: "code", letter: "</>", rot: "-2deg", topStart: "#FFFFFF", topEnd: "#E5E7EB", sideStart: "#9CA3AF", sideEnd: "#4B5563", delay: "0.1s", isIcon: true, textColor: "#0A0F14" },
+  { id: "P", letter: "P", rot: "1deg", topStart: "#FF6B22", topEnd: "#FF4500", sideStart: "#C93B00", sideEnd: "#802600", delay: "0.2s", textColor: "#0A0F14" },
+  { id: "A1", letter: "A", rot: "-1deg", topStart: "#4A9EFF", topEnd: "#2563EB", sideStart: "#1D4ED8", sideEnd: "#1E3A8A", delay: "0.3s", textColor: "#0A0F14" },
+  { id: "V", letter: "V", rot: "2deg", topStart: "#54D69A", topEnd: "#10B981", sideStart: "#059669", sideEnd: "#064E3B", delay: "0.4s", textColor: "#0A0F14" },
 
-  { id: "A2", letter: "A", top: "42%", left: "0%", rot: "-12deg", topStart: "#FFD83D", topEnd: "#F59E0B", sideStart: "#D97706", sideEnd: "#78350F", delay: "0.3s", textColor: "#0A0F14" },
-  { id: "N", letter: "N", top: "44%", left: "26%", rot: "8deg", topStart: "#DCC5FF", topEnd: "#A78BFA", sideStart: "#7C3AED", sideEnd: "#4C1D95", delay: "0.25s", textColor: "#0A0F14" },
-  { id: "bolt", letter: "⚡", top: "38%", left: "52%", rot: "-14deg", topStart: "#FF5E7E", topEnd: "#E11D48", sideStart: "#9F1239", sideEnd: "#4C0519", delay: "0.35s", isIcon: true, textColor: "#FFFFFF" },
-  { id: "dots", letter: "...", top: "54%", left: "74%", rot: "18deg", topStart: "#FEF3C7", topEnd: "#FDE68A", sideStart: "#D97706", sideEnd: "#78350F", delay: "0.45s", isIcon: true, textColor: "#0A0F14" },
+  // Row 2
+  { id: "A2", letter: "A", rot: "2deg", topStart: "#FFD83D", topEnd: "#F59E0B", sideStart: "#D97706", sideEnd: "#78350F", delay: "0.15s", textColor: "#0A0F14" },
+  { id: "N", letter: "N", rot: "-2deg", topStart: "#DCC5FF", topEnd: "#A78BFA", sideStart: "#7C3AED", sideEnd: "#4C1D95", delay: "0.25s", textColor: "#0A0F14" },
+  { id: "K", letter: "K", rot: "1deg", topStart: "#FF6B22", topEnd: "#FF4500", sideStart: "#C93B00", sideEnd: "#802600", delay: "0.35s", textColor: "#0A0F14" },
+  { id: "U", letter: "U", rot: "-1deg", topStart: "#54D69A", topEnd: "#10B981", sideStart: "#059669", sideEnd: "#064E3B", delay: "0.45s", textColor: "#0A0F14" },
 
-  { id: "K", letter: "K", top: "70%", left: "10%", rot: "10deg", topStart: "#FF6B22", topEnd: "#FF4500", sideStart: "#C93B00", sideEnd: "#802600", delay: "0.5s", textColor: "#0A0F14" },
-  { id: "U", letter: "U", top: "72%", left: "38%", rot: "-8deg", topStart: "#54D69A", topEnd: "#10B981", sideStart: "#059669", sideEnd: "#064E3B", delay: "0.1s", textColor: "#0A0F14" },
-  { id: "M", letter: "M", top: "68%", left: "64%", rot: "14deg", topStart: "#4A9EFF", topEnd: "#2563EB", sideStart: "#1D4ED8", sideEnd: "#1E3A8A", delay: "0.4s", textColor: "#0A0F14" },
+  // Row 3
+  { id: "M", letter: "M", rot: "-1deg", topStart: "#4A9EFF", topEnd: "#2563EB", sideStart: "#1D4ED8", sideEnd: "#1E3A8A", delay: "0.2s", textColor: "#0A0F14" },
+  { id: "bolt", letter: "⚡", rot: "2deg", topStart: "#FF5E7E", topEnd: "#E11D48", sideStart: "#9F1239", sideEnd: "#4C0519", delay: "0.3s", isIcon: true, textColor: "#FFFFFF" },
+  { id: "cmd", letter: "⌘", rot: "-2deg", topStart: "#374151", topEnd: "#1F2937", sideStart: "#111827", sideEnd: "#030712", delay: "0.4s", isIcon: true, textColor: "#FFFFFF" },
+  { id: "dots", letter: "...", rot: "1deg", topStart: "#FEF3C7", topEnd: "#FDE68A", sideStart: "#D97706", sideEnd: "#78350F", delay: "0.5s", isIcon: true, textColor: "#0A0F14" },
 ];
 ---
 
 <style>
   @keyframes float-idle {
     0% { transform: translateY(0px) rotate(var(--rot, 0deg)); }
-    50% { transform: translateY(-8px) rotate(var(--rot, 0deg)); }
+    50% { transform: translateY(-6px) rotate(var(--rot, 0deg)); }
     100% { transform: translateY(0px) rotate(var(--rot, 0deg)); }
   }
   .animate-float-idle {
@@ -97,14 +100,14 @@ const vectorKeys = [
       </h1>
     </div>
 
-    <!-- Right Column: Vector SVG 3D Isometric Mechanical Keys -->
-    <div id="keyboard-cluster" class="hidden lg:block lg:col-span-5 relative h-[400px] xl:h-[460px] w-full select-none transition-transform duration-300 ease-out">
+    <!-- Right Column: Aligned 4x3 Vector SVG 3D Mechanical Key Grid -->
+    <div id="keyboard-cluster" class="hidden lg:grid lg:col-span-5 grid-cols-4 gap-3 xl:gap-4 items-center justify-items-center w-full select-none transition-transform duration-300 ease-out z-0">
       {vectorKeys.map((k) => (
         <div 
-          class="absolute group cursor-pointer transition-all duration-300 ease-out hover:scale-120 hover:z-50 animate-float-idle select-none"
-          style={`top: ${k.top}; left: ${k.left}; animation-delay: ${k.delay}; --rot: ${k.rot};`}
+          class="group cursor-pointer transition-all duration-300 ease-out hover:scale-115 hover:z-50 animate-float-idle select-none"
+          style={`animation-delay: ${k.delay}; --rot: ${k.rot};`}
         >
-          <svg viewBox="0 0 120 120" class="w-20 h-20 sm:w-24 sm:h-24 xl:w-26 xl:h-26 drop-shadow-xl overflow-visible">
+          <svg viewBox="0 0 120 120" class="w-18 h-18 sm:w-20 sm:h-20 xl:w-24 xl:h-24 drop-shadow-xl overflow-visible">
             <defs>
               <linearGradient id={`top-grad-${k.id}`} x1="0%" y1="0%" x2="100%" y2="100%">
                 <stop offset="0%" stop-color={k.topStart} />
@@ -122,7 +125,7 @@ const vectorKeys = [
             <!-- 2. 3D Gradient Side Wall Extrusion -->
             <rect x="5" y="9" width="88" height="88" rx="22" fill={`url(#side-grad-${k.id})`} stroke="#0A0F14" stroke-width="4" stroke-linejoin="round" />
 
-            <!-- 3. Top Keycap Face (Translates down on hover for realistic mechanical press) -->
+            <!-- 3. Top Keycap Face -->
             <g class="transition-transform duration-150 ease-out group-hover:translate-x-[-3px] group-hover:translate-y-[-3px]">
               <rect x="0" y="0" width="88" height="88" rx="22" fill={`url(#top-grad-${k.id})`} stroke="#0A0F14" stroke-width="4" stroke-linejoin="round" />
               
