@@ -1,15 +1,19 @@
 ---
-const scatteredKeys = [
-  { letter: "</>", top: "2%", left: "35%", rot: "-4deg", topGrad: "from-[#FFFFFF] to-[#E5E7EB]", sideGrad: "from-[#9CA3AF] to-[#4B5563]", delay: "0.5s", isIcon: true },
-  { letter: "O", top: "8%", left: "2%", rot: "-16deg", topGrad: "from-[#FF6B22] to-[#FF4500]", sideGrad: "from-[#C93B00] to-[#802600]", delay: "0s" },
-  { letter: "V", top: "18%", left: "30%", rot: "12deg", topGrad: "from-[#DCC5FF] to-[#A78BFA]", sideGrad: "from-[#7C3AED] to-[#5B21B6]", delay: "0.2s" },
-  { letter: "E", top: "10%", left: "60%", rot: "-8deg", topGrad: "from-[#818CF8] to-[#4F46E5]", sideGrad: "from-[#3730A3] to-[#1E1B4B]", delay: "0.4s" },
-  { letter: "R", top: "24%", left: "78%", rot: "15deg", topGrad: "from-[#54D69A] to-[#10B981]", sideGrad: "from-[#059669] to-[#047857]", delay: "0.1s" },
-  { letter: "F", top: "45%", left: "0%", rot: "-10deg", topGrad: "from-[#60A5FA] to-[#3B82F6]", sideGrad: "from-[#2563EB] to-[#1D4ED8]", delay: "0.3s" },
-  { letter: "L", top: "46%", left: "28%", rot: "8deg", topGrad: "from-[#FDE047] to-[#EAB308]", sideGrad: "from-[#CA8A04] to-[#854D0E]", delay: "0.15s" },
-  { letter: "O", top: "42%", left: "54%", rot: "-14deg", topGrad: "from-[#FF6B22] to-[#EF4444]", sideGrad: "from-[#DC2626] to-[#991B1B]", delay: "0.35s" },
-  { letter: "W", top: "58%", left: "74%", rot: "18deg", topGrad: "from-[#E9D5FF] to-[#C084FC]", sideGrad: "from-[#9333EA] to-[#6B21A8]", delay: "0.25s" },
-  { letter: "...", top: "72%", left: "8%", rot: "10deg", topGrad: "from-[#FEF3C7] to-[#FDE68A]", sideGrad: "from-[#D97706] to-[#B45309]", delay: "0.45s", isIcon: true },
+const vectorKeys = [
+  { id: "code", letter: "</>", top: "0%", left: "30%", rot: "-6deg", topStart: "#FFFFFF", topEnd: "#E5E7EB", sideStart: "#9CA3AF", sideEnd: "#4B5563", delay: "0.5s", isIcon: true, textColor: "#0A0F14" },
+  { id: "P", letter: "P", top: "6%", left: "2%", rot: "-18deg", topStart: "#FF6B22", topEnd: "#FF4500", sideStart: "#C93B00", sideEnd: "#802600", delay: "0s", textColor: "#0A0F14" },
+  { id: "A1", letter: "A", top: "16%", left: "28%", rot: "12deg", topStart: "#4A9EFF", topEnd: "#2563EB", sideStart: "#1D4ED8", sideEnd: "#1E3A8A", delay: "0.2s", textColor: "#0A0F14" },
+  { id: "V", letter: "V", top: "8%", left: "58%", rot: "-10deg", topStart: "#54D69A", topEnd: "#10B981", sideStart: "#059669", sideEnd: "#064E3B", delay: "0.4s", textColor: "#0A0F14" },
+  { id: "cmd", letter: "⌘", top: "22%", left: "80%", rot: "16deg", topStart: "#374151", topEnd: "#1F2937", sideStart: "#111827", sideEnd: "#030712", delay: "0.15s", isIcon: true, textColor: "#FFFFFF" },
+
+  { id: "A2", letter: "A", top: "42%", left: "0%", rot: "-12deg", topStart: "#FFD83D", topEnd: "#F59E0B", sideStart: "#D97706", sideEnd: "#78350F", delay: "0.3s", textColor: "#0A0F14" },
+  { id: "N", letter: "N", top: "44%", left: "26%", rot: "8deg", topStart: "#DCC5FF", topEnd: "#A78BFA", sideStart: "#7C3AED", sideEnd: "#4C1D95", delay: "0.25s", textColor: "#0A0F14" },
+  { id: "bolt", letter: "⚡", top: "38%", left: "52%", rot: "-14deg", topStart: "#FF5E7E", topEnd: "#E11D48", sideStart: "#9F1239", sideEnd: "#4C0519", delay: "0.35s", isIcon: true, textColor: "#FFFFFF" },
+  { id: "dots", letter: "...", top: "54%", left: "74%", rot: "18deg", topStart: "#FEF3C7", topEnd: "#FDE68A", sideStart: "#D97706", sideEnd: "#78350F", delay: "0.45s", isIcon: true, textColor: "#0A0F14" },
+
+  { id: "K", letter: "K", top: "70%", left: "10%", rot: "10deg", topStart: "#FF6B22", topEnd: "#FF4500", sideStart: "#C93B00", sideEnd: "#802600", delay: "0.5s", textColor: "#0A0F14" },
+  { id: "U", letter: "U", top: "72%", left: "38%", rot: "-8deg", topStart: "#54D69A", topEnd: "#10B981", sideStart: "#059669", sideEnd: "#064E3B", delay: "0.1s", textColor: "#0A0F14" },
+  { id: "M", letter: "M", top: "68%", left: "64%", rot: "14deg", topStart: "#4A9EFF", topEnd: "#2563EB", sideStart: "#1D4ED8", sideEnd: "#1E3A8A", delay: "0.4s", textColor: "#0A0F14" },
 ];
 ---
 
@@ -93,25 +97,53 @@ const scatteredKeys = [
       </h1>
     </div>
 
-    <!-- Right Column: Scattered 2.5D Gradient Mechanical Keys -->
-    <div id="keyboard-cluster" class="hidden lg:block lg:col-span-5 relative h-[380px] xl:h-[420px] w-full select-none transition-transform duration-200 ease-out">
-      {scatteredKeys.map((k) => (
+    <!-- Right Column: Vector SVG 3D Isometric Mechanical Keys -->
+    <div id="keyboard-cluster" class="hidden lg:block lg:col-span-5 relative h-[400px] xl:h-[460px] w-full select-none transition-transform duration-300 ease-out">
+      {vectorKeys.map((k) => (
         <div 
-          class="absolute group cursor-pointer transition-all duration-300 ease-out hover:scale-115 hover:z-50 animate-float-idle select-none"
+          class="absolute group cursor-pointer transition-all duration-300 ease-out hover:scale-120 hover:z-50 animate-float-idle select-none"
           style={`top: ${k.top}; left: ${k.left}; animation-delay: ${k.delay}; --rot: ${k.rot};`}
         >
-          <!-- Layer 1: Solid Black Bottom Extrusion Shadow -->
-          <div class="absolute inset-0 bg-[#0A0F14] rounded-2xl translate-x-3 translate-y-4"></div>
-          
-          <!-- Layer 2: Gradient Side Extrusion Wall -->
-          <div class={`absolute inset-0 bg-gradient-to-b ${k.sideGrad} rounded-2xl translate-x-1.5 translate-y-2 border-2 border-[#0A0F14]`}></div>
-          
-          <!-- Layer 3: Keycap Top Face -->
-          <div class={`relative w-18 h-18 xl:w-22 xl:h-22 bg-gradient-to-br ${k.topGrad} border-[3.5px] border-[#0A0F14] rounded-2xl flex items-center justify-center shadow-[inset_0_-4px_6px_rgba(0,0,0,0.25)] group-hover:-translate-x-1 group-hover:-translate-y-1 transition-transform duration-150`}>
-            <span class={`font-heading font-black text-[#0A0F14] drop-shadow-sm ${k.isIcon ? 'text-xl xl:text-2xl font-mono' : 'text-3xl xl:text-4xl'}`}>
-              {k.letter}
-            </span>
-          </div>
+          <svg viewBox="0 0 120 120" class="w-20 h-20 sm:w-24 sm:h-24 xl:w-26 xl:h-26 drop-shadow-xl overflow-visible">
+            <defs>
+              <linearGradient id={`top-grad-${k.id}`} x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color={k.topStart} />
+                <stop offset="100%" stop-color={k.topEnd} />
+              </linearGradient>
+              <linearGradient id={`side-grad-${k.id}`} x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color={k.sideStart} />
+                <stop offset="100%" stop-color={k.sideEnd} />
+              </linearGradient>
+            </defs>
+
+            <!-- 1. Solid Black Base Extrusion Shadow -->
+            <rect x="10" y="16" width="88" height="88" rx="22" fill="#0A0F14" />
+
+            <!-- 2. 3D Gradient Side Wall Extrusion -->
+            <rect x="5" y="9" width="88" height="88" rx="22" fill={`url(#side-grad-${k.id})`} stroke="#0A0F14" stroke-width="4" stroke-linejoin="round" />
+
+            <!-- 3. Top Keycap Face (Translates down on hover for realistic mechanical press) -->
+            <g class="transition-transform duration-150 ease-out group-hover:translate-x-[-3px] group-hover:translate-y-[-3px]">
+              <rect x="0" y="0" width="88" height="88" rx="22" fill={`url(#top-grad-${k.id})`} stroke="#0A0F14" stroke-width="4" stroke-linejoin="round" />
+              
+              <!-- 4. Glossy Bevel Inner Reflection -->
+              <rect x="4" y="4" width="80" height="80" rx="18" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-opacity="0.4" />
+
+              <!-- 5. Key Letter / Icon Text -->
+              <text 
+                x="44" 
+                y="48" 
+                font-family="Outfit, sans-serif" 
+                font-weight="900" 
+                font-size={k.isIcon ? "26" : "38"} 
+                fill={k.textColor} 
+                text-anchor="middle" 
+                dominant-baseline="central"
+              >
+                {k.letter}
+              </text>
+            </g>
+          </svg>
         </div>
       ))}
     </div>
