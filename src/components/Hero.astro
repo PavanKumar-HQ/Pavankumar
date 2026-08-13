@@ -1,53 +1,95 @@
 ---
-const heroKeys = [
-  // Top Cluster (Layer 1)
-  { letter: "P", color: "bg-[#FF6B22]", sideColor: "bg-[#c94a0b]", x: -140, y: -160, z: 15, angle: -15 },
-  { letter: "A", color: "bg-[#DCC5FF]", sideColor: "bg-[#9a7bc7]", x: -10, y: -180, z: -5, angle: 10 },
-  { letter: "V", color: "bg-[#54D69A]", sideColor: "bg-[#329668]", x: 130, y: -150, z: 25, angle: -5 },
-  
-  // Upper Middle (Layer 2)
-  { letter: "A", color: "bg-[#FFD83D]", sideColor: "bg-[#d9ae18]", x: -90, y: -60, z: -10, angle: 20 },
-  { letter: "N", color: "bg-[#4A9EFF]", sideColor: "bg-[#266cc7]", x: 50, y: -70, z: 10, angle: -8 },
-  { letter: "</>", color: "bg-[#F3F1EB]", sideColor: "bg-[#c8c6c0]", x: 170, y: -50, z: 5, angle: 12 },
+const letters = [
+  // Row 0
+  { letter: "P", color: "bg-[#FF6B22]", sideColor: "#c94a0b" },
+  { letter: "A", color: "bg-[#DCC5FF]", sideColor: "#9a7bc7" },
+  { letter: "V", color: "bg-[#54D69A]", sideColor: "#329668" },
+  { letter: "A", color: "bg-[#FFD83D]", sideColor: "#d9ae18" },
+  { letter: "N", color: "bg-[#4A9EFF]", sideColor: "#266cc7" },
+  { letter: "</>", color: "bg-[#F3F1EB]", sideColor: "#c8c6c0" },
 
-  // Center / Lower Middle (Layer 3)
-  { letter: "K", color: "bg-[#54D69A]", sideColor: "bg-[#329668]", x: -150, y: 50, z: 0, angle: -10 },
-  { letter: "U", color: "bg-[#FFD83D]", sideColor: "bg-[#d9ae18]", x: -20, y: 40, z: 35, angle: 5 },
-  { letter: "M", color: "bg-[#4A9EFF]", sideColor: "bg-[#266cc7]", x: 110, y: 60, z: -15, angle: -20 },
-  
-  // Bottom Cluster (Layer 4)
-  { letter: "A", color: "bg-[#FF6B22]", sideColor: "bg-[#c94a0b]", x: -100, y: 160, z: 20, angle: 15 },
-  { letter: "R", color: "bg-[#DCC5FF]", sideColor: "bg-[#9a7bc7]", x: 30, y: 150, z: -5, angle: -12 },
-  { letter: "↵", color: "bg-[#F3F1EB]", sideColor: "bg-[#c8c6c0]", x: 160, y: 170, z: 15, angle: 8 },
+  // Row 1
+  { letter: "K", color: "bg-[#54D69A]", sideColor: "#329668" },
+  { letter: "U", color: "bg-[#FFD83D]", sideColor: "#d9ae18" },
+  { letter: "M", color: "bg-[#4A9EFF]", sideColor: "#266cc7" },
+  { letter: "A", color: "bg-[#FF6B22]", sideColor: "#c94a0b" },
+  { letter: "R", color: "bg-[#DCC5FF]", sideColor: "#9a7bc7" },
+  { letter: "⌘", color: "bg-[#F3F1EB]", sideColor: "#c8c6c0" },
 
-  // Spilled left edge
-  { letter: "⌘", color: "bg-[#F3F1EB]", sideColor: "bg-[#c8c6c0]", x: -190, y: -50, z: -25, angle: -25 },
-  { letter: "★", color: "bg-[#FFD83D]", sideColor: "bg-[#d9ae18]", x: -180, y: 150, z: 5, angle: 30 },
-  { letter: "B", color: "bg-[#4A9EFF]", sideColor: "bg-[#266cc7]", x: -220, y: 50, z: 10, angle: -15 },
-  { letter: "W", color: "bg-[#54D69A]", sideColor: "bg-[#329668]", x: -240, y: -100, z: -10, angle: 25 },
+  // Row 2
+  { letter: "B", color: "bg-[#FF6B22]", sideColor: "#c94a0b" },
+  { letter: "U", color: "bg-[#DCC5FF]", sideColor: "#9a7bc7" },
+  { letter: "I", color: "bg-[#54D69A]", sideColor: "#329668" },
+  { letter: "L", color: "bg-[#FFD83D]", sideColor: "#d9ae18" },
+  { letter: "D", color: "bg-[#4A9EFF]", sideColor: "#266cc7" },
+  { letter: "★", color: "bg-[#FFD83D]", sideColor: "#d9ae18" },
 
-  // Spilled right edge
-  { letter: "E", color: "bg-[#FFD83D]", sideColor: "bg-[#d9ae18]", x: 250, y: 10, z: -20, angle: -30 },
-  { letter: "B", color: "bg-[#4A9EFF]", sideColor: "bg-[#266cc7]", x: 230, y: -120, z: 30, angle: 18 },
-  { letter: "D", color: "bg-[#FF6B22]", sideColor: "bg-[#c94a0b]", x: 260, y: 110, z: -5, angle: -10 },
-  
-  // Spilled Top/Bottom Edges
-  { letter: "I", color: "bg-[#DCC5FF]", sideColor: "bg-[#9a7bc7]", x: -80, y: -250, z: 20, angle: -22 },
-  { letter: "L", color: "bg-[#54D69A]", sideColor: "bg-[#329668]", x: 60, y: -260, z: -15, angle: 15 },
-  { letter: "⌥", color: "bg-[#F3F1EB]", sideColor: "bg-[#c8c6c0]", x: -20, y: 240, z: -10, angle: -5 },
-  { letter: "⇧", color: "bg-[#F3F1EB]", sideColor: "bg-[#c8c6c0]", x: 100, y: 260, z: 25, angle: 20 },
-  { letter: "⎋", color: "bg-[#FFD83D]", sideColor: "bg-[#d9ae18]", x: -120, y: 250, z: 5, angle: -18 },
-].map((k, i) => ({ ...k, delay: `${i * 0.05}s` }));
+  // Row 3
+  { letter: "W", color: "bg-[#54D69A]", sideColor: "#329668" },
+  { letter: "E", color: "bg-[#FFD83D]", sideColor: "#d9ae18" },
+  { letter: "B", color: "bg-[#4A9EFF]", sideColor: "#266cc7" },
+  { letter: "A", color: "bg-[#FF6B22]", sideColor: "#c94a0b" },
+  { letter: "I", color: "bg-[#DCC5FF]", sideColor: "#9a7bc7" },
+  { letter: "↵", color: "bg-[#F3F1EB]", sideColor: "#c8c6c0" },
+
+  // Row 4
+  { letter: "C", color: "bg-[#FF6B22]", sideColor: "#c94a0b" },
+  { letter: "O", color: "bg-[#4A9EFF]", sideColor: "#266cc7" },
+  { letter: "D", color: "bg-[#54D69A]", sideColor: "#329668" },
+  { letter: "E", color: "bg-[#FFD83D]", sideColor: "#d9ae18" },
+  { letter: "S", color: "bg-[#DCC5FF]", sideColor: "#9a7bc7" },
+  { letter: "⌥", color: "bg-[#F3F1EB]", sideColor: "#c8c6c0" },
+];
+
+const colSpacing = 68;
+const rowSpacing = 68;
+
+const heroKeys = letters.map((k, i) => {
+  const row = Math.floor(i / 6);
+  const col = i % 6;
+  const xStagger = (row % 2 === 1) ? 28 : 0;
+  const jitterX = Math.round(Math.sin(i * 1.7) * 8);
+  const jitterY = Math.round(Math.cos(i * 2.3) * 8);
+  const angle = Math.floor(Math.sin(i * 3.1) * 16);
+
+  return {
+    ...k,
+    x: Math.round(col * colSpacing + xStagger - 165 + jitterX),
+    y: Math.round(row * rowSpacing - 130 + jitterY),
+    angle,
+    delay: `${(i % 6) * 0.12}s`
+  };
+});
 ---
 
 <style>
   @keyframes float-idle {
     0% { transform: translateY(0px); }
-    50% { transform: translateY(-8px); }
+    50% { transform: translateY(-6px); }
     100% { transform: translateY(0px); }
   }
   .animate-float-idle {
-    animation: float-idle 4s ease-in-out infinite;
+    animation: float-idle 3.5s ease-in-out infinite;
+  }
+
+  .key-box {
+    box-shadow: 
+      1px 1px 0 #0A0F14,
+      2px 2px 0 var(--side-col),
+      3px 3px 0 var(--side-col),
+      4px 4px 0 var(--side-col),
+      5px 5px 0 var(--side-col),
+      6px 6px 0 var(--side-col),
+      7px 7px 0 #0A0F14,
+      8px 8px 0 #0A0F14;
+    transition: transform 0.1s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.1s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .key-box:hover, .key-box.key-pressed {
+    transform: translate(5px, 5px) !important;
+    box-shadow: 
+      0px 0px 0 #0A0F14,
+      1px 1px 0 #0A0F14 !important;
   }
 </style>
 
@@ -69,7 +111,7 @@ const heroKeys = [
         <span class="px-8">★ BENGALURU, INDIA</span>
         <span class="opacity-30">·</span>
       </div>
-      <!-- Copy 2 (identical — for seamless loop) -->
+      <!-- Copy 2 -->
       <div class="ticker-set flex shrink-0 items-center" aria-hidden="true">
         <span class="px-8">★ BCA STUDENT</span>
         <span class="opacity-30">·</span>
@@ -89,8 +131,8 @@ const heroKeys = [
   <div class="my-6 lg:my-10 relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8">
     
     <!-- Left Column: Editorial Headline & Statement Box -->
-    <div class="w-full lg:w-[55%] xl:w-[58%] shrink-0 relative z-20">
-      <!-- Creative Neo-Brutalist Greeting Tag with Animated Waving Hand -->
+    <div class="w-full lg:w-[52%] xl:w-[55%] shrink-0 relative z-20">
+      <!-- Creative Neo-Brutalist Greeting Tag -->
       <div class="inline-flex items-center gap-2 mb-4 px-4 py-1.5 bg-[#4A9EFF] text-white font-mono-tech text-xs sm:text-sm font-bold uppercase brutal-border-thick rotate-1 hover:-rotate-1 transition-transform duration-200 shadow-[4px_4px_0px_0px_#0A0F14] select-none">
         <span class="inline-block animate-wave origin-[70%_70%]">
           <svg class="w-5 h-5 text-[#FFD83D] fill-current" viewBox="0 0 24 24">
@@ -137,36 +179,26 @@ const heroKeys = [
       </div>
     </div>
 
-    <!-- Right Column: Dedicated 3D Keyboard Canvas (100% Unobstructed Visibility) -->
-    <div class="w-full lg:w-[45%] xl:w-[42%] h-[420px] sm:h-[480px] lg:h-[540px] relative flex items-center justify-center overflow-visible z-30">
-      <div class="w-full h-full flex items-center justify-center pointer-events-none" style="perspective: 2500px;">
+    <!-- Right Column: Dedicated 30-Key Keyboard Canvas (100% Unobstructed & Ultra-Performance) -->
+    <div class="w-full lg:w-[48%] xl:w-[45%] h-[400px] sm:h-[480px] lg:h-[540px] relative flex items-center justify-center overflow-visible z-30">
+      <div class="w-full h-full flex items-center justify-center pointer-events-none" style="perspective: 2000px;">
         
-        <!-- The Cluster Rotator (Fixed Isometric Angle) -->
-        <div id="true-3d-cluster" class="relative pointer-events-auto w-[420px] h-[420px] flex items-center justify-center" style="transform: rotateX(55deg) rotateZ(-40deg); transform-style: preserve-3d;">
+        <!-- The Cluster Rotator (Static Isometric View) -->
+        <div id="true-3d-cluster" class="relative pointer-events-auto w-[420px] h-[420px] flex items-center justify-center" style="transform: rotateX(50deg) rotateZ(-35deg); transform-style: preserve-3d;">
           
           {heroKeys.map((key) => (
-            <div class="absolute animate-float-idle mechanical-key-wrapper" data-base-z={key.z} style={`transform: translateX(${key.x}px) translateY(${key.y}px) translateZ(${key.z}px) rotateZ(${key.angle}deg); transform-style: preserve-3d; animation-delay: ${key.delay};`}>
+            <div class="absolute animate-float-idle mechanical-key-wrapper" style={`transform: translate(${key.x}px, ${key.y}px) rotate(${key.angle}deg); animation-delay: ${key.delay};`}>
               
-              <!-- Press interaction wrapper -->
-              <div class="relative w-18 h-18 sm:w-20 sm:h-20 xl:w-24 xl:h-24 transition-transform duration-75 ease-out cursor-pointer group key-press-target" style="transform-style: preserve-3d;">
+              <!-- 2.5D Isometric Mechanical Key Box -->
+              <div class={`relative w-13 h-13 sm:w-15 sm:h-15 xl:w-17 xl:h-17 rounded-xl border-3 border-[#0A0F14] ${key.color} flex items-center justify-center cursor-pointer key-box select-none`} style={`--side-col: ${key.sideColor};`}>
                 
-                <!-- Solid Black Base (Bottom 12 layers) -->
-                {Array.from({ length: 12 }).map((_, i) => (
-                  <div class="absolute inset-0 bg-[#0A0F14] rounded-xl" style={`transform: translateZ(${i - 28}px);`}></div>
-                ))}
-                
-                <!-- Solid Colored Side Extrusion (Middle 24 layers with shading gradient) -->
-                {Array.from({ length: 24 }).map((_, i) => (
-                  <div class={`absolute inset-0 ${key.sideColor} rounded-xl`} style={`transform: translateZ(${i - 16}px); filter: brightness(${0.65 + (i * 0.015)});`}></div>
-                ))}
+                <!-- Inner bevel highlight -->
+                <div class="absolute inset-0 rounded-lg shadow-[inset_0_3px_0_rgba(255,255,255,0.35),inset_0_-3px_0_rgba(0,0,0,0.12)] pointer-events-none"></div>
 
-                <!-- Top Cap (Layer Z=8) -->
-                <div class={`absolute inset-0 ${key.color} border-4 border-[#0A0F14] rounded-xl flex items-center justify-center shadow-[inset_0_4px_0_rgba(255,255,255,0.25),inset_0_-4px_0_rgba(0,0,0,0.12)] group-hover:brightness-110 transition-all`} style="transform: translateZ(8px);">
-                  <!-- Counter-rotate text so it faces up cleanly -->
-                  <span class="font-heading font-black text-2xl sm:text-3xl xl:text-4xl text-[#0A0F14] drop-shadow-sm select-none" style={`transform: rotateZ(${40 - key.angle}deg);`}>{key.letter}</span>
-                </div>
-
+                <!-- Counter-rotated label so text faces up cleanly -->
+                <span class="font-heading font-black text-lg sm:text-xl xl:text-2xl text-[#0A0F14] drop-shadow-sm pointer-events-none" style={`transform: rotate(${-key.angle}deg);`}>{key.letter}</span>
               </div>
+
             </div>
           ))}
           
@@ -190,7 +222,6 @@ const heroKeys = [
         delay: 0.2
       });
 
-      // Magnetic Distortion & Micro-Bounce on Hover
       chars.forEach((char) => {
         char.addEventListener('mouseenter', () => {
           gsap.to(char, {
@@ -247,59 +278,48 @@ const heroKeys = [
       setTimeout(typeEffect, speed);
     }
 
-    // Proximity Mouse Press & Ghost Typing Script
+    // Lightweight Proximity Typing & Ghost Typing Script (0 Lag, 60FPS)
     const heroSection = document.getElementById('hero');
-    const keys = document.querySelectorAll('.mechanical-key-wrapper');
+    const keyBoxes = document.querySelectorAll('.key-box');
 
-    if (heroSection && keys.length > 0) {
-      // 1. Proximity Typing Press Effect (Keys press down as mouse approaches)
+    if (heroSection && keyBoxes.length > 0) {
+      let ticking = false;
+
       heroSection.addEventListener('mousemove', (e) => {
-        keys.forEach((keyEl) => {
-          const rect = keyEl.getBoundingClientRect();
-          const keyCenterX = rect.left + rect.width / 2;
-          const keyCenterY = rect.top + rect.height / 2;
+        if (!ticking) {
+          window.requestAnimationFrame(() => {
+            keyBoxes.forEach((keyEl) => {
+              const rect = keyEl.getBoundingClientRect();
+              const keyCenterX = rect.left + rect.width / 2;
+              const keyCenterY = rect.top + rect.height / 2;
 
-          const dist = Math.hypot(e.clientX - keyCenterX, e.clientY - keyCenterY);
-          const pressThreshold = 110; // Proximity radius in pixels
+              const dist = Math.hypot(e.clientX - keyCenterX, e.clientY - keyCenterY);
 
-          const innerTarget = keyEl.querySelector('.key-press-target') as HTMLElement | null;
-
-          if (dist < pressThreshold && innerTarget) {
-            const pressFactor = Math.pow(1 - dist / pressThreshold, 1.4);
-            const pressZ = -22 * pressFactor;
-            innerTarget.style.transform = `translateZ(${pressZ}px)`;
-            innerTarget.classList.add('brightness-110');
-          } else if (innerTarget) {
-            innerTarget.style.transform = `translateZ(0px)`;
-            innerTarget.classList.remove('brightness-110');
-          }
-        });
+              if (dist < 80) {
+                keyEl.classList.add('key-pressed');
+              } else {
+                keyEl.classList.remove('key-pressed');
+              }
+            });
+            ticking = false;
+          });
+          ticking = true;
+        }
       });
 
       heroSection.addEventListener('mouseleave', () => {
-        keys.forEach((keyEl) => {
-          const innerTarget = keyEl.querySelector('.key-press-target') as HTMLElement | null;
-          if (innerTarget) {
-            innerTarget.style.transform = `translateZ(0px)`;
-            innerTarget.classList.remove('brightness-110');
-          }
-        });
+        keyBoxes.forEach((keyEl) => keyEl.classList.remove('key-pressed'));
       });
 
-      // 2. Continuous Ghost Typing Animation
+      // Ghost Typist Sequence Loop
       setInterval(() => {
-        const randomIdx = Math.floor(Math.random() * keys.length);
-        const targetKey = keys[randomIdx];
-        const innerTarget = targetKey?.querySelector('.key-press-target') as HTMLElement | null;
-        if (innerTarget && !innerTarget.matches(':hover')) {
-          innerTarget.style.transform = 'translateZ(-18px)';
-          innerTarget.classList.add('brightness-125');
-          setTimeout(() => {
-            innerTarget.style.transform = 'translateZ(0px)';
-            innerTarget.classList.remove('brightness-125');
-          }, 150);
+        const randomIdx = Math.floor(Math.random() * keyBoxes.length);
+        const targetKey = keyBoxes[randomIdx];
+        if (targetKey && !targetKey.matches(':hover')) {
+          targetKey.classList.add('key-pressed');
+          setTimeout(() => targetKey.classList.remove('key-pressed'), 180);
         }
-      }, 500);
+      }, 400);
     }
 
     typeEffect();
