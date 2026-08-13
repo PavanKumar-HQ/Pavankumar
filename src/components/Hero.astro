@@ -1,29 +1,43 @@
 ---
 const heroKeys = [
-  // Top Row
+  // Top Cluster (Layer 1)
   { letter: "P", color: "bg-[#FF6B22]", sideColor: "bg-[#c94a0b]", x: -140, y: -160, z: 15, angle: -15 },
   { letter: "A", color: "bg-[#DCC5FF]", sideColor: "bg-[#9a7bc7]", x: -10, y: -180, z: -5, angle: 10 },
   { letter: "V", color: "bg-[#54D69A]", sideColor: "bg-[#329668]", x: 130, y: -150, z: 25, angle: -5 },
   
-  // Upper Middle
+  // Upper Middle (Layer 2)
   { letter: "A", color: "bg-[#FFD83D]", sideColor: "bg-[#d9ae18]", x: -90, y: -60, z: -10, angle: 20 },
   { letter: "N", color: "bg-[#4A9EFF]", sideColor: "bg-[#266cc7]", x: 50, y: -70, z: 10, angle: -8 },
   { letter: "</>", color: "bg-[#F3F1EB]", sideColor: "bg-[#c8c6c0]", x: 170, y: -50, z: 5, angle: 12 },
 
-  // Center / Lower Middle
-  { letter: "B", color: "bg-[#54D69A]", sideColor: "bg-[#329668]", x: -150, y: 50, z: 0, angle: -10 },
+  // Center / Lower Middle (Layer 3)
+  { letter: "K", color: "bg-[#54D69A]", sideColor: "bg-[#329668]", x: -150, y: 50, z: 0, angle: -10 },
   { letter: "U", color: "bg-[#FFD83D]", sideColor: "bg-[#d9ae18]", x: -20, y: 40, z: 35, angle: 5 },
-  { letter: "I", color: "bg-[#4A9EFF]", sideColor: "bg-[#266cc7]", x: 110, y: 60, z: -15, angle: -20 },
+  { letter: "M", color: "bg-[#4A9EFF]", sideColor: "bg-[#266cc7]", x: 110, y: 60, z: -15, angle: -20 },
   
-  // Bottom Cluster
-  { letter: "L", color: "bg-[#FF6B22]", sideColor: "bg-[#c94a0b]", x: -100, y: 160, z: 20, angle: 15 },
-  { letter: "D", color: "bg-[#DCC5FF]", sideColor: "bg-[#9a7bc7]", x: 30, y: 150, z: -5, angle: -12 },
+  // Bottom Cluster (Layer 4)
+  { letter: "A", color: "bg-[#FF6B22]", sideColor: "bg-[#c94a0b]", x: -100, y: 160, z: 20, angle: 15 },
+  { letter: "R", color: "bg-[#DCC5FF]", sideColor: "bg-[#9a7bc7]", x: 30, y: 150, z: -5, angle: -12 },
   { letter: "↵", color: "bg-[#F3F1EB]", sideColor: "bg-[#c8c6c0]", x: 160, y: 170, z: 15, angle: 8 },
 
-  // Spilled off edges
+  // Spilled left edge
   { letter: "⌘", color: "bg-[#F3F1EB]", sideColor: "bg-[#c8c6c0]", x: -190, y: -50, z: -25, angle: -25 },
   { letter: "★", color: "bg-[#FFD83D]", sideColor: "bg-[#d9ae18]", x: -180, y: 150, z: 5, angle: 30 },
-].map((k, i) => ({ ...k, delay: `${i * 0.1}s` }));
+  { letter: "B", color: "bg-[#4A9EFF]", sideColor: "bg-[#266cc7]", x: -220, y: 50, z: 10, angle: -15 },
+  { letter: "W", color: "bg-[#54D69A]", sideColor: "bg-[#329668]", x: -240, y: -100, z: -10, angle: 25 },
+
+  // Spilled right edge
+  { letter: "E", color: "bg-[#FFD83D]", sideColor: "bg-[#d9ae18]", x: 250, y: 10, z: -20, angle: -30 },
+  { letter: "B", color: "bg-[#4A9EFF]", sideColor: "bg-[#266cc7]", x: 230, y: -120, z: 30, angle: 18 },
+  { letter: "D", color: "bg-[#FF6B22]", sideColor: "bg-[#c94a0b]", x: 260, y: 110, z: -5, angle: -10 },
+  
+  // Spilled Top/Bottom Edges
+  { letter: "I", color: "bg-[#DCC5FF]", sideColor: "bg-[#9a7bc7]", x: -80, y: -250, z: 20, angle: -22 },
+  { letter: "L", color: "bg-[#54D69A]", sideColor: "bg-[#329668]", x: 60, y: -260, z: -15, angle: 15 },
+  { letter: "⌥", color: "bg-[#F3F1EB]", sideColor: "bg-[#c8c6c0]", x: -20, y: 240, z: -10, angle: -5 },
+  { letter: "⇧", color: "bg-[#F3F1EB]", sideColor: "bg-[#c8c6c0]", x: 100, y: 260, z: 25, angle: 20 },
+  { letter: "⎋", color: "bg-[#FFD83D]", sideColor: "bg-[#d9ae18]", x: -120, y: 250, z: 5, angle: -18 },
+].map((k, i) => ({ ...k, delay: `${i * 0.05}s` }));
 ---
 
 <style>
