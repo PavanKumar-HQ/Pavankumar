@@ -66,17 +66,36 @@
       </span>
     </h1>
 
-    <!-- CSS 3D Interactive Mechanical Key -->
-    <div class="hidden lg:flex absolute right-[10%] top-[30%] z-0 items-center justify-center pointer-events-none" style="perspective: 1200px;">
-      <div id="css-3d-key" class="relative group cursor-pointer pointer-events-auto transition-transform duration-100 ease-out will-change-transform" style="transform: rotateX(20deg) rotateY(-25deg); transform-style: preserve-3d;">
-        <!-- Base Shadow -->
-        <div class="absolute inset-0 bg-[#0A0F14] rounded-xl" style="transform: translateZ(-10px) translateY(18px) translateX(-8px);"></div>
+    <!-- CSS 3D Interactive Mechanical Key Cluster -->
+    <div class="hidden lg:flex absolute right-[5%] top-[25%] z-0 items-center justify-center pointer-events-none" style="perspective: 1200px;">
+      <div id="css-3d-key-cluster" class="relative group cursor-pointer pointer-events-auto transition-transform duration-100 ease-out will-change-transform w-80 h-80" style="transform: rotateX(25deg) rotateY(-20deg) rotateZ(10deg); transform-style: preserve-3d;">
         
-        <!-- Key Cap -->
-        <div class="relative bg-[#FFD83D] border-4 border-[#0A0F14] rounded-xl w-40 h-40 flex flex-col items-center justify-center shadow-[inset_0_-10px_0_rgba(10,15,20,0.2)] group-hover:translate-y-2 group-hover:-translate-x-1 group-active:translate-y-4 group-active:-translate-x-2 transition-transform duration-150" style="transform: translateZ(20px);">
-          <div class="absolute top-3 left-4 w-3 h-3 rounded-full bg-[#0A0F14]/20"></div>
-          <span class="font-heading font-black text-4xl text-[#0A0F14] tracking-widest mt-2">CTRL</span>
+        <!-- Key 1: W (Purple) -->
+        <div class="absolute left-0 bottom-4 w-28 h-28 transition-transform duration-150 hover:-translate-y-2 hover:translate-x-2" style="transform-style: preserve-3d; transform: translateZ(20px);">
+          <!-- Thick Black Isometric Base Extrusion -->
+          <div class="absolute inset-0 bg-[#0A0F14] rounded-2xl" style="transform: translateZ(-15px) translateY(20px) translateX(-15px);"></div>
+          <!-- Key Cap -->
+          <div class="absolute inset-0 bg-[#DCC5FF] border-[5px] border-[#0A0F14] rounded-2xl flex items-center justify-center shadow-[inset_0_-8px_0_rgba(10,15,20,0.25)]" style="transform: translateZ(0px);">
+            <span class="font-heading font-black text-5xl text-[#0A0F14] drop-shadow-sm">W</span>
+          </div>
         </div>
+
+        <!-- Key 2: E (Green) -->
+        <div class="absolute left-24 top-8 w-28 h-28 transition-transform duration-150 hover:-translate-y-2 hover:translate-x-2" style="transform-style: preserve-3d; transform: translateZ(50px);">
+          <div class="absolute inset-0 bg-[#0A0F14] rounded-2xl" style="transform: translateZ(-15px) translateY(20px) translateX(-15px);"></div>
+          <div class="absolute inset-0 bg-[#54D69A] border-[5px] border-[#0A0F14] rounded-2xl flex items-center justify-center shadow-[inset_0_-8px_0_rgba(10,15,20,0.25)]" style="transform: translateZ(0px);">
+            <span class="font-heading font-black text-5xl text-[#0A0F14] drop-shadow-sm">E</span>
+          </div>
+        </div>
+
+        <!-- Key 3: B (Yellow) -->
+        <div class="absolute right-0 bottom-24 w-28 h-28 transition-transform duration-150 hover:-translate-y-2 hover:translate-x-2" style="transform-style: preserve-3d; transform: translateZ(35px);">
+          <div class="absolute inset-0 bg-[#0A0F14] rounded-2xl" style="transform: translateZ(-15px) translateY(20px) translateX(-15px);"></div>
+          <div class="absolute inset-0 bg-[#FFD83D] border-[5px] border-[#0A0F14] rounded-2xl flex items-center justify-center shadow-[inset_0_-8px_0_rgba(10,15,20,0.25)]" style="transform: translateZ(0px);">
+            <span class="font-heading font-black text-5xl text-[#0A0F14] drop-shadow-sm">B</span>
+          </div>
+        </div>
+
       </div>
     </div>
 
@@ -169,25 +188,25 @@
       setTimeout(typeEffect, speed);
     }
 
-    // CSS 3D Key Hover Effect
-    const key3D = document.getElementById('css-3d-key');
+    // CSS 3D Key Cluster Hover Effect
+    const keyCluster = document.getElementById('css-3d-key-cluster');
     const heroSection = document.getElementById('hero');
-    if (key3D && heroSection) {
+    if (keyCluster && heroSection) {
       heroSection.addEventListener('mousemove', (e) => {
-        const rect = key3D.getBoundingClientRect();
+        const rect = keyCluster.getBoundingClientRect();
         const centerX = rect.left + rect.width / 2;
         const centerY = rect.top + rect.height / 2;
         
         const deltaX = e.clientX - centerX;
         const deltaY = e.clientY - centerY;
         
-        const rotateX = Math.max(-40, Math.min(40, -deltaY / 15));
-        const rotateY = Math.max(-40, Math.min(40, deltaX / 15));
+        const rotateX = Math.max(-20, Math.min(20, -deltaY / 25));
+        const rotateY = Math.max(-20, Math.min(20, deltaX / 25));
         
-        key3D.style.transform = `rotateX(${rotateX + 15}deg) rotateY(${rotateY - 15}deg)`;
+        keyCluster.style.transform = `rotateX(${rotateX + 25}deg) rotateY(${rotateY - 20}deg) rotateZ(10deg)`;
       });
       heroSection.addEventListener('mouseleave', () => {
-        key3D.style.transform = `rotateX(20deg) rotateY(-25deg)`;
+        keyCluster.style.transform = `rotateX(25deg) rotateY(-20deg) rotateZ(10deg)`;
       });
     }
 
