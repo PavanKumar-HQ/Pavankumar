@@ -149,7 +149,7 @@
 }
 
 @keyframes marquee {
-  0% { transform: translateX(0%); }
+  0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
 
@@ -160,6 +160,17 @@
 }
 
 .animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Seamless ticker: parent track holds 2 identical sets */
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+
+.ticker-track:hover {
   animation-play-state: paused;
 }
 
