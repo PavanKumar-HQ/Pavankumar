@@ -97,13 +97,13 @@ const heroKeys = [
     </h1>
 
     <!-- Mechanical Keyboard Grid (2.5D Isometric Style) -->
-    <div id="keyboard-cluster" class="hidden lg:grid absolute right-[2%] top-1/2 -translate-y-1/2 w-[480px] h-[480px] grid-cols-3 grid-rows-3 gap-6 pointer-events-auto origin-center transition-transform duration-200 ease-out z-0">
+    <div id="keyboard-cluster" class="hidden lg:grid absolute right-[2%] top-[55%] xl:top-1/2 -translate-y-1/2 w-[380px] h-[380px] xl:w-[480px] xl:h-[480px] grid-cols-3 grid-rows-3 gap-4 xl:gap-6 pointer-events-auto origin-center transition-transform duration-200 ease-out z-0">
       {heroKeys.map((key) => (
         <div class="flex items-center justify-center animate-float-idle" style={`animation-delay: ${key.delay}; --rot: ${key.rotate};`}>
-          <div class={`relative w-24 h-24 rounded-2xl border-4 border-[#0A0F14] ${key.color} flex items-center justify-center cursor-pointer key-mechanical`} style={`--shadow-color: ${key.shadowColor};`}>
+          <div class={`relative w-20 h-20 xl:w-24 xl:h-24 rounded-xl xl:rounded-2xl border-4 border-[#0A0F14] ${key.color} flex items-center justify-center cursor-pointer key-mechanical`} style={`--shadow-color: ${key.shadowColor};`}>
             <!-- Inner highlight for 3D bevel -->
-            <div class="absolute inset-0 rounded-xl shadow-[inset_0_4px_0_rgba(255,255,255,0.25),inset_0_-4px_0_rgba(0,0,0,0.15)] pointer-events-none"></div>
-            <span class="font-heading font-black text-4xl text-[#0A0F14] drop-shadow-sm">{key.letter}</span>
+            <div class="absolute inset-0 rounded-lg xl:rounded-xl shadow-[inset_0_4px_0_rgba(255,255,255,0.25),inset_0_-4px_0_rgba(0,0,0,0.15)] pointer-events-none"></div>
+            <span class="font-heading font-black text-3xl xl:text-4xl text-[#0A0F14] drop-shadow-sm">{key.letter}</span>
           </div>
         </div>
       ))}
