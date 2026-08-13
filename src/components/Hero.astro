@@ -89,20 +89,20 @@ const sideViewKeys = [
       </h1>
     </div>
 
-    <!-- Right Column: Diagonal Top-Right Isometric Side-View Mechanical Key Grid -->
-    <div class="hidden lg:grid lg:col-span-5 grid-cols-4 gap-4 xl:gap-5 items-center justify-items-center w-full select-none z-0 -rotate-12 transform-gpu">
+    <!-- Right Column: Straight Aligned Top-Right Isometric Side-View Mechanical Key Grid -->
+    <div id="keyboard-cluster" class="hidden lg:grid lg:col-span-5 grid-cols-4 gap-4 xl:gap-5 items-center justify-items-center w-full select-none z-0">
       {sideViewKeys.map((k) => (
         <div class="group cursor-pointer select-none">
-          <div class="relative w-16 h-16 sm:w-18 sm:h-18 xl:w-22 xl:h-22">
-            <!-- Layer 1: Solid Black Base Shadow (Steep Deeper Offset) -->
-            <div class="absolute inset-0 bg-[#0A0F14] rounded-2xl translate-x-5 translate-y-5"></div>
+          <div class="relative w-18 h-18 sm:w-20 sm:h-20 xl:w-24 xl:h-24">
+            <!-- Layer 1: Solid Black Base Shadow (Offset to Bottom-Right) -->
+            <div class="absolute inset-0 bg-[#0A0F14] rounded-2xl translate-x-4 translate-y-4"></div>
             
-            <!-- Layer 2: Right & Bottom 3D Side Slope Wall (Deeper 3D Angle) -->
-            <div class={`absolute inset-0 ${k.sideBg} border-4 border-[#0A0F14] rounded-2xl translate-x-2.5 translate-y-2.5`}></div>
+            <!-- Layer 2: Right & Bottom 3D Side Slope Wall (Steep 3D Angle) -->
+            <div class={`absolute inset-0 ${k.sideBg} border-4 border-[#0A0F14] rounded-2xl translate-x-2 translate-y-2`}></div>
             
-            <!-- Layer 3: Top Keycap Face (Depresses along diagonal 3D angle) -->
-            <div class={`relative w-full h-full ${k.topBg} border-4 border-[#0A0F14] rounded-2xl flex items-center justify-center translate-x-0 translate-y-0 group-hover:translate-x-1.5 group-hover:translate-y-1.5 group-active:translate-x-2.5 group-active:translate-y-2.5 transition-transform duration-150`}>
-              <span class={`font-heading font-black ${k.textColor} ${k.isIcon ? 'text-lg xl:text-xl font-mono' : 'text-2xl xl:text-3xl'}`}>
+            <!-- Layer 3: Top Keycap Face (Depresses towards bottom-right on hover) -->
+            <div class={`relative w-full h-full ${k.topBg} border-4 border-[#0A0F14] rounded-2xl flex items-center justify-center translate-x-0 translate-y-0 group-hover:translate-x-1 group-hover:translate-y-1 group-active:translate-x-2 group-active:translate-y-2 transition-transform duration-150`}>
+              <span class={`font-heading font-black ${k.textColor} ${k.isIcon ? 'text-xl xl:text-2xl font-mono' : 'text-3xl xl:text-4xl'}`}>
                 {k.letter}
               </span>
             </div>
