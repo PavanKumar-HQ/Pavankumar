@@ -1,35 +1,24 @@
 ---
-const vectorKeys = [
+const neoKeys = [
   // Row 1
-  { id: "code", letter: "</>", rot: "-2deg", topStart: "#FFFFFF", topEnd: "#E5E7EB", sideStart: "#9CA3AF", sideEnd: "#4B5563", delay: "0.1s", isIcon: true, textColor: "#0A0F14" },
-  { id: "P", letter: "P", rot: "1deg", topStart: "#FF6B22", topEnd: "#FF4500", sideStart: "#C93B00", sideEnd: "#802600", delay: "0.2s", textColor: "#0A0F14" },
-  { id: "A1", letter: "A", rot: "-1deg", topStart: "#4A9EFF", topEnd: "#2563EB", sideStart: "#1D4ED8", sideEnd: "#1E3A8A", delay: "0.3s", textColor: "#0A0F14" },
-  { id: "V", letter: "V", rot: "2deg", topStart: "#54D69A", topEnd: "#10B981", sideStart: "#059669", sideEnd: "#064E3B", delay: "0.4s", textColor: "#0A0F14" },
+  { letter: "</>", bg: "bg-white", textColor: "text-[#0A0F14]", isIcon: true },
+  { letter: "P", bg: "bg-[#FF6B22]", textColor: "text-[#0A0F14]" },
+  { letter: "A", bg: "bg-[#4A9EFF]", textColor: "text-[#0A0F14]" },
+  { letter: "V", bg: "bg-[#54D69A]", textColor: "text-[#0A0F14]" },
 
   // Row 2
-  { id: "A2", letter: "A", rot: "2deg", topStart: "#FFD83D", topEnd: "#F59E0B", sideStart: "#D97706", sideEnd: "#78350F", delay: "0.15s", textColor: "#0A0F14" },
-  { id: "N", letter: "N", rot: "-2deg", topStart: "#DCC5FF", topEnd: "#A78BFA", sideStart: "#7C3AED", sideEnd: "#4C1D95", delay: "0.25s", textColor: "#0A0F14" },
-  { id: "K", letter: "K", rot: "1deg", topStart: "#FF6B22", topEnd: "#FF4500", sideStart: "#C93B00", sideEnd: "#802600", delay: "0.35s", textColor: "#0A0F14" },
-  { id: "U", letter: "U", rot: "-1deg", topStart: "#54D69A", topEnd: "#10B981", sideStart: "#059669", sideEnd: "#064E3B", delay: "0.45s", textColor: "#0A0F14" },
+  { letter: "A", bg: "bg-[#FFD83D]", textColor: "text-[#0A0F14]" },
+  { letter: "N", bg: "bg-[#DCC5FF]", textColor: "text-[#0A0F14]" },
+  { letter: "K", bg: "bg-[#FF6B22]", textColor: "text-[#0A0F14]" },
+  { letter: "U", bg: "bg-[#54D69A]", textColor: "text-[#0A0F14]" },
 
   // Row 3
-  { id: "M", letter: "M", rot: "-1deg", topStart: "#4A9EFF", topEnd: "#2563EB", sideStart: "#1D4ED8", sideEnd: "#1E3A8A", delay: "0.2s", textColor: "#0A0F14" },
-  { id: "bolt", letter: "⚡", rot: "2deg", topStart: "#FF5E7E", topEnd: "#E11D48", sideStart: "#9F1239", sideEnd: "#4C0519", delay: "0.3s", isIcon: true, textColor: "#FFFFFF" },
-  { id: "cmd", letter: "⌘", rot: "-2deg", topStart: "#374151", topEnd: "#1F2937", sideStart: "#111827", sideEnd: "#030712", delay: "0.4s", isIcon: true, textColor: "#FFFFFF" },
-  { id: "dots", letter: "...", rot: "1deg", topStart: "#FEF3C7", topEnd: "#FDE68A", sideStart: "#D97706", sideEnd: "#78350F", delay: "0.5s", isIcon: true, textColor: "#0A0F14" },
+  { letter: "M", bg: "bg-[#4A9EFF]", textColor: "text-[#0A0F14]" },
+  { letter: "⚡", bg: "bg-[#FFD83D]", textColor: "text-[#0A0F14]", isIcon: true },
+  { letter: "⌘", bg: "bg-[#0A0F14]", textColor: "text-[#F3F1EB]", isIcon: true },
+  { letter: "...", bg: "bg-white", textColor: "text-[#0A0F14]", isIcon: true },
 ];
 ---
-
-<style>
-  @keyframes float-idle {
-    0% { transform: translateY(0px) rotate(var(--rot, 0deg)); }
-    50% { transform: translateY(-6px) rotate(var(--rot, 0deg)); }
-    100% { transform: translateY(0px) rotate(var(--rot, 0deg)); }
-  }
-  .animate-float-idle {
-    animation: float-idle 4s ease-in-out infinite;
-  }
-</style>
 
 <section id="hero" class="relative w-full min-h-[90vh] flex flex-col justify-between p-6 sm:p-12 lg:p-16 border-b-3 border-[#0A0F14] overflow-hidden bg-[#F3F1EB] bg-grid-pattern">
   
@@ -100,53 +89,15 @@ const vectorKeys = [
       </h1>
     </div>
 
-    <!-- Right Column: Aligned 4x3 Vector SVG 3D Mechanical Key Grid -->
-    <div id="keyboard-cluster" class="hidden lg:grid lg:col-span-5 grid-cols-4 gap-3 xl:gap-4 items-center justify-items-center w-full select-none transition-transform duration-300 ease-out z-0">
-      {vectorKeys.map((k) => (
-        <div 
-          class="group cursor-pointer transition-all duration-300 ease-out hover:scale-115 hover:z-50 animate-float-idle select-none"
-          style={`animation-delay: ${k.delay}; --rot: ${k.rot};`}
-        >
-          <svg viewBox="0 0 120 120" class="w-18 h-18 sm:w-20 sm:h-20 xl:w-24 xl:h-24 drop-shadow-xl overflow-visible">
-            <defs>
-              <linearGradient id={`top-grad-${k.id}`} x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color={k.topStart} />
-                <stop offset="100%" stop-color={k.topEnd} />
-              </linearGradient>
-              <linearGradient id={`side-grad-${k.id}`} x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stop-color={k.sideStart} />
-                <stop offset="100%" stop-color={k.sideEnd} />
-              </linearGradient>
-            </defs>
-
-            <!-- 1. Solid Black Base Extrusion Shadow -->
-            <rect x="10" y="16" width="88" height="88" rx="22" fill="#0A0F14" />
-
-            <!-- 2. 3D Gradient Side Wall Extrusion -->
-            <rect x="5" y="9" width="88" height="88" rx="22" fill={`url(#side-grad-${k.id})`} stroke="#0A0F14" stroke-width="4" stroke-linejoin="round" />
-
-            <!-- 3. Top Keycap Face -->
-            <g class="transition-transform duration-150 ease-out group-hover:translate-x-[-3px] group-hover:translate-y-[-3px]">
-              <rect x="0" y="0" width="88" height="88" rx="22" fill={`url(#top-grad-${k.id})`} stroke="#0A0F14" stroke-width="4" stroke-linejoin="round" />
-              
-              <!-- 4. Glossy Bevel Inner Reflection -->
-              <rect x="4" y="4" width="80" height="80" rx="18" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-opacity="0.4" />
-
-              <!-- 5. Key Letter / Icon Text -->
-              <text 
-                x="44" 
-                y="48" 
-                font-family="Outfit, sans-serif" 
-                font-weight="900" 
-                font-size={k.isIcon ? "26" : "38"} 
-                fill={k.textColor} 
-                text-anchor="middle" 
-                dominant-baseline="central"
-              >
-                {k.letter}
-              </text>
-            </g>
-          </svg>
+    <!-- Right Column: Aligned Pure Neo-Brutalist 4x3 Mechanical Key Grid -->
+    <div class="hidden lg:grid lg:col-span-5 grid-cols-4 gap-4 xl:gap-5 items-center justify-items-center w-full select-none z-0">
+      {neoKeys.map((k) => (
+        <div class="group cursor-pointer select-none">
+          <div class={`relative w-18 h-18 sm:w-20 sm:h-20 xl:w-24 xl:h-24 ${k.bg} border-4 border-[#0A0F14] rounded-2xl flex items-center justify-center shadow-[6px_6px_0px_0px_#0A0F14] hover:translate-x-1 hover:translate-y-1 hover:shadow-[2px_2px_0px_0px_#0A0F14] active:translate-x-1.5 active:translate-y-1.5 active:shadow-none transition-all duration-150`}>
+            <span class={`font-heading font-black ${k.textColor} ${k.isIcon ? 'text-xl xl:text-2xl font-mono' : 'text-3xl xl:text-4xl'}`}>
+              {k.letter}
+            </span>
+          </div>
         </div>
       ))}
     </div>
@@ -239,28 +190,6 @@ const vectorKeys = [
       }
 
       setTimeout(typeEffect, speed);
-    }
-
-    // Parallax Cluster Hover Effect
-    const keyCluster = document.getElementById('keyboard-cluster');
-    const heroSection = document.getElementById('hero');
-    if (keyCluster && heroSection) {
-      heroSection.addEventListener('mousemove', (e) => {
-        const rect = heroSection.getBoundingClientRect();
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-        
-        const deltaX = (e.clientX - rect.left) - centerX;
-        const deltaY = (e.clientY - rect.top) - centerY;
-        
-        const moveX = -deltaX / 35;
-        const moveY = -deltaY / 35;
-        
-        keyCluster.style.transform = `translate(${moveX}px, ${moveY}px)`;
-      });
-      heroSection.addEventListener('mouseleave', () => {
-        keyCluster.style.transform = `translate(0px, 0px)`;
-      });
     }
 
     typeEffect();
