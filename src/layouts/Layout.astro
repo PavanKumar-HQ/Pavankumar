@@ -106,8 +106,8 @@ const {
     <!-- Custom Neo-Brutalist Cursor Follower -->
     <div id="cursor" class="custom-cursor hidden md:block"></div>
 
-    <!-- Entire Website Main Camera Wrapper Container with 3D Perspective -->
-    <div id="main-wrapper" class="w-full origin-center scale-[1.25] blur-[10px] opacity-0 transition-all duration-300 pointer-events-none transform-gpu" style="perspective: 1200px;">
+    <!-- Entire Website Main Wrapper Container -->
+    <div id="main-wrapper" class="w-full origin-center scale-[1.15] opacity-0 transition-opacity duration-300 pointer-events-none">
       <slot />
     </div>
     
@@ -118,7 +118,7 @@ const {
 
       gsap.registerPlugin(ScrollTrigger);
 
-      // Preloader Simulation & 3D Cinematic Camera Zoom Entrance
+      // Preloader Simulation & Silky Smooth Camera Zoom-Out Entrance
       const preloader = document.getElementById('preloader');
       const preloaderCard = document.getElementById('preloader-card');
       const loadingBarFill = document.getElementById('loading-bar-fill');
@@ -179,21 +179,17 @@ const {
           if (progress >= 100) {
             clearInterval(loadInterval);
 
-            // 3D Cinematic Camera Zoom-In & Grand Pull-Back Zoom-Out Reveal
+            // Silky Smooth Preloader Exit & Website Zoom-Out Sequence
             const tl = gsap.timeline();
 
-            // Phase 1: Preloader Card Dip & Burst
+            // 1. Preloader Card Fades & Scales Up Smoothly
             tl.to(preloaderCard, {
-              scale: 0.88,
-              duration: 0.2,
-              ease: 'power2.in'
-            })
-            .to(preloaderCard, {
-              scale: 1.45,
+              scale: 1.15,
               opacity: 0,
               duration: 0.35,
-              ease: 'power3.in'
+              ease: 'power2.in'
             })
+            // 2. Preloader Background Overlay Fades Out
             .to(preloader, {
               opacity: 0,
               duration: 0.35,
@@ -203,22 +199,13 @@ const {
               }
             }, '-=0.2')
 
-            // Phase 2: ENTIRE WEBSITE CINEMATIC CAMERA ZOOM IN (Push Forward)
-            .to(mainWrapper, {
-              scale: 1.32,
-              opacity: 0.6,
-              duration: 0.3,
-              ease: 'power2.in'
-            }, '-=0.55')
-
-            // Phase 3: GRAND CINEMATIC CAMERA PULL-BACK ZOOM OUT (From 1.32 -> 0.97 -> 1.0)
+            // 3. SILKY SMOOTH WEBSITE ZOOM-OUT REVEAL (From scale 1.15 down to 1.0)
             .to(mainWrapper, {
               scale: 1.0,
-              filter: 'blur(0px)',
               opacity: 1,
-              duration: 1.3,
-              ease: 'power4.out'
-            }, '-=0.25');
+              duration: 1.0,
+              ease: 'power3.out'
+            }, '-=0.3');
           }
         }, 35);
       }
