@@ -1,14 +1,14 @@
 ---
 const heroKeys = [
-  { letter: "B", color: "bg-[#4A9EFF]", shadowColor: "#266cc7", rotate: "-6deg", delay: "0.1s" },
-  { letter: "U", color: "bg-[#DCC5FF]", shadowColor: "#9a7bc7", rotate: "3deg", delay: "0.3s" },
-  { letter: "I", color: "bg-[#54D69A]", shadowColor: "#329668", rotate: "-2deg", delay: "0.5s" },
-  { letter: "L", color: "bg-[#FFD83D]", shadowColor: "#d9ae18", rotate: "5deg", delay: "0.2s" },
-  { letter: "D", color: "bg-[#FF6B22]", shadowColor: "#c94a0b", rotate: "-4deg", delay: "0.4s" },
-  { letter: "↵", color: "bg-[#F3F1EB]", shadowColor: "#c8c6c0", rotate: "2deg", delay: "0.6s" },
-  { letter: "W", color: "bg-[#54D69A]", shadowColor: "#329668", rotate: "-5deg", delay: "0.15s" },
-  { letter: "E", color: "bg-[#FFD83D]", shadowColor: "#d9ae18", rotate: "4deg", delay: "0.35s" },
-  { letter: "B", color: "bg-[#4A9EFF]", shadowColor: "#266cc7", rotate: "-3deg", delay: "0.55s" },
+  { letter: "B", color: "bg-[#4A9EFF]", shadowColor: "#266cc7", rotate: "-10deg", delay: "0.1s", top: "5%", left: "10%", z: "z-10" },
+  { letter: "U", color: "bg-[#DCC5FF]", shadowColor: "#9a7bc7", rotate: "8deg", delay: "0.3s", top: "10%", left: "45%", z: "z-20" },
+  { letter: "I", color: "bg-[#54D69A]", shadowColor: "#329668", rotate: "-5deg", delay: "0.5s", top: "8%", left: "75%", z: "z-10" },
+  { letter: "L", color: "bg-[#FFD83D]", shadowColor: "#d9ae18", rotate: "12deg", delay: "0.2s", top: "40%", left: "2%", z: "z-30" },
+  { letter: "D", color: "bg-[#FF6B22]", shadowColor: "#c94a0b", rotate: "-8deg", delay: "0.4s", top: "35%", left: "38%", z: "z-40" },
+  { letter: "↵", color: "bg-[#F3F1EB]", shadowColor: "#c8c6c0", rotate: "5deg", delay: "0.6s", top: "42%", left: "72%", z: "z-30" },
+  { letter: "W", color: "bg-[#54D69A]", shadowColor: "#329668", rotate: "-12deg", delay: "0.15s", top: "72%", left: "15%", z: "z-50" },
+  { letter: "E", color: "bg-[#FFD83D]", shadowColor: "#d9ae18", rotate: "10deg", delay: "0.35s", top: "78%", left: "45%", z: "z-40" },
+  { letter: "B", color: "bg-[#4A9EFF]", shadowColor: "#266cc7", rotate: "-4deg", delay: "0.55s", top: "70%", left: "82%", z: "z-30" },
 ];
 ---
 
@@ -22,12 +22,31 @@ const heroKeys = [
     animation: float-idle 4s ease-in-out infinite;
   }
   .key-mechanical {
-    box-shadow: 8px 8px 0px 0px var(--shadow-color), 8px 8px 0px 4px #0A0F14;
-    transition: all 0.15s ease-out;
+    box-shadow: 
+      1px 1px 0 0 var(--shadow-color),
+      2px 2px 0 0 var(--shadow-color),
+      3px 3px 0 0 var(--shadow-color),
+      4px 4px 0 0 var(--shadow-color),
+      5px 5px 0 0 var(--shadow-color),
+      6px 6px 0 0 var(--shadow-color),
+      7px 7px 0 0 var(--shadow-color),
+      8px 8px 0 0 var(--shadow-color),
+      9px 9px 0 0 var(--shadow-color),
+      10px 10px 0 0 var(--shadow-color),
+      11px 11px 0 0 var(--shadow-color),
+      12px 12px 0 0 var(--shadow-color),
+      13px 13px 0 0 var(--shadow-color),
+      14px 14px 0 0 var(--shadow-color),
+      15px 15px 0 0 var(--shadow-color),
+      16px 16px 0 0 var(--shadow-color),
+      16px 16px 0 4px #0A0F14;
+    transition: transform 0.1s ease-out, box-shadow 0.1s ease-out;
   }
   .key-mechanical:hover {
-    box-shadow: 0px 0px 0px 0px var(--shadow-color), 0px 0px 0px 4px #0A0F14;
-    transform: translate(8px, 8px) !important;
+    box-shadow: 
+      0px 0px 0 0 var(--shadow-color),
+      0px 0px 0 4px #0A0F14;
+    transform: translate(16px, 16px) !important;
   }
 </style>
 
@@ -96,14 +115,14 @@ const heroKeys = [
       </span>
     </h1>
 
-    <!-- Mechanical Keyboard Grid (2.5D Isometric Style) -->
-    <div id="keyboard-cluster" class="hidden lg:grid absolute right-[2%] top-[55%] xl:top-1/2 -translate-y-1/2 w-[380px] h-[380px] xl:w-[480px] xl:h-[480px] grid-cols-3 grid-rows-3 gap-4 xl:gap-6 pointer-events-auto origin-center transition-transform duration-200 ease-out z-0">
+    <!-- Mechanical Keyboard Grid (Perfect 2.5D Isometric Spilled Style) -->
+    <div id="keyboard-cluster" class="hidden lg:block absolute right-[2%] top-[55%] xl:top-1/2 -translate-y-1/2 w-[420px] h-[420px] xl:w-[500px] xl:h-[500px] pointer-events-auto origin-center transition-transform duration-200 ease-out z-0">
       {heroKeys.map((key) => (
-        <div class="flex items-center justify-center animate-float-idle" style={`animation-delay: ${key.delay}; --rot: ${key.rotate};`}>
-          <div class={`relative w-20 h-20 xl:w-24 xl:h-24 rounded-xl xl:rounded-2xl border-4 border-[#0A0F14] ${key.color} flex items-center justify-center cursor-pointer key-mechanical`} style={`--shadow-color: ${key.shadowColor};`}>
+        <div class={`absolute ${key.z} animate-float-idle`} style={`left: ${key.left}; top: ${key.top}; animation-delay: ${key.delay}; transform: rotate(${key.rotate});`}>
+          <div class={`relative w-20 h-20 xl:w-28 xl:h-28 rounded-xl xl:rounded-2xl border-4 border-[#0A0F14] ${key.color} flex items-center justify-center cursor-pointer key-mechanical`} style={`--shadow-color: ${key.shadowColor};`}>
             <!-- Inner highlight for 3D bevel -->
-            <div class="absolute inset-0 rounded-lg xl:rounded-xl shadow-[inset_0_4px_0_rgba(255,255,255,0.25),inset_0_-4px_0_rgba(0,0,0,0.15)] pointer-events-none"></div>
-            <span class="font-heading font-black text-3xl xl:text-4xl text-[#0A0F14] drop-shadow-sm">{key.letter}</span>
+            <div class="absolute inset-0 rounded-lg xl:rounded-xl shadow-[inset_0_6px_0_rgba(255,255,255,0.3),inset_0_-6px_0_rgba(0,0,0,0.15)] pointer-events-none"></div>
+            <span class="font-heading font-black text-4xl xl:text-5xl text-[#0A0F14] drop-shadow-sm">{key.letter}</span>
           </div>
         </div>
       ))}
