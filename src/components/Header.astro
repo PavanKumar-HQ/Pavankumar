@@ -52,17 +52,31 @@
     threshold: 0
   };
 
+  const navColors: Record<string, string> = {
+    hero: 'bg-[#4A9EFF]',       // Blue
+    about: 'bg-[#FFD83D]',      // Yellow
+    experience: 'bg-[#54D69A]', // Green
+    geniusphere: 'bg-[#DCC5FF]',// Purple
+    skills: 'bg-[#FF6B22]',     // Orange
+    contact: 'bg-[#4A9EFF]'     // Blue
+  };
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         const id = entry.target.getAttribute('id');
         if (!id) return;
+        
         gridItems.forEach((item) => {
-          if (item.getAttribute('data-nav') === id) {
-            item.classList.add('bg-[#4A9EFF]', 'font-bold');
+          const navId = item.getAttribute('data-nav');
+          if (!navId) return;
+          const activeColor = navColors[navId] || 'bg-[#4A9EFF]';
+          
+          if (navId === id) {
+            item.classList.add(activeColor, 'font-bold');
             item.classList.remove('bg-[#F3F1EB]');
           } else {
-            item.classList.remove('bg-[#4A9EFF]', 'font-bold');
+            item.classList.remove(activeColor, 'font-bold');
             item.classList.add('bg-[#F3F1EB]');
           }
         });
