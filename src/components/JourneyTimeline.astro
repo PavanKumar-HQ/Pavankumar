@@ -27,17 +27,17 @@ const milestones = [
 ];
 ---
 
-<section id="journey" class="w-full bg-[#0A0F14] text-[#F3F1EB] border-b-2 border-[#0A0F14] overflow-hidden">
+<section id="journey" class="w-full bg-[#F3F1EB] text-[#0A0F14] border-b-2 border-[#0A0F14] overflow-hidden">
   
   <!-- Section Header -->
-  <div class="px-8 sm:px-16 py-12 border-b-2 border-[#F3F1EB]/10 flex flex-col md:flex-row justify-between md:items-end gap-6">
+  <div class="px-8 sm:px-16 py-12 border-b-2 border-[#0A0F14]/10 flex flex-col md:flex-row justify-between md:items-end gap-6">
     <div>
-      <div class="font-mono-tech text-xs font-bold text-[#F3F1EB]/50 uppercase tracking-[0.2em] mb-3">01 / TIMELINE</div>
-      <h2 class="font-heading font-black text-6xl sm:text-8xl uppercase tracking-tighter leading-none text-[#F3F1EB]">
+      <div class="font-mono-tech text-xs font-bold text-[#0A0F14]/50 uppercase tracking-[0.2em] mb-3">01 / TIMELINE</div>
+      <h2 class="font-heading font-black text-6xl sm:text-8xl uppercase tracking-tighter leading-none text-[#0A0F14]">
         THE JOURNEY
       </h2>
     </div>
-    <div class="font-mono-tech text-[10px] text-[#F3F1EB]/40 uppercase tracking-widest flex items-center gap-3 pb-2">
+    <div class="font-mono-tech text-[10px] text-[#0A0F14]/40 uppercase tracking-widest flex items-center gap-3 pb-2">
       <span class="w-2 h-2 bg-[#FF6B22] animate-pulse"></span>
       DRAG OR SCROLL TO EXPLORE
     </div>
@@ -46,33 +46,33 @@ const milestones = [
   <!-- Horizontal Scroll Container -->
   <div class="flex overflow-x-auto no-scrollbar snap-x snap-mandatory">
     {milestones.map((item, index) => (
-      <div class="snap-start shrink-0 w-[85vw] sm:w-[45vw] lg:w-[33.333vw] border-r-2 border-[#F3F1EB]/10 flex flex-col justify-between group">
+      <div class="snap-start shrink-0 w-[85vw] sm:w-[45vw] lg:w-[33.333vw] border-r-2 border-[#0A0F14]/10 flex flex-col justify-between group hover:bg-[#0A0F14]/[0.02] transition-colors">
         
         <!-- Top Date/Number -->
-        <div class="p-8 sm:p-12 border-b-2 border-[#F3F1EB]/10">
+        <div class="p-8 sm:p-12 border-b-2 border-[#0A0F14]/10">
           <div class="flex justify-between items-start mb-6">
-            <span class="font-mono-tech text-xs text-[#F3F1EB]/30 tracking-widest">CHAPTER 0{index + 1}</span>
+            <span class="font-mono-tech text-xs text-[#0A0F14]/40 font-bold tracking-widest">CHAPTER 0{index + 1}</span>
             <span class="font-mono-tech text-[10px] text-[#FF6B22] font-bold uppercase tracking-wider">{item.tag}</span>
           </div>
-          <div class={`font-heading font-black text-7xl sm:text-8xl leading-none tracking-tighter ${item.color}`}>
+          <div class={`font-heading font-black text-7xl sm:text-8xl leading-none tracking-tighter ${item.color.replace('text-[#FFD83D]', 'text-[#FFB800]')}`}>
             {item.year}
           </div>
         </div>
 
         <!-- Content -->
         <div class="p-8 sm:p-12 grow flex flex-col justify-start">
-          <h3 class="font-heading font-black text-3xl sm:text-4xl uppercase leading-[0.95] mb-6 text-[#F3F1EB] group-hover:text-[#FF6B22] transition-colors">
+          <h3 class="font-heading font-black text-3xl sm:text-4xl uppercase leading-[0.95] mb-6 text-[#0A0F14] group-hover:text-[#FF6B22] transition-colors">
             {item.title}
           </h3>
-          <p class="font-sans text-sm sm:text-base text-[#F3F1EB]/60 leading-relaxed max-w-sm">
+          <p class="font-sans text-sm sm:text-base text-[#0A0F14]/70 leading-relaxed max-w-sm font-medium">
             {item.description}
           </p>
         </div>
 
         <!-- Footer -->
         <div class="p-8 sm:p-12 pt-0">
-          <div class="border-t-2 border-[#F3F1EB]/10 pt-6">
-            <span class="font-mono-tech text-[10px] text-[#F3F1EB]/40 uppercase tracking-widest block">
+          <div class="border-t-2 border-[#0A0F14]/10 pt-6">
+            <span class="font-mono-tech text-[10px] font-bold text-[#0A0F14]/50 uppercase tracking-widest block">
               {item.metrics}
             </span>
           </div>
@@ -82,8 +82,8 @@ const milestones = [
     ))}
     
     <!-- Empty End Spacer to allow final item to center/show clearly -->
-    <div class="snap-start shrink-0 w-[15vw] sm:w-[10vw] border-r-2 border-[#F3F1EB]/10 flex items-center justify-center">
-      <span class="font-mono-tech text-xs text-[#F3F1EB]/20 rotate-90 whitespace-nowrap">TO BE CONTINUED</span>
+    <div class="snap-start shrink-0 w-[15vw] sm:w-[10vw] border-r-2 border-[#0A0F14]/10 flex items-center justify-center bg-[#0A0F14]/5">
+      <span class="font-mono-tech text-xs font-bold text-[#0A0F14]/30 rotate-90 whitespace-nowrap">TO BE CONTINUED</span>
     </div>
   </div>
   
