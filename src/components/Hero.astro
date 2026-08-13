@@ -85,88 +85,95 @@ const heroKeys = [
     </div>
   </div>
 
-  <!-- Giant Editorial Headline Section -->
-  <div class="my-10 relative z-10">
-    <!-- Creative Neo-Brutalist Greeting Tag with Animated Waving Hand -->
-    <div class="inline-flex items-center gap-2 mb-4 px-4 py-1.5 bg-[#4A9EFF] text-white font-mono-tech text-xs sm:text-sm font-bold uppercase brutal-border-thick rotate-1 hover:-rotate-1 transition-transform duration-200 shadow-[4px_4px_0px_0px_#0A0F14] select-none">
-      <span class="inline-block animate-wave origin-[70%_70%]">
-        <svg class="w-5 h-5 text-[#FFD83D] fill-current" viewBox="0 0 24 24">
-          <path d="M12 2a1 1 0 0 1 1 1v8a1 1 0 0 1-2 0V3a1 1 0 0 1 1-1zm3 3a1 1 0 0 1 1 1v6a1 1 0 0 1-2 0V6a1 1 0 0 1 1-1zm3 3a1 1 0 0 1 1 1v4a1 1 0 0 1-2 0V9a1 1 0 0 1 1-1zm-9-1a1 1 0 0 1 1 1v5a1 1 0 0 1-2 0V8a1 1 0 0 1 1-1zM6.5 11a1.5 1.5 0 0 0-1.5 1.5v3.6c0 3.3 2.7 6 6 6h2.5c3.6 0 6.5-2.9 6.5-6.5V13a1 1 0 1 0-2 0v2.6c0 2.5-2 4.5-4.5 4.5H11c-2.2 0-4-1.8-4-4v-3.6A1.5 1.5 0 0 0 5.5 11z"/>
-        </svg>
-      </span>
-      <span id="greeting-switcher">SAY HELLO!</span>
-    </div>
-
-    <h1 id="hero-title" class="font-heading font-black text-6xl sm:text-8xl md:text-9xl lg:text-[11.5rem] leading-[0.82] tracking-tighter uppercase select-none text-[#0A0F14]">
-      <span class="block cursor-default overflow-hidden flex" id="word-pavan">
-        <span class="char inline-block translate-y-full hover:text-[#FF6B22] transition-colors duration-200 cursor-pointer">P</span>
-        <span class="char inline-block translate-y-full hover:text-[#4A9EFF] transition-colors duration-200 cursor-pointer">A</span>
-        <span class="char inline-block translate-y-full hover:text-[#54D69A] transition-colors duration-200 cursor-pointer">V</span>
-        <span class="char inline-block translate-y-full hover:text-[#FFD83D] transition-colors duration-200 cursor-pointer">A</span>
-        <span class="char inline-block translate-y-full hover:text-[#FF6B22] transition-colors duration-200 cursor-pointer">N</span>
-      </span>
-      <span class="inline-block mt-2 cursor-default overflow-hidden bg-[#FFD83D] text-[#0A0F14] px-4 py-1 brutal-border-thick -rotate-2 hover:rotate-0 transition-transform duration-300 shadow-[6px_6px_0px_0px_#0A0F14]" id="word-kumar">
-        <span class="flex">
-          <span class="char inline-block translate-y-full hover:text-[#FF6B22] transition-colors duration-200 cursor-pointer">K</span>
-          <span class="char inline-block translate-y-full hover:text-[#4A9EFF] transition-colors duration-200 cursor-pointer">U</span>
-          <span class="char inline-block translate-y-full hover:text-[#54D69A] transition-colors duration-200 cursor-pointer">M</span>
-          <span class="char inline-block translate-y-full hover:text-[#FF6B22] transition-colors duration-200 cursor-pointer">A</span>
-          <span class="char inline-block translate-y-full hover:text-[#4A9EFF] transition-colors duration-200 cursor-pointer">R</span>
+  <!-- Giant Editorial Headline Section with Side-by-Side 3D Canvas -->
+  <div class="my-6 lg:my-10 relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8">
+    
+    <!-- Left Column: Editorial Headline & Statement Box -->
+    <div class="w-full lg:w-[55%] xl:w-[58%] shrink-0 relative z-20">
+      <!-- Creative Neo-Brutalist Greeting Tag with Animated Waving Hand -->
+      <div class="inline-flex items-center gap-2 mb-4 px-4 py-1.5 bg-[#4A9EFF] text-white font-mono-tech text-xs sm:text-sm font-bold uppercase brutal-border-thick rotate-1 hover:-rotate-1 transition-transform duration-200 shadow-[4px_4px_0px_0px_#0A0F14] select-none">
+        <span class="inline-block animate-wave origin-[70%_70%]">
+          <svg class="w-5 h-5 text-[#FFD83D] fill-current" viewBox="0 0 24 24">
+            <path d="M12 2a1 1 0 0 1 1 1v8a1 1 0 0 1-2 0V3a1 1 0 0 1 1-1zm3 3a1 1 0 0 1 1 1v6a1 1 0 0 1-2 0V6a1 1 0 0 1 1-1zm3 3a1 1 0 0 1 1 1v4a1 1 0 0 1-2 0V9a1 1 0 0 1 1-1zm-9-1a1 1 0 0 1 1 1v5a1 1 0 0 1-2 0V8a1 1 0 0 1 1-1zM6.5 11a1.5 1.5 0 0 0-1.5 1.5v3.6c0 3.3 2.7 6 6 6h2.5c3.6 0 6.5-2.9 6.5-6.5V13a1 1 0 1 0-2 0v2.6c0 2.5-2 4.5-4.5 4.5H11c-2.2 0-4-1.8-4-4v-3.6A1.5 1.5 0 0 0 5.5 11z"/>
+          </svg>
         </span>
-      </span>
-    </h1>
-
-    <!-- True 3D Isometric Layered Extrusion Keyboard -->
-    <div class="hidden lg:flex absolute right-[2%] top-[55%] xl:top-1/2 -translate-y-1/2 w-[500px] h-[500px] items-center justify-center pointer-events-none" style="perspective: 2500px;">
-      
-      <!-- The Cluster Rotator -->
-      <div id="true-3d-cluster" class="relative pointer-events-auto transition-transform duration-100 ease-out will-change-transform w-[400px] h-[400px] flex items-center justify-center" style="transform: rotateX(55deg) rotateZ(-40deg); transform-style: preserve-3d;">
-        
-        {heroKeys.map((key) => (
-          <div class="absolute animate-float-idle" style={`transform: translateX(${key.x}px) translateY(${key.y}px) translateZ(${key.z}px) rotateZ(${key.angle}deg); transform-style: preserve-3d; animation-delay: ${key.delay};`}>
-            
-            <!-- Press interaction wrapper -->
-            <div class="relative w-20 h-20 xl:w-24 xl:h-24 transition-transform duration-150 hover:translateZ(-10px) cursor-pointer group" style="transform-style: preserve-3d;">
-              
-              <!-- Solid Black Base (Bottom 12 layers) -->
-              {Array.from({ length: 12 }).map((_, i) => (
-                <div class="absolute inset-0 bg-[#0A0F14] rounded-xl" style={`transform: translateZ(${i - 28}px);`}></div>
-              ))}
-              
-              <!-- Solid Colored Side Extrusion (Middle 24 layers with shading gradient) -->
-              {Array.from({ length: 24 }).map((_, i) => (
-                <div class={`absolute inset-0 ${key.sideColor} rounded-xl`} style={`transform: translateZ(${i - 16}px); filter: brightness(${0.65 + (i * 0.015)});`}></div>
-              ))}
-
-              <!-- Top Cap (Layer Z=8) -->
-              <div class={`absolute inset-0 ${key.color} border-4 border-[#0A0F14] rounded-xl flex items-center justify-center shadow-[inset_0_4px_0_rgba(255,255,255,0.2),inset_0_-4px_0_rgba(0,0,0,0.1)] group-hover:brightness-110 transition-all`} style="transform: translateZ(8px);">
-                <!-- Counter-rotate text so it faces up cleanly -->
-                <span class="font-heading font-black text-3xl xl:text-4xl text-[#0A0F14] drop-shadow-sm" style={`transform: rotateZ(${40 - key.angle}deg);`}>{key.letter}</span>
-              </div>
-
-            </div>
-          </div>
-        ))}
-        
+        <span id="greeting-switcher">SAY HELLO!</span>
       </div>
-    </div>
 
-    <div class="mt-8 relative z-10">
-      <!-- Editorial Statement Box with Full-Width Rigid Layout -->
-      <div class="w-full font-mono-tech space-y-4 bg-[#54D69A] text-[#0A0F14] p-6 sm:p-8 brutal-border-thick brutal-shadow-lg flex flex-col justify-between h-[260px] sm:h-[220px] overflow-hidden">
-        <div class="h-full flex flex-col justify-between">
-          <div class="h-[120px] flex items-center overflow-hidden my-auto">
-            <p id="typewriter-title" class="font-bold text-2xl sm:text-4xl lg:text-5xl text-[#0A0F14] font-heading leading-tight uppercase">
-              <!-- Typewriter content injected here -->
+      <h1 id="hero-title" class="font-heading font-black text-5xl sm:text-7xl md:text-8xl xl:text-[9.5rem] leading-[0.85] tracking-tighter uppercase select-none text-[#0A0F14]">
+        <span class="block cursor-default overflow-hidden flex" id="word-pavan">
+          <span class="char inline-block translate-y-full hover:text-[#FF6B22] transition-colors duration-200 cursor-pointer">P</span>
+          <span class="char inline-block translate-y-full hover:text-[#4A9EFF] transition-colors duration-200 cursor-pointer">A</span>
+          <span class="char inline-block translate-y-full hover:text-[#54D69A] transition-colors duration-200 cursor-pointer">V</span>
+          <span class="char inline-block translate-y-full hover:text-[#FFD83D] transition-colors duration-200 cursor-pointer">A</span>
+          <span class="char inline-block translate-y-full hover:text-[#FF6B22] transition-colors duration-200 cursor-pointer">N</span>
+        </span>
+        <span class="inline-block mt-2 cursor-default overflow-hidden bg-[#FFD83D] text-[#0A0F14] px-4 py-1 brutal-border-thick -rotate-2 hover:rotate-0 transition-transform duration-300 shadow-[6px_6px_0px_0px_#0A0F14]" id="word-kumar">
+          <span class="flex">
+            <span class="char inline-block translate-y-full hover:text-[#FF6B22] transition-colors duration-200 cursor-pointer">K</span>
+            <span class="char inline-block translate-y-full hover:text-[#4A9EFF] transition-colors duration-200 cursor-pointer">U</span>
+            <span class="char inline-block translate-y-full hover:text-[#54D69A] transition-colors duration-200 cursor-pointer">M</span>
+            <span class="char inline-block translate-y-full hover:text-[#FF6B22] transition-colors duration-200 cursor-pointer">A</span>
+            <span class="char inline-block translate-y-full hover:text-[#4A9EFF] transition-colors duration-200 cursor-pointer">R</span>
+          </span>
+        </span>
+      </h1>
+
+      <div class="mt-6">
+        <!-- Editorial Statement Box -->
+        <div class="w-full font-mono-tech space-y-4 bg-[#54D69A] text-[#0A0F14] p-6 brutal-border-thick brutal-shadow-lg flex flex-col justify-between h-[220px] sm:h-[200px] overflow-hidden">
+          <div class="h-full flex flex-col justify-between">
+            <div class="h-[100px] flex items-center overflow-hidden my-auto">
+              <p id="typewriter-title" class="font-bold text-xl sm:text-3xl lg:text-4xl text-[#0A0F14] font-heading leading-tight uppercase">
+                <!-- Typewriter content injected here -->
+              </p>
+            </div>
+
+            <p class="text-[#0A0F14] font-medium text-xs sm:text-sm leading-relaxed border-t-2 border-[#0A0F14] pt-3">
+              Passionate 2nd-year BCA student building real-world AI tools, Geniusphere educational programs, & modern web apps.
             </p>
           </div>
-
-          <p class="text-[#0A0F14] font-medium text-xs sm:text-sm leading-relaxed border-t-2 border-[#0A0F14] pt-3">
-            Passionate 2nd-year BCA student building real-world AI tools, Geniusphere educational programs, & modern web apps.
-          </p>
         </div>
       </div>
     </div>
+
+    <!-- Right Column: Dedicated 3D Keyboard Canvas (100% Unobstructed Visibility) -->
+    <div class="w-full lg:w-[45%] xl:w-[42%] h-[420px] sm:h-[480px] lg:h-[540px] relative flex items-center justify-center overflow-visible z-30">
+      <div class="w-full h-full flex items-center justify-center pointer-events-none" style="perspective: 2500px;">
+        
+        <!-- The Cluster Rotator (Fixed Isometric Angle) -->
+        <div id="true-3d-cluster" class="relative pointer-events-auto w-[420px] h-[420px] flex items-center justify-center" style="transform: rotateX(55deg) rotateZ(-40deg); transform-style: preserve-3d;">
+          
+          {heroKeys.map((key) => (
+            <div class="absolute animate-float-idle mechanical-key-wrapper" data-base-z={key.z} style={`transform: translateX(${key.x}px) translateY(${key.y}px) translateZ(${key.z}px) rotateZ(${key.angle}deg); transform-style: preserve-3d; animation-delay: ${key.delay};`}>
+              
+              <!-- Press interaction wrapper -->
+              <div class="relative w-18 h-18 sm:w-20 sm:h-20 xl:w-24 xl:h-24 transition-transform duration-75 ease-out cursor-pointer group key-press-target" style="transform-style: preserve-3d;">
+                
+                <!-- Solid Black Base (Bottom 12 layers) -->
+                {Array.from({ length: 12 }).map((_, i) => (
+                  <div class="absolute inset-0 bg-[#0A0F14] rounded-xl" style={`transform: translateZ(${i - 28}px);`}></div>
+                ))}
+                
+                <!-- Solid Colored Side Extrusion (Middle 24 layers with shading gradient) -->
+                {Array.from({ length: 24 }).map((_, i) => (
+                  <div class={`absolute inset-0 ${key.sideColor} rounded-xl`} style={`transform: translateZ(${i - 16}px); filter: brightness(${0.65 + (i * 0.015)});`}></div>
+                ))}
+
+                <!-- Top Cap (Layer Z=8) -->
+                <div class={`absolute inset-0 ${key.color} border-4 border-[#0A0F14] rounded-xl flex items-center justify-center shadow-[inset_0_4px_0_rgba(255,255,255,0.25),inset_0_-4px_0_rgba(0,0,0,0.12)] group-hover:brightness-110 transition-all`} style="transform: translateZ(8px);">
+                  <!-- Counter-rotate text so it faces up cleanly -->
+                  <span class="font-heading font-black text-2xl sm:text-3xl xl:text-4xl text-[#0A0F14] drop-shadow-sm select-none" style={`transform: rotateZ(${40 - key.angle}deg);`}>{key.letter}</span>
+                </div>
+
+              </div>
+            </div>
+          ))}
+          
+        </div>
+      </div>
+    </div>
+
   </div>
 
   <script>
@@ -240,27 +247,59 @@ const heroKeys = [
       setTimeout(typeEffect, speed);
     }
 
-    // True 3D Cluster Hover Effect
-    const keyCluster = document.getElementById('true-3d-cluster');
+    // Proximity Mouse Press & Ghost Typing Script
     const heroSection = document.getElementById('hero');
-    if (keyCluster && heroSection) {
+    const keys = document.querySelectorAll('.mechanical-key-wrapper');
+
+    if (heroSection && keys.length > 0) {
+      // 1. Proximity Typing Press Effect (Keys press down as mouse approaches)
       heroSection.addEventListener('mousemove', (e) => {
-        const rect = heroSection.getBoundingClientRect();
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-        
-        const deltaX = (e.clientX - rect.left) - centerX;
-        const deltaY = (e.clientY - rect.top) - centerY;
-        
-        // Base isometric angle: rotateX(55deg) rotateZ(-40deg)
-        const rotateX = 55 + Math.max(-15, Math.min(15, -deltaY / 40));
-        const rotateZ = -40 + Math.max(-15, Math.min(15, deltaX / 40));
-        
-        keyCluster.style.transform = `rotateX(${rotateX}deg) rotateZ(${rotateZ}deg)`;
+        keys.forEach((keyEl) => {
+          const rect = keyEl.getBoundingClientRect();
+          const keyCenterX = rect.left + rect.width / 2;
+          const keyCenterY = rect.top + rect.height / 2;
+
+          const dist = Math.hypot(e.clientX - keyCenterX, e.clientY - keyCenterY);
+          const pressThreshold = 110; // Proximity radius in pixels
+
+          const innerTarget = keyEl.querySelector('.key-press-target') as HTMLElement | null;
+
+          if (dist < pressThreshold && innerTarget) {
+            const pressFactor = Math.pow(1 - dist / pressThreshold, 1.4);
+            const pressZ = -22 * pressFactor;
+            innerTarget.style.transform = `translateZ(${pressZ}px)`;
+            innerTarget.classList.add('brightness-110');
+          } else if (innerTarget) {
+            innerTarget.style.transform = `translateZ(0px)`;
+            innerTarget.classList.remove('brightness-110');
+          }
+        });
       });
+
       heroSection.addEventListener('mouseleave', () => {
-        keyCluster.style.transform = `rotateX(55deg) rotateZ(-40deg)`;
+        keys.forEach((keyEl) => {
+          const innerTarget = keyEl.querySelector('.key-press-target') as HTMLElement | null;
+          if (innerTarget) {
+            innerTarget.style.transform = `translateZ(0px)`;
+            innerTarget.classList.remove('brightness-110');
+          }
+        });
       });
+
+      // 2. Continuous Ghost Typing Animation
+      setInterval(() => {
+        const randomIdx = Math.floor(Math.random() * keys.length);
+        const targetKey = keys[randomIdx];
+        const innerTarget = targetKey?.querySelector('.key-press-target') as HTMLElement | null;
+        if (innerTarget && !innerTarget.matches(':hover')) {
+          innerTarget.style.transform = 'translateZ(-18px)';
+          innerTarget.classList.add('brightness-125');
+          setTimeout(() => {
+            innerTarget.style.transform = 'translateZ(0px)';
+            innerTarget.classList.remove('brightness-125');
+          }, 150);
+        }
+      }, 500);
     }
 
     typeEffect();
