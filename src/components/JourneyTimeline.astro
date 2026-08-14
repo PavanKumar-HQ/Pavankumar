@@ -6,7 +6,8 @@ const milestones = [
     title: "GENIUSPHERE",
     description: "Empowering students with tech, finance, and soft skills through AI awareness & workshops.",
     metrics: "FOUNDER",
-    hoverBg: "hover:bg-[#FF6B22]"
+    hoverBg: "hover:bg-[#FF6B22]",
+    color: "#FF6B22"
   },
   {
     year: "2025",
@@ -14,7 +15,8 @@ const milestones = [
     title: "BRANDEX",
     description: "Building scalable technology solutions, enterprise CRM workflows, and digital services.",
     metrics: "CO-FOUNDER",
-    hoverBg: "hover:bg-[#4A9EFF]"
+    hoverBg: "hover:bg-[#4A9EFF]",
+    color: "#4A9EFF"
   },
   {
     year: "2025",
@@ -22,7 +24,8 @@ const milestones = [
     title: "AIML RESEARCH",
     description: "Technical design at Epic Minds and AI tools for business outreach at Sanna Innovations.",
     metrics: "INTERNSHIP",
-    hoverBg: "hover:bg-[#54D69A]"
+    hoverBg: "hover:bg-[#54D69A]",
+    color: "#54D69A"
   }
 ];
 ---
@@ -31,7 +34,7 @@ const milestones = [
   
   <!-- Header -->
   <div class="px-6 sm:px-12 lg:px-16 mb-12 flex flex-col lg:flex-row justify-between lg:items-end gap-8">
-    <h2 class="font-heading font-black text-6xl sm:text-8xl md:text-9xl uppercase tracking-tighter leading-[0.85] text-[#0A0F14] pb-2">
+    <h2 class="font-heading font-black text-5xl sm:text-7xl lg:text-8xl uppercase tracking-tighter leading-[0.85] text-[#0A0F14] pb-2">
       THE <br>
       <span class="bg-[#FFD83D] px-4 border-2 border-[#0A0F14]">JOURNEY</span>
     </h2>
@@ -40,18 +43,18 @@ const milestones = [
   <!-- Interactive Row List (Full Row Hover Effect) -->
   <div class="w-full flex flex-col border-t-2 border-[#0A0F14]">
     {milestones.map((item) => (
-      <div class={`group flex flex-col lg:flex-row border-b-2 border-[#0A0F14] transition-colors duration-300 bg-[#F3F1EB] ${item.hoverBg} cursor-default`}>
+      <div class={`group flex flex-col lg:flex-row border-b-2 border-[#0A0F14] transition-colors duration-300 bg-[#F3F1EB] ${item.hoverBg} cursor-default journey-row`} data-color={item.color}>
         
         <!-- Column 1: Year (Faded normally, solid black on hover) -->
         <div class="w-full lg:w-[15%] border-b-2 lg:border-b-0 lg:border-r-2 border-[#0A0F14] p-6 lg:p-8 flex items-center justify-center transition-colors duration-300">
-          <span class="font-heading font-black text-5xl sm:text-6xl leading-none text-[#0A0F14]/30 group-hover:text-[#0A0F14] transition-colors duration-300">
+          <span class="journey-year font-heading font-black text-5xl sm:text-6xl leading-none text-[#0A0F14]/30 group-hover:text-[#0A0F14] transition-colors duration-300">
             {item.year}
           </span>
         </div>
 
         <!-- Column 2: Title & Tag -->
         <div class="w-full lg:w-[35%] border-b-2 lg:border-b-0 lg:border-r-2 border-[#0A0F14] p-6 lg:p-8 flex flex-col justify-center transition-colors duration-300">
-          <div class="font-mono-tech text-[10px] font-bold uppercase tracking-widest text-[#0A0F14]/50 group-hover:text-[#0A0F14]/80 transition-colors mb-3">
+          <div class="journey-tag font-mono-tech text-[10px] font-bold uppercase tracking-widest text-[#0A0F14]/50 group-hover:text-[#0A0F14]/80 transition-colors mb-3">
             {item.tag}
           </div>
           <h3 class="font-heading font-black text-3xl sm:text-4xl lg:text-5xl uppercase leading-[0.9] text-[#0A0F14] transition-colors duration-300">
@@ -61,17 +64,17 @@ const milestones = [
 
         <!-- Column 3: Description -->
         <div class="w-full lg:w-[35%] border-b-2 lg:border-b-0 lg:border-r-2 border-[#0A0F14] p-6 lg:p-8 flex items-center">
-          <p class="font-sans text-sm sm:text-base text-[#0A0F14]/70 group-hover:text-[#0A0F14] transition-colors leading-relaxed font-medium">
+          <p class="journey-desc font-sans text-sm sm:text-base text-[#0A0F14]/70 group-hover:text-[#0A0F14] transition-colors leading-relaxed font-medium">
             {item.description}
           </p>
         </div>
 
         <!-- Column 4: Metrics & CTA -->
         <div class="w-full lg:w-[15%] p-6 lg:p-8 flex lg:flex-col justify-between items-center lg:items-end gap-6">
-          <div class="bg-[#0A0F14] text-[#F3F1EB] px-3 py-1.5 font-mono-tech text-[10px] sm:text-xs font-bold uppercase tracking-widest border-2 border-[#0A0F14] group-hover:bg-transparent group-hover:text-[#0A0F14] transition-colors duration-300">
+          <div class="journey-metric bg-[#0A0F14] text-[#F3F1EB] px-3 py-1.5 font-mono-tech text-[10px] sm:text-xs font-bold uppercase tracking-widest border-2 border-[#0A0F14] group-hover:bg-transparent group-hover:text-[#0A0F14] transition-colors duration-300">
             {item.metrics}
           </div>
-          <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-[#0A0F14] flex items-center justify-center bg-transparent group-hover:bg-[#0A0F14] transition-colors duration-300 mt-auto">
+          <div class="journey-arrow-btn w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-[#0A0F14] flex items-center justify-center bg-transparent group-hover:bg-[#0A0F14] transition-colors duration-300 mt-auto">
             <span class="text-xl sm:text-2xl font-black text-[#0A0F14] group-hover:text-[#F3F1EB] group-hover:translate-x-1 lg:group-hover:-translate-y-1 transition-all duration-300">
               ↗
             </span>
@@ -82,4 +85,58 @@ const milestones = [
     ))}
   </div>
 
+  <script>
+    import { gsap } from 'gsap';
+    const isMobile = window.matchMedia('(max-width: 1024px)').matches;
+    if (isMobile) {
+      const rows = document.querySelectorAll('.journey-row');
+      if (rows.length > 0) {
+        let jIndex = 0;
+        setInterval(() => {
+          const row = rows[jIndex];
+          const color = row.getAttribute('data-color');
+          
+          // Hover on
+          gsap.to(row, { backgroundColor: color, duration: 0.3 });
+          
+          const year = row.querySelector('.journey-year');
+          if(year) gsap.to(year, { color: '#0A0F14', duration: 0.3 });
+          
+          const tag = row.querySelector('.journey-tag');
+          if(tag) gsap.to(tag, { color: 'rgba(10, 15, 20, 0.8)', duration: 0.3 });
+          
+          const desc = row.querySelector('.journey-desc');
+          if(desc) gsap.to(desc, { color: '#0A0F14', duration: 0.3 });
+          
+          const metric = row.querySelector('.journey-metric');
+          if(metric) {
+             gsap.to(metric, { backgroundColor: 'transparent', color: '#0A0F14', duration: 0.3 });
+          }
+          
+          const arrowBtn = row.querySelector('.journey-arrow-btn');
+          if(arrowBtn) {
+             gsap.to(arrowBtn, { backgroundColor: '#0A0F14', duration: 0.3 });
+             const arrowIcon = arrowBtn.querySelector('span');
+             if(arrowIcon) gsap.to(arrowIcon, { color: '#F3F1EB', x: 4, duration: 0.3 });
+          }
+
+          // Hover off after 1200ms
+          setTimeout(() => {
+            gsap.to(row, { backgroundColor: '#F3F1EB', duration: 0.3 });
+            if(year) gsap.to(year, { color: 'rgba(10, 15, 20, 0.3)', duration: 0.3 });
+            if(tag) gsap.to(tag, { color: 'rgba(10, 15, 20, 0.5)', duration: 0.3 });
+            if(desc) gsap.to(desc, { color: 'rgba(10, 15, 20, 0.7)', duration: 0.3 });
+            if(metric) gsap.to(metric, { backgroundColor: '#0A0F14', color: '#F3F1EB', duration: 0.3 });
+            if(arrowBtn) {
+              gsap.to(arrowBtn, { backgroundColor: 'transparent', duration: 0.3 });
+              const arrowIcon = arrowBtn.querySelector('span');
+              if(arrowIcon) gsap.to(arrowIcon, { color: '#0A0F14', x: 0, duration: 0.3 });
+            }
+          }, 1200);
+
+          jIndex = (jIndex + 1) % rows.length;
+        }, 2000);
+      }
+    }
+  </script>
 </section>
