@@ -12,7 +12,7 @@
     <!-- Editorial Header Breakdown -->
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-12">
       <div class="lg:col-span-7">
-        <h2 class="font-heading font-black text-6xl sm:text-8xl uppercase leading-[0.85] tracking-tight mb-4 pb-2">
+        <h2 class="font-heading font-black text-5xl sm:text-7xl lg:text-8xl uppercase leading-[0.85] tracking-tight mb-4 pb-2">
           BRANDEX <br>
           <span class="bg-white px-4 border-2 border-[#0A0F14]">TECH OS</span>
         </h2>
@@ -75,4 +75,31 @@
     </div>
 
   </div>
+
+  <script>
+    import { gsap } from 'gsap';
+    const isMobile = window.matchMedia('(max-width: 1024px)').matches;
+    if (isMobile) {
+      const bCards = document.querySelectorAll('#brandex .group');
+      if (bCards.length > 0) {
+        let bIndex = 0;
+        setInterval(() => {
+          const card = bCards[bIndex];
+          const title = card.querySelector('h3');
+          
+          // Hover on
+          gsap.to(card, { x: -4, y: -4, boxShadow: '10px 10px 0px #0A0F14', duration: 0.2 });
+          if(title) gsap.to(title, { x: 4, duration: 0.2 });
+
+          // Hover off after 800ms
+          setTimeout(() => {
+            gsap.to(card, { x: 0, y: 0, boxShadow: '4px 4px 0px #0A0F14', duration: 0.3 });
+            if(title) gsap.to(title, { x: 0, duration: 0.3 });
+          }, 800);
+
+          bIndex = (bIndex + 1) % bCards.length;
+        }, 1200);
+      }
+    }
+  </script>
 </section>

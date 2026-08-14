@@ -61,4 +61,35 @@ const projects = await getCollection('projects');
     </div>
 
   </div>
+
+  <script>
+    import { gsap } from 'gsap';
+    const isMobile = window.matchMedia('(max-width: 1024px)').matches;
+    if (isMobile) {
+      const cards = document.querySelectorAll('#work article');
+      if (cards.length > 0) {
+        let currentIndex = 0;
+        setInterval(() => {
+          const card = cards[currentIndex];
+          const title = card.querySelector('h3');
+          // Select the last span containing the arrow inside the border-t-2 div
+          const arrow = card.querySelector('.border-t-2 span:last-child');
+          
+          // Apply hover effect
+          gsap.to(card, { x: -4, y: -4, boxShadow: '10px 10px 0px #0A0F14', duration: 0.2 });
+          if(title) gsap.to(title, { color: '#4A9EFF', duration: 0.2 });
+          if(arrow) gsap.to(arrow, { backgroundColor: '#FFD83D', color: '#0A0F14', duration: 0.2 });
+
+          // Revert after 800ms
+          setTimeout(() => {
+            gsap.to(card, { x: 0, y: 0, boxShadow: '4px 4px 0px #0A0F14', duration: 0.3 });
+            if(title) gsap.to(title, { color: '', duration: 0.3 }); 
+            if(arrow) gsap.to(arrow, { backgroundColor: '#0A0F14', color: '#FFFFFF', duration: 0.3 });
+          }, 800);
+
+          currentIndex = (currentIndex + 1) % cards.length;
+        }, 1500); // Trigger every 1.5s
+      }
+    }
+  </script>
 </section>

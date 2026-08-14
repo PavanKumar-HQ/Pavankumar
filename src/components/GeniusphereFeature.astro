@@ -92,4 +92,31 @@
     </div>
 
   </div>
+
+  <script>
+    import { gsap } from 'gsap';
+    const isMobile = window.matchMedia('(max-width: 1024px)').matches;
+    if (isMobile) {
+      const gCards = document.querySelectorAll('#geniusphere .group');
+      if (gCards.length > 0) {
+        let gIndex = 0;
+        setInterval(() => {
+          const card = gCards[gIndex];
+          const numberText = card.querySelector('.font-heading.text-5xl, .font-heading.text-6xl');
+          
+          // Hover on
+          gsap.to(card, { y: -8, boxShadow: '10px 10px 0px #0A0F14', duration: 0.2 });
+          if(numberText) gsap.to(numberText, { scale: 1.05, duration: 0.2, transformOrigin: 'left' });
+
+          // Hover off after 800ms
+          setTimeout(() => {
+            gsap.to(card, { y: 0, boxShadow: '4px 4px 0px #0A0F14', duration: 0.3 });
+            if(numberText) gsap.to(numberText, { scale: 1, duration: 0.3 });
+          }, 800);
+
+          gIndex = (gIndex + 1) % gCards.length;
+        }, 1600);
+      }
+    }
+  </script>
 </section>
