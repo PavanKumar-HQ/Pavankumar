@@ -90,26 +90,26 @@ const heroKeys = [
     </div>
 
     <!-- Right Column: Truncated Pyramid Right-Side View Mechanical Key Grid -->
-    <div id="keyboard-cluster" class="hidden lg:grid lg:col-span-5 grid-cols-4 gap-4 xl:gap-5 items-center justify-items-center w-full select-none z-0">
+    <div id="keyboard-cluster" class="mt-8 lg:mt-0 grid lg:col-span-5 grid-cols-4 gap-3 sm:gap-4 xl:gap-5 items-center justify-items-center w-full select-none z-0">
       {heroKeys.map((k) => (
         <button class="group cursor-pointer select-none keycap-btn focus:outline-none" aria-label={`Mechanical Key ${k.letter}`}>
-          <div class="relative w-18 h-18 sm:w-20 sm:h-20 xl:w-24 xl:h-24 flex items-center justify-center">
+          <div class="relative w-16 h-16 sm:w-20 sm:h-20 xl:w-24 xl:h-24 flex items-center justify-center">
             <!-- 1. Solid Black Base Shadow -->
-            <div class="absolute inset-0 bg-[#0A0F14] rounded-2xl translate-x-3 translate-y-3"></div>
+            <div class="absolute inset-0 bg-[#0A0F14] rounded-2xl translate-x-2.5 translate-y-2.5 sm:translate-x-3 sm:translate-y-3"></div>
 
             <!-- 2. Dark Mechanical Switch Housing Base -->
-            <div class="absolute inset-0 bg-[#1A202C] border-3 border-[#0A0F14] rounded-2xl translate-x-1.5 translate-y-1.5"></div>
+            <div class="absolute inset-0 bg-[#1A202C] border-2 sm:border-3 border-[#0A0F14] rounded-2xl translate-x-1 sm:translate-x-1.5 translate-y-1 sm:translate-y-1.5"></div>
 
             <!-- 3. Keycap Body Right-Side Extrusion Wall -->
-            <div class={`absolute inset-0 ${k.bg} border-4 border-[#0A0F14] rounded-2xl translate-x-1 translate-y-0.5`}></div>
+            <div class={`absolute inset-0 ${k.bg} border-3 sm:border-4 border-[#0A0F14] rounded-2xl translate-x-0.5 sm:translate-x-1 translate-y-px sm:translate-y-0.5`}></div>
 
             <!-- 4. Keycap Sculpted Top Face (Truncated Pyramid - Inset 85% & Shifted to show Right Side View) -->
-            <div class={`relative w-[85%] h-[85%] ${k.bg} border-4 border-[#0A0F14] rounded-xl flex items-center justify-center -translate-x-1 -translate-y-1.5 group-hover:translate-x-0 group-hover:-translate-y-0.5 group-active:translate-x-0.5 group-active:translate-y-0.5 transition-transform duration-150 shadow-[inset_0_-3px_0_rgba(0,0,0,0.2),inset_0_3px_0_rgba(255,255,255,0.35)]`}>
+            <div class={`relative w-[85%] h-[85%] ${k.bg} border-3 sm:border-4 border-[#0A0F14] rounded-xl flex items-center justify-center -translate-x-1 -translate-y-1 sm:-translate-y-1.5 group-hover:translate-x-0 group-hover:-translate-y-0.5 group-active:translate-x-0.5 group-active:translate-y-0.5 transition-transform duration-150 shadow-[inset_0_-3px_0_rgba(0,0,0,0.2),inset_0_3px_0_rgba(255,255,255,0.35)]`}>
               
               <!-- Keycap Concave Top Dish Highlight -->
               <div class="absolute inset-1 rounded-lg border border-[#0A0F14]/15 pointer-events-none"></div>
 
-              <span class={`font-heading font-black ${k.textColor} ${k.isIcon ? 'text-lg xl:text-xl font-mono' : 'text-2xl xl:text-3xl'}`}>
+              <span class={`font-heading font-black ${k.textColor} ${k.isIcon ? 'text-base sm:text-lg xl:text-xl font-mono' : 'text-xl sm:text-2xl xl:text-3xl'}`}>
                 {k.letter}
               </span>
             </div>
@@ -151,8 +151,12 @@ const heroKeys = [
         delay: 0.2
       });
 
+      // Colors to cycle through for mobile demo effect
+      const colors = ['#FF6B22', '#4A9EFF', '#54D69A', '#FFD83D', '#DCC5FF'];
+
       // Magnetic Distortion & Micro-Bounce on Hover
-      chars.forEach((char) => {
+      chars.forEach((char, index) => {
+        // Desktop Hover effect
         char.addEventListener('mouseenter', () => {
           gsap.to(char, {
             y: '-15%',
@@ -170,6 +174,35 @@ const heroKeys = [
           });
         });
       });
+
+      // Mobile Automatic Hover Demo Effect (Since there is no cursor)
+      const isMobile = window.matchMedia('(max-width: 1024px)').matches;
+      if (isMobile) {
+        let currentIndex = 0;
+        setInterval(() => {
+          const char = chars[currentIndex] as HTMLElement;
+          if (char) {
+            // Apply bounce and color
+            gsap.to(char, {
+              y: '-15%',
+              scale: 1.15,
+              color: colors[currentIndex % colors.length],
+              duration: 0.15,
+              ease: 'power2.out',
+              onComplete: () => {
+                gsap.to(char, {
+                  y: '0%',
+                  scale: 1,
+                  color: '#0A0F14',
+                  duration: 0.4,
+                  ease: 'elastic.out(1, 0.4)'
+                });
+              }
+            });
+          }
+          currentIndex = (currentIndex + 1) % chars.length;
+        }, 300); // Trigger a wave every 300ms across the letters
+      }
     }
 
     // Typewriter Loop
